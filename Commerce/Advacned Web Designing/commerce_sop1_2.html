@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOP 2: Creation of website using HTML5 - Commerce IT</title>
+    <title>SOP 2: Design webpage layout using HTML and CSS - Commerce IT</title>
     <style>
         :root {
             --primary-color: #2563eb;
@@ -21,6 +22,7 @@
             background-color: var(--light-bg);
             color: var(--text-color);
         }
+
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -28,6 +30,7 @@
             text-align: center;
             box-shadow: var(--shadow);
         }
+
         .container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -36,16 +39,25 @@
             box-shadow: var(--shadow);
             border-radius: 0.5rem;
         }
-        h1, h2, h3 {
+
+        h1,
+        h3 {
             color: var(--primary-color);
             margin-bottom: 15px;
             color: white;
         }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
         h3 {
             border-bottom: 1px solid #ccc;
             padding-bottom: 5px;
             margin-top: 30px;
         }
+
         pre {
             background-color: #f0f0f0;
             padding: 15px;
@@ -59,11 +71,13 @@
             margin-bottom: 20px;
             border-radius: 0.25rem;
         }
+
         .output-section {
             margin-top: 40px;
             border-top: 2px dashed #a0a0a0;
             padding-top: 30px;
         }
+
         .live-preview-container {
             margin-top: 20px;
             border: 2px solid var(--primary-color);
@@ -72,6 +86,7 @@
             border-radius: 8px;
             display: none;
         }
+
         .live-preview-container h4 {
             margin-top: 0;
             color: var(--primary-color);
@@ -79,6 +94,7 @@
             font-size: 1.3em;
             margin-bottom: 15px;
         }
+
         .live-preview-iframe {
             width: 100%;
             height: 500px;
@@ -86,6 +102,7 @@
             background-color: white;
             border-radius: 5px;
         }
+
         .preview-buttons {
             display: flex;
             justify-content: center;
@@ -93,7 +110,9 @@
             margin-bottom: 20px;
             margin-top: 20px;
         }
-        .preview-button, .download-button {
+
+        .preview-button,
+        .download-button {
             background-color: var(--primary-color);
             color: white;
             padding: 10px 20px;
@@ -103,9 +122,12 @@
             font-size: 1em;
             transition: background-color 0.3s ease;
         }
-        .preview-button:hover, .download-button:hover {
+
+        .preview-button:hover,
+        .download-button:hover {
             background-color: var(--hover-color);
         }
+
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -126,7 +148,7 @@
             position: absolute;
             background-color: #f9f9f9;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
             border-radius: 5px;
             overflow: hidden;
@@ -147,17 +169,28 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+        .QuestionImage {
+            max-width: 50%;
+        }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>SOP 2: Creation of website using HTML5</h1>
+        <h1>SOP 2: Design webpage layout using HTML and CSS</h1>
         <p>Std 12th IT Subject (Commerce Stream)</p>
     </header>
 
     <div class="container">
-        <h2>SOP 2: Creation of website using HTML5</h2>
-        <p>Create a website using HTML5 and CSS using any 4 CSS properties. Write a code for 2 separate pages having different file names such as first page as index.html, second page as form.html. Use any theme such as college profile or company profile etc.</p>
+        <h2>SOP 2: Design webpage layout using HTML and CSS</h2>
+        <p>The top section will display the heading , ‘Tourist places’ in header. The
+            section on the left has list of cities. The right hand side displays tourist places
+            of any one of the city.<br>Use Inline style sheet in the top section to display background color for the
+            text ‘Tourist places’. Use internal stylesheet for the left and right section
+            with background color and font styles.</p>
+        <center><img class="QuestionImage" src="SOP2Q.png" alt="SOP Question Image"></center>
+
 
         <h3>Program Code (index.html - Main Page)</h3>
         <pre id="htmlCode1">
@@ -217,7 +250,7 @@ font-size:50px; margin-bottom:0px;"&gt;TouristPlaces&lt;/h1&gt;
     </div>
 
     <div class="preview-buttons">
-        <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>        
+        <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
         <!-- Dropdown for Download Button -->
         <div class="dropdown">
             <button class="download-button">Download</button>
@@ -243,32 +276,32 @@ font-size:50px; margin-bottom:0px;"&gt;TouristPlaces&lt;/h1&gt;
             const previewIframe = document.getElementById('previewIframe');
             const previewTitle = document.getElementById('previewTitle');
             const codeId = page === 'index' ? 'htmlCode1' : 'htmlCode2';
-            
+
             // Get the code content
             const codeElement = document.getElementById(codeId);
             let code = codeElement.textContent;
-            
+
             // Decode HTML entities
             code = code.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-            
+
             // Update the title
             previewTitle.textContent = `Live Preview: ${page}.html`;
-            
+
             // Write the code to the iframe
             previewIframe.contentWindow.document.open();
             previewIframe.contentWindow.document.write(code);
             previewIframe.contentWindow.document.close();
-            
+
             // Show the preview container
             previewContainer.style.display = 'block';
-            
+
             // Add event listener for navigation within the iframe
-            previewIframe.onload = function() {
+            previewIframe.onload = function () {
                 const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
                 const links = iframeDoc.querySelectorAll('a');
-                
+
                 links.forEach(link => {
-                    link.addEventListener('click', function(e) {
+                    link.addEventListener('click', function (e) {
                         e.preventDefault();
                         const href = this.getAttribute('href');
                         if (href === 'index.html') {
@@ -313,4 +346,5 @@ font-size:50px; margin-bottom:0px;"&gt;TouristPlaces&lt;/h1&gt;
         }
     </script>
 </body>
+
 </html>

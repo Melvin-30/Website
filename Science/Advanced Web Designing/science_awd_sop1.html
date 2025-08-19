@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +22,7 @@
             background-color: var(--light-bg);
             color: var(--text-color);
         }
+
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -28,6 +30,7 @@
             text-align: center;
             box-shadow: var(--shadow);
         }
+
         .container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -36,16 +39,25 @@
             box-shadow: var(--shadow);
             border-radius: 0.5rem;
         }
-        h1, h2, h3 {
+
+        h1,
+        h3 {
             color: var(--primary-color);
             margin-bottom: 15px;
             color: white;
         }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
         h3 {
             border-bottom: 1px solid #ccc;
             padding-bottom: 5px;
             margin-top: 30px;
         }
+
         pre {
             background-color: #f0f0f0;
             padding: 15px;
@@ -59,11 +71,13 @@
             margin-bottom: 20px;
             border-radius: 0.25rem;
         }
+
         .output-section {
             margin-top: 40px;
             border-top: 2px dashed #a0a0a0;
             padding-top: 30px;
         }
+
         .live-preview-container {
             margin-top: 20px;
             border: 2px solid var(--primary-color);
@@ -72,6 +86,7 @@
             border-radius: 8px;
             display: none;
         }
+
         .live-preview-container h4 {
             margin-top: 0;
             color: var(--primary-color);
@@ -79,6 +94,7 @@
             font-size: 1.3em;
             margin-bottom: 15px;
         }
+
         .live-preview-iframe {
             width: 100%;
             height: 500px;
@@ -86,6 +102,7 @@
             background-color: white;
             border-radius: 5px;
         }
+
         .preview-buttons {
             display: flex;
             justify-content: center;
@@ -93,7 +110,9 @@
             margin-bottom: 20px;
             margin-top: 20px;
         }
-        .preview-button, .download-button {
+
+        .preview-button,
+        .download-button {
             background-color: var(--primary-color);
             color: white;
             padding: 10px 20px;
@@ -103,9 +122,12 @@
             font-size: 1em;
             transition: background-color 0.3s ease;
         }
-        .preview-button:hover, .download-button:hover {
+
+        .preview-button:hover,
+        .download-button:hover {
             background-color: var(--hover-color);
         }
+
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -126,7 +148,7 @@
             position: absolute;
             background-color: #f9f9f9;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
             border-radius: 5px;
             overflow: hidden;
@@ -149,6 +171,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>SOP 1: Creation of website using HTML5</h1>
@@ -157,7 +180,23 @@
 
     <div class="container">
         <h2>SOP 1: Creation of website using HTML5</h2>
-        <p>Create a website using HTML5 and CSS using any 4 CSS properties. Write a code for 2 separate pages having different file names such as first page as index.html, second page as form.html. Use any theme such as college profile or company profile etc.</p>
+        <p>Create a website using HTML5 and CSS using any 4 CSS properties. Write
+            a code for 2 separate pages having different file names such as first page as
+            Index. html and second page as page2.html. Use any theme such as college
+            profile or company profile etc. Every page must contain proper Meta
+            information and design web page as follows
+        <ol>
+            <li>The index page must contain a heading which is highest among other text
+                on pages and must be at centre of the page. There must be a paragraph
+                which introduces general information about the theme chosen. It must
+                have at least 3 physical style tags and one image with alternate text.
+                This page must be connected to other page with proper navigational
+                links.</li>
+            <li>The 2nd page must contain the feedback or enrolment form related with
+                theme chosen with features of HTML5. The form must contain text element
+                and email address of the company or person. Include the submit button</li>
+        </ol>
+        </p>
 
         <h3>Program Code (index.html - Main Page)</h3>
         <pre id="htmlCode1">
@@ -224,13 +263,14 @@
     <div class="preview-buttons">
         <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
         <button class="preview-button" onclick="showPreview('page2')">Preview page2.html</button>
-        
+
         <!-- Dropdown for Download Button -->
         <div class="dropdown">
             <button class="download-button">Download</button>
             <div class="dropdown-content">
                 <a href="https://drive.google.com/file/d/1HzR3OfACQmoLpTQk1l0hTRtITsvCGJU5/view?usp=sharing">Code</a>
-                <a href="https://drive.google.com/file/d/1Xe29STfOPReDw1Iiqqtpn4m_Q3KzGpEV/view?usp=drive_link">Output</a>
+                <a
+                    href="https://drive.google.com/file/d/1Xe29STfOPReDw1Iiqqtpn4m_Q3KzGpEV/view?usp=drive_link">Output</a>
             </div>
         </div>
     </div>
@@ -250,32 +290,32 @@
             const previewIframe = document.getElementById('previewIframe');
             const previewTitle = document.getElementById('previewTitle');
             const codeId = page === 'index' ? 'htmlCode1' : 'htmlCode2';
-            
+
             // Get the code content
             const codeElement = document.getElementById(codeId);
             let code = codeElement.textContent;
-            
+
             // Decode HTML entities
             code = code.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-            
+
             // Update the title
             previewTitle.textContent = `Live Preview: ${page}.html`;
-            
+
             // Write the code to the iframe
             previewIframe.contentWindow.document.open();
             previewIframe.contentWindow.document.write(code);
             previewIframe.contentWindow.document.close();
-            
+
             // Show the preview container
             previewContainer.style.display = 'block';
-            
+
             // Add event listener for navigation within the iframe
-            previewIframe.onload = function() {
+            previewIframe.onload = function () {
                 const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
                 const links = iframeDoc.querySelectorAll('a');
-                
+
                 links.forEach(link => {
-                    link.addEventListener('click', function(e) {
+                    link.addEventListener('click', function (e) {
                         e.preventDefault();
                         const href = this.getAttribute('href');
                         if (href === 'index.html') {
@@ -320,4 +360,5 @@
         }
     </script>
 </body>
+
 </html>
