@@ -3,88 +3,112 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=768px">
+    <!-- Changed to initial-scale=1.0 for better mobile responsiveness -->
     <title>Std 12th IT Subject SOPs (Maharashtra Board)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Using Segoe UI from Google Fonts for consistency -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome for icons -->
     <style>
+        /* CSS Variables for consistent theming - ORIGINAL COLORS */
         :root {
             --primary-color: #2563eb;
+            /* Original primary blue */
             --secondary-color: #1e40af;
+            /* Original secondary blue */
             --hover-color: #3b82f6;
+            /* Original hover blue */
             --text-color: #1f2937;
+            /* Original dark text color */
             --light-bg: #f9fafb;
+            /* Original light background */
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Original shadow */
+
+            /* New variables for clarity, derived from original colors */
+            --background-color: var(--light-bg);
+            --card-background: #ffffff;
             --border-color: #e5e7eb;
-            --accent-color: #f59e0b;
+            /* Slightly adjusted from original for consistency */
+            --light-text-color: #4a5568;
+            /* A slightly lighter text color for secondary elements */
+            --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+            /* Lighter shadow for subtle effects */
+            --shadow-medium: var(--shadow);
+            /* Using original shadow for main elements */
+            --transition-speed: 0.3s ease;
         }
 
+        /* Base Styles */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Reverted to original font stack */
             margin: 0;
             padding: 0;
-            background-color: var(--light-bg);
+            background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
+        /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 1.5rem 0;
+            padding: 2rem 1rem;
             text-align: center;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
         }
 
         header h1 {
-            font-family: 'Lato', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            padding: 0 1rem;
+            margin: 0 0 0.5rem 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
         }
 
         header p {
-            font-size: 1rem;
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 300;
             opacity: 0.9;
-            padding: 0 1rem;
         }
 
+        /* Navigation Bar Styles */
         nav {
-            background-color: white;
-            box-shadow: var(--shadow);
+            background-color: var(--card-background);
+            box-shadow: var(--shadow-light);
             position: sticky;
             top: 0;
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .nav-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            width: 95%;
+            max-width: 1280px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 60px;
+            flex-wrap: wrap;
         }
 
         .nav-main {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .hamburger-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-color);
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
-        }
-
-        /* Dropdown styles */
+        /* Dropdown Menu Styles */
         .dropdown {
             position: relative;
         }
@@ -92,66 +116,77 @@
         .dropdown-btn {
             background-color: transparent;
             color: var(--text-color);
-            padding: 0.75rem 1rem;
+            padding: 0.85rem 1.5rem;
             font-size: 1rem;
+            font-weight: 500;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            font-weight: 500;
+            gap: 0.6rem;
+            border-radius: 0.375rem;
+            transition: all var(--transition-speed);
+            white-space: nowrap;
         }
 
-        .dropdown-btn:hover,
-        .dropdown-btn:focus {
+        .dropdown-btn:hover {
             background-color: var(--light-bg);
+            /* Original light-bg for hover */
             color: var(--primary-color);
+            /* Original primary-color for hover text */
+            transform: translateY(-2px);
         }
 
-        .dropdown-btn::after {
-            content: "▼";
-            font-size: 0.6rem;
-            transition: transform 0.3s ease;
+        .dropdown-btn i {
+            font-size: 0.7rem;
+            transition: transform var(--transition-speed);
         }
 
-        .dropdown:hover .dropdown-btn::after,
-        .dropdown-btn.active::after {
+        .dropdown:hover .dropdown-btn i {
             transform: rotate(180deg);
         }
 
         .dropdown-content {
             position: absolute;
-            background-color: white;
+            background-color: var(--card-background);
             min-width: 280px;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-medium);
             border-radius: 0.5rem;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(15px);
-            transition: all 0.3s ease;
-            z-index: 1;
-            max-height: none;
-            overflow: visible;
-            padding: 0.5rem 0;
+            transform: translateY(10px);
+            transition: all var(--transition-speed);
+            z-index: 10;
+            padding: 1rem 0;
+            border: 1px solid var(--border-color);
         }
 
-        .dropdown:hover .dropdown-content,
-        .dropdown-btn.active+.dropdown-content {
+        .dropdown:hover .dropdown-content {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
 
-        /* Topic dropdown styles */
+        /* Side-by-side links within dropdown (for Useful Links) */
+        .side-by-side-links {
+            display: flex;
+            gap: 30px;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .side-by-side-links>div {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        /* Topic Dropdown Styles (Nested Dropdown) */
         .topic-dropdown {
             position: relative;
         }
 
         .topic-btn {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 0.85rem 1.5rem;
             text-align: left;
             background-color: transparent;
             border: none;
@@ -160,254 +195,272 @@
             justify-content: space-between;
             align-items: center;
             transition: background-color 0.2s, color 0.2s;
-            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            /* Reverted to original text color for topic buttons */
         }
 
-        .topic-btn:hover,
-        .topic-btn:focus {
+        .topic-btn:hover {
             background-color: var(--light-bg);
+            /* Original light-bg for hover */
             color: var(--primary-color);
+            /* Original primary-color for hover text */
         }
 
-        .topic-btn::after {
-            content: "▶";
+        .topic-btn i {
             font-size: 0.7rem;
-            transition: transform 0.3s ease;
-        }
-
-        .topic-dropdown:hover .topic-btn::after,
-        .topic-btn.active::after {
-            transform: rotate(90deg);
+            color: var(--primary-color);
+            /* Using primary color for topic arrow */
         }
 
         .topic-content {
             position: absolute;
             left: 100%;
             top: 0;
-            background-color: white;
-            box-shadow: var(--shadow);
-            border-radius: 0 0.5rem 0.5rem 0.5rem;
+            background-color: var(--card-background);
+            box-shadow: var(--shadow-medium);
+            border-radius: 0.5rem;
             opacity: 0;
             visibility: hidden;
-            transform: translateX(15px);
-            transition: all 0.3s ease;
+            transform: translateX(10px);
+            transition: all var(--transition-speed);
             max-height: none;
             overflow: visible;
             columns: 2;
             column-gap: 25px;
             width: 600px;
-            padding: 0.5rem 1rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--border-color);
         }
 
-        .topic-dropdown:hover .topic-content,
-        .topic-btn.active+.topic-content {
+        .topic-dropdown:hover .topic-content {
             opacity: 1;
             visibility: visible;
             transform: translateX(0);
         }
 
+        /* Menu Item Styles (Links within dropdowns) */
         .menu-item {
-            padding: 0.75rem 1rem;
+            padding: 0.75rem 1.5rem;
             color: var(--text-color);
+            /* Original text color for menu items */
             text-decoration: none;
             display: block;
             transition: all 0.2s ease;
             border-radius: 0.25rem;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
-        .menu-item:hover,
-        .menu-item:focus {
+        .menu-item:hover {
             background-color: var(--light-bg);
+            /* Original light-bg for hover */
             color: var(--primary-color);
+            /* Original primary-color for hover text */
+            transform: translateX(5px);
         }
 
+        /* Section Title within Dropdowns */
         .section-title {
-            font-weight: 700;
-            padding: 0.75rem 1rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
             color: var(--primary-color);
+            /* Original primary-color */
             border-bottom: 1px solid var(--border-color);
-            margin: 0;
-            font-size: 1rem;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
         }
 
+        /* Main Content Area */
         .container {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            background-color: var(--card-background);
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow-light);
+            padding: 2rem;
         }
 
         .container h2 {
-            font-family: 'Lato', sans-serif;
-            font-size: 1.75rem;
             color: var(--primary-color);
+            /* Original primary-color */
+            font-size: 2rem;
+            margin-top: 0;
             margin-bottom: 1rem;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 0.5rem;
         }
 
         .container p {
-            font-size: 1rem;
+            color: var(--text-color);
+            /* Original text color */
             margin-bottom: 1.5rem;
         }
 
         #tutorials a {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
+            /* Using primary color for button */
             color: white;
             padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
+            border-radius: 0.375rem;
             text-decoration: none;
             font-weight: 500;
-            transition: background-color 0.3s ease;
-            margin-bottom: 1rem;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
         }
 
-        #tutorials a:hover,
-        #tutorials a:focus {
-            background-color: #d97706;
+        #tutorials a:hover {
+            background-color: var(--secondary-color);
+            /* Using secondary color for button hover */
+            transform: translateY(-2px);
         }
 
+        /* Footer Styles */
         footer {
             text-align: center;
-            padding: 1.5rem;
-            background-color: white;
+            padding: 2rem;
+            background-color: var(--card-background);
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.03);
             color: var(--text-color);
+            /* Original text color */
             font-size: 0.9rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
         }
 
-        /* Mobile styles */
-        @media (max-width: 768px) {
-            header {
-                padding: 1rem 0;
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .nav-container {
+                width: 98%;
             }
 
+            .nav-main {
+                justify-content: space-around;
+                width: 100%;
+            }
+
+            .dropdown-btn {
+                padding: 0.75rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .dropdown-content {
+                min-width: 220px;
+            }
+
+            .topic-content {
+                width: 500px;
+                column-gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
             header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .nav-main {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .dropdown {
+                width: 100%;
+            }
+
+            .dropdown-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.85rem 1rem;
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid var(--border-color);
+                border-radius: 0;
+                padding: 0.5rem 0;
+                min-width: auto;
+            }
+
+            .topic-dropdown {
+                margin-left: 1rem;
+            }
+
+            .topic-btn {
+                padding-left: 2rem;
+            }
+
+            .topic-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+                box-shadow: none;
+                border: none;
+                border-top: 1px dashed var(--border-color);
+                border-radius: 0;
+                columns: 1;
+                width: auto;
+                padding: 0.5rem 1rem 0.5rem 2.5rem;
+            }
+
+            .menu-item {
+                padding: 0.6rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            .section-title {
+                padding: 0.6rem 1rem;
+                font-size: 1rem;
+            }
+
+            .side-by-side-links {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0.5rem 1rem;
+            }
+
+            .container {
+                margin: 1.5rem auto;
+                padding: 1.5rem;
+            }
+
+            .container h2 {
                 font-size: 1.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
             }
 
             header p {
                 font-size: 0.9rem;
             }
 
-            .nav-container {
-                padding: 0 1rem;
-                position: relative;
-            }
-
-            .hamburger-btn {
-                display: block;
-            }
-
-            .nav-main {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background-color: white;
-                flex-direction: column;
-                gap: 0;
-                padding: 0;
-                box-shadow: var(--shadow);
-                display: none;
-                max-height: calc(100vh - 60px);
-                overflow-y: auto;
-            }
-
-            .nav-main.nav-open {
-                display: flex;
-            }
-
-            .dropdown {
-                width: 100%;
-                border-bottom: 1px solid var(--border-color);
-            }
-
             .dropdown-btn {
-                width: 100%;
-                padding: 1rem;
-                border-radius: 0;
-                justify-content: space-between;
-            }
-
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                display: none;
-                padding: 0;
-                border-top: 1px solid var(--border-color);
-            }
-
-            .dropdown-btn.active+.dropdown-content {
-                display: block;
-            }
-
-            .topic-dropdown {
-                width: 100%;
-                border-bottom: none;
-            }
-
-            .topic-btn {
-                padding: 0.75rem 1.5rem;
-                background-color: #f5f5f5;
-            }
-
-            .topic-content {
-                position: static;
-                width: 100%;
-                columns: 1;
-                box-shadow: none;
-                display: none;
-                padding: 0;
-                transform: none;
-                margin-left: 1rem;
-                border-left: 2px solid var(--border-color);
-            }
-
-            .topic-btn.active+.topic-content {
-                display: block;
-            }
-
-            .menu-item {
-                padding: 0.75rem 1.5rem;
-            }
-
-            .section-title {
-                padding: 1rem 1.5rem;
-                margin-top: 0;
-            }
-
-            .side-by-side-links {
-                flex-direction: column;
-                gap: 0;
+                font-size: 0.9rem;
+                padding: 0.7rem 0.8rem;
             }
 
             .container {
-                margin: 1.5rem auto;
-                padding: 0 1rem;
-            }
-
-            footer {
                 padding: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5rem;
             }
 
             .container h2 {
                 font-size: 1.5rem;
-            }
-
-            #tutorials a {
-                display: block;
-                text-align: center;
             }
         }
     </style>
@@ -421,38 +474,43 @@
 
     <nav>
         <div class="nav-container">
-            <button class="hamburger-btn" aria-label="Toggle navigation menu">☰</button>
             <div class="nav-main">
-                <!-- Commerce Stream -->
+                <!-- Commerce Stream Dropdown -->
                 <div class="dropdown">
-                    <button class="dropdown-btn">Commerce Stream</button>
+                    <button class="dropdown-btn">
+                        Commerce Stream <i class="fas fa-chevron-down"></i>
+                    </button>
                     <div class="dropdown-content">
                         <h4 class="section-title">Commerce SOPs</h4>
 
-                        <!-- Advanced Web Designing -->
+                        <!-- Advanced Web Designing (Commerce) -->
                         <div class="topic-dropdown">
-                            <button class="topic-btn">Advanced Web Designing</button>
+                            <button class="topic-btn">
+                                Advanced Web Designing <i class="fas fa-chevron-right"></i>
+                            </button>
                             <div class="topic-content">
                                 <a href="./Commerce/Advacned Web Designing/commerce_sop1_1.html" class="menu-item">SOP
-                                    1: Website with HTML5/CSS</a>
+                                    1: Creation of website using HTML5 and CSS</a>
                                 <a href="./Commerce/Advacned Web Designing/commerce_sop1_2.html" class="menu-item">SOP
-                                    2: Webpage Layout</a>
+                                    2: Design webpage layout using HTML and CSS</a>
                                 <a href="./Commerce/Advacned Web Designing/commerce_sop1_3.html" class="menu-item">SOP
-                                    3: Interlinked Pages</a>
+                                    3: Create interlinked webpages with external stylesheet</a>
                                 <a href="./Commerce/Advacned Web Designing/commerce_sop1_4.html" class="menu-item">SOP
-                                    4: Semantic Tags</a>
+                                    4: Creation of website using HTML5 semantic tags and CSS</a>
                                 <a href="./Commerce/Advacned Web Designing/commerce_sop1_5.html" class="menu-item">SOP
-                                    5: Audio in HTML5</a>
+                                    5: Use of Audio on web pages using HTML5</a>
                                 <a href="./Commerce/Advacned Web Designing/commerce_sop1_6.html" class="menu-item">SOP
-                                    6: Video in HTML5</a>
+                                    6: Use of Video on web pages using HTML5</a>
                                 <a href="./Commerce/Advacned Web Designing/commerce_sop1_7.html" class="menu-item">SOP
-                                    7: Image Mapping</a>
+                                    7: Navigation on an image using Client side image Mapping</a>
                             </div>
                         </div>
 
-                        <!-- Digital Marketing -->
+                        <!-- Digital Marketing (Commerce) -->
                         <div class="topic-dropdown">
-                            <button class="topic-btn">Digital Marketing</button>
+                            <button class="topic-btn">
+                                Digital Marketing <i class="fas fa-chevron-right"></i>
+                            </button>
                             <div class="topic-content">
                                 <a href="./Commerce/Digital Marketing/commerce_sop2_1.html" class="menu-item">SOP 1: SEO
                                     Optimization</a>
@@ -465,9 +523,11 @@
                             </div>
                         </div>
 
-                        <!-- Computerised Accounting -->
+                        <!-- Computerised Accounting (Commerce) -->
                         <div class="topic-dropdown">
-                            <button class="topic-btn">Computerised Accounting</button>
+                            <button class="topic-btn">
+                                Computerised Accounting <i class="fas fa-chevron-right"></i>
+                            </button>
                             <div class="topic-content">
                                 <a href="./Commerce/Computerised Accounting/commerce_sop3_1.html" class="menu-item">SOP
                                     1: Bitwise Trading</a>
@@ -480,9 +540,11 @@
                             </div>
                         </div>
 
-                        <!-- Database Concepts -->
+                        <!-- Database Concepts (Commerce) -->
                         <div class="topic-dropdown">
-                            <button class="topic-btn">Database Concepts</button>
+                            <button class="topic-btn">
+                                Database Concepts <i class="fas fa-chevron-right"></i>
+                            </button>
                             <div class="topic-content">
                                 <a href="./Commerce/Database Concept/commerce_sop4_1.html" class="menu-item">SOP 1:
                                     Student Table</a>
@@ -495,88 +557,101 @@
                     </div>
                 </div>
 
-                <!-- Science Stream -->
+                <!-- Science Stream Dropdown -->
                 <div class="dropdown">
-                    <button class="dropdown-btn">Science Stream</button>
+                    <button class="dropdown-btn">
+                        Science Stream <i class="fas fa-chevron-down"></i>
+                    </button>
                     <div class="dropdown-content">
                         <h4 class="section-title">Science SOPs</h4>
 
-                        <!-- Advanced Web Designing -->
+                        <!-- Advanced Web Designing (Science) -->
                         <div class="topic-dropdown">
-                            <button class="topic-btn">Advanced Web Designing</button>
+                            <button class="topic-btn">
+                                Advanced Web Designing <i class="fas fa-chevron-right"></i>
+                            </button>
                             <div class="topic-content">
                                 <a href="./Science/Advanced Web Designing/science_awd_sop1.html" class="menu-item">SOP
-                                    1: Website with HTML5/CSS</a>
+                                    1: Creation of website using HTML5 and CSS</a>
                                 <a href="./Science/Advanced Web Designing/science_awd_sop2.html" class="menu-item">SOP
-                                    2: Webpage Layout</a>
+                                    2: Design webpage layout using HTML and CSS</a>
                                 <a href="./Science/Advanced Web Designing/science_awd_sop3.html" class="menu-item">SOP
-                                    3: Interlinked Pages</a>
+                                    3: Create interlinked webpages with external stylesheet</a>
                                 <a href="./Science/Advanced Web Designing/science_awd_sop4.html" class="menu-item">SOP
-                                    4: Semantic Tags</a>
+                                    4: Creation of website using HTML5 semantic tags and CSS</a>
                                 <a href="./Science/Advanced Web Designing/science_awd_sop5.html" class="menu-item">SOP
-                                    5: Audio in HTML5</a>
+                                    5: Use of Audio on web pages using HTML5</a>
                                 <a href="./Science/Advanced Web Designing/science_awd_sop6.html" class="menu-item">SOP
-                                    6: Video in HTML5</a>
+                                    6: Use of Video on web pages using HTML5</a>
                                 <a href="./Science/Advanced Web Designing/science_awd_sop7.html" class="menu-item">SOP
-                                    7: Image Mapping</a>
+                                    7: Navigation on an image using Client side image Mapping</a>
                             </div>
                         </div>
 
-                        <!-- Advanced Javascript -->
+                        <!-- Advanced Javascript (Science) -->
                         <div class="topic-dropdown">
-                            <button class="topic-btn">Advanced Javascript</button>
+                            <button class="topic-btn">
+                                Advanced Javascript <i class="fas fa-chevron-right"></i>
+                            </button>
                             <div class="topic-content">
-                                <a href="./Science/JavaScript/science_js_sop1.html" class="menu-item">SOP 1: Current
-                                    Day/Time</a>
-                                <a href="./Science/JavaScript/science_js_sop2.html" class="menu-item">SOP 2:
-                                    Positive/Negative Number</a>
-                                <a href="./Science/JavaScript/science_js_sop3.html" class="menu-item">SOP 3: Largest of
-                                    Three Numbers</a>
-                                <a href="./Science/JavaScript/science_js_sop4.html" class="menu-item">SOP 4:
-                                    Multiplication Table</a>
-                                <a href="./Science/JavaScript/science_js_sop5.html" class="menu-item">SOP 5: While Loop
-                                    (1-10)</a>
-                                <a href="./Science/JavaScript/science_js_sop6.html" class="menu-item">SOP 6: For Loop
-                                    (10-1)</a>
-                                <a href="./Science/JavaScript/science_js_sop7.html" class="menu-item">SOP 7: String
-                                    Length</a>
+                                <a href="./Science/JavaScript/science_js_sop1.html" class="menu-item">SOP 1: Write a
+                                    JavaScript program to display the current day and time.</a>
+                                <a href="./Science/JavaScript/science_js_sop2.html" class="menu-item">SOP 2: Write a
+                                    JavaScript program to check whether the entered number is positive or negative.</a>
+                                <a href="./Science/JavaScript/science_js_sop3.html" class="menu-item">SOP 3: Write a
+                                    JavaScript program to display the largest of three numbers.</a>
+                                <a href="./Science/JavaScript/science_js_sop4.html" class="menu-item">SOP 4: Write a
+                                    JavaScript program to display the multiplication table of a given number.</a>
+                                <a href="./Science/JavaScript/science_js_sop5.html" class="menu-item">SOP 5: Write a
+                                    JavaScript program to display numbers from 1 to 10 using a while loop.</a>
+                                <a href="./Science/JavaScript/science_js_sop6.html" class="menu-item">SOP 6: Write a
+                                    JavaScript program to display numbers from 10 to 1 using a for loop.</a>
+                                <a href="./Science/JavaScript/science_js_sop7.html" class="menu-item">SOP 7: Write a
+                                    JavaScript program to accept a string from the user and display its length.</a>
                             </div>
                         </div>
 
-                        <!-- Server-Side Scripting (PHP) -->
+                        <!-- Server-Side Scripting (PHP) (Science) -->
                         <div class="topic-dropdown">
-                            <button class="topic-btn">Server-Side Scripting (PHP)</button>
+                            <button class="topic-btn">
+                                Server-Side Scripting (PHP) <i class="fas fa-chevron-right"></i>
+                            </button>
                             <div class="topic-content">
-                                <a href="./Science/PHP/science_php_sop1.html" class="menu-item">SOP 1: Hello World</a>
-                                <a href="./Science/PHP/science_php_sop2.html" class="menu-item">SOP 2: Add Two
-                                    Numbers</a>
-                                <a href="./Science/PHP/science_php_sop3.html" class="menu-item">SOP 3: Even/Odd
-                                    Check</a>
-                                <a href="./Science/PHP/science_php_sop4.html" class="menu-item">SOP 4: Largest of
-                                    Three</a>
-                                <a href="./Science/PHP/science_php_sop5.html" class="menu-item">SOP 5: Numbers 1-10</a>
-                                <a href="./Science/PHP/science_php_sop6.html" class="menu-item">SOP 6: Simple Form</a>
-                                <a href="./Science/PHP/science_php_sop7.html" class="menu-item">SOP 7: MySQL
-                                    Connection</a>
+                                <a href="./Science/PHP/science_php_sop1.html" class="menu-item">SOP 1: Write a PHP
+                                    program to display "Hello World!".</a>
+                                <a href="./Science/PHP/science_php_sop2.html" class="menu-item">SOP 2: Write a PHP
+                                    program to add two numbers.</a>
+                                <a href="./Science/PHP/science_php_sop3.html" class="menu-item">SOP 3: Write a PHP
+                                    program to check whether a number is even or odd.</a>
+                                <a href="./Science/PHP/science_php_sop4.html" class="menu-item">SOP 4: Write a PHP
+                                    program to display the largest of three numbers.</a>
+                                <a href="./Science/PHP/science_php_sop5.html" class="menu-item">SOP 5: Write a PHP
+                                    program to display numbers from 1 to 10 using a loop.</a>
+                                <a href="./Science/PHP/science_php_sop6.html" class="menu-item">SOP 6: Write a PHP
+                                    program to create a simple form and display the submitted data.</a>
+                                <a href="./Science/PHP/science_php_sop7.html" class="menu-item">SOP 7: Write a PHP
+                                    program to connect to a MySQL database and display data from a table.</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Useful Links -->
+                <!-- Useful Links Dropdown -->
                 <div class="dropdown">
-                    <button class="dropdown-btn">Useful Links</button>
+                    <button class="dropdown-btn">
+                        Useful Links <i class="fas fa-chevron-down"></i>
+                    </button>
                     <div class="dropdown-content">
                         <div class="side-by-side-links">
                             <div>
                                 <h4 class="section-title">Web Development Resources</h4>
-                                <a href="https://www.w3schools.com/html/" target="_blank" class="menu-item">HTML
+                                <a href="https://www.w3schools.com/html/" target="_blank" class="menu-item">W3Schools
+                                    HTML Tutorial</a>
+                                <a href="https://www.w3schools.com/css/" target="_blank" class="menu-item">W3Schools CSS
                                     Tutorial</a>
-                                <a href="https://www.w3schools.com/css/" target="_blank" class="menu-item">CSS
-                                    Tutorial</a>
-                                <a href="https://www.w3schools.com/js/" target="_blank" class="menu-item">JavaScript
-                                    Tutorial</a>
-                                <a href="https://www.w3schools.com/php/" target="_blank" class="menu-item">PHP
+                                <a href="https://www.w3schools.com/js/" target="_blank" class="menu-item">W3Schools
+                                    JavaScript Tutorial</a>
+                                <a href="https://www.w3schools.com/php/" target="_blank" class="menu-item">W3Schools PHP
                                     Tutorial</a>
                             </div>
                         </div>
@@ -588,92 +663,23 @@
 
     <div class="container">
         <h2>Welcome to IT SOPs Portal</h2>
-        <p>Select your stream and topic from the navigation menu to access Skill Oriented Practicals.</p>
+        <p>This portal provides comprehensive Skill Oriented Practicals (SOPs) for Std 12th IT Subject, aligned with the
+            Maharashtra State Board curriculum for both Science and Commerce Streams. Navigate through the menu above to
+            access detailed practical guides for various topics.</p>
 
         <section id="tutorials">
-            <h2>IT Subject Tutorials</h2>
-            <p>For video tutorials, visit our YouTube channel:</p>
-            <a href="https://youtube.com/@infotechbysirdominic7761?feature=shared" target="_blank">IT Tutorials YouTube
-                Channel</a>
+            <h2>IT Subject Video Tutorials</h2>
+            <p>Enhance your learning experience with our video tutorials. For step-by-step guides and explanations,
+                visit our official YouTube channel:</p>
+            <a href="https://youtube.com/@infotechbysirdominic7761?feature=shared" target="_blank">
+                <i class="fab fa-youtube"></i> IT Tutorials YouTube Channel
+            </a>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Std 12th IT SOPs. Maharashtra State Board.</p>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved. Maharashtra State Board.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburgerBtn = document.querySelector('.hamburger-btn');
-            const navMain = document.querySelector('.nav-main');
-            const dropdownBtns = document.querySelectorAll('.dropdown-btn');
-            const topicBtns = document.querySelectorAll('.topic-btn');
-
-            // Toggle main navigation
-            hamburgerBtn.addEventListener('click', () => {
-                navMain.classList.toggle('nav-open');
-                hamburgerBtn.classList.toggle('is-active');
-                document.body.style.overflow = navMain.classList.contains('nav-open') ? 'hidden' : '';
-            });
-
-            // Toggle dropdowns
-            dropdownBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-
-                    // Close other open dropdowns
-                    dropdownBtns.forEach(otherBtn => {
-                        if (otherBtn !== btn && otherBtn.classList.contains('active')) {
-                            otherBtn.classList.remove('active');
-                        }
-                    });
-
-                    btn.classList.toggle('active');
-                });
-            });
-
-            // Toggle topic dropdowns
-            topicBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-
-                    // Close other topic dropdowns in same parent
-                    const parentContent = btn.closest('.dropdown-content');
-                    if (parentContent) {
-                        parentContent.querySelectorAll('.topic-btn').forEach(otherBtn => {
-                            if (otherBtn !== btn && otherBtn.classList.contains('active')) {
-                                otherBtn.classList.remove('active');
-                            }
-                        });
-                    }
-
-                    btn.classList.toggle('active');
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.nav-container') && navMain.classList.contains('nav-open')) {
-                    navMain.classList.remove('nav-open');
-                    hamburgerBtn.classList.remove('is-active');
-                    document.body.style.overflow = '';
-
-                    // Also close any open dropdowns
-                    dropdownBtns.forEach(btn => btn.classList.remove('active'));
-                    topicBtns.forEach(btn => btn.classList.remove('active'));
-                }
-            });
-
-            // Close menu when resizing to desktop
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768 && navMain.classList.contains('nav-open')) {
-                    navMain.classList.remove('nav-open');
-                    hamburgerBtn.classList.remove('is-active');
-                    document.body.style.overflow = '';
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
