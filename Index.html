@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=1024">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Std 12th IT Subject SOPs (Maharashtra Board)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #2563eb;
@@ -14,22 +14,36 @@
             --text-color: #1f2937;
             --light-bg: #f9fafb;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-color: #e5e7eb;
+            --accent-color: #f59e0b; /* A subtle accent for highlights */
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif; /* Modern, legible font */
             margin: 0;
             padding: 0;
-            background-color: #f9fafb;
+            background-color: var(--light-bg);
             color: var(--text-color);
+            line-height: 1.6; /* Improved readability */
         }
 
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 1.5rem 0;
+            padding: 2rem 0; /* Increased padding */
             text-align: center;
             box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-family: 'Lato', sans-serif; /* Distinct font for headings */
+            font-size: 2.5rem; /* Larger heading */
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
         nav {
@@ -40,7 +54,7 @@
             z-index: 1000;
             display: flex;
             justify-content: center;
-            padding: 0.5rem 0;
+            padding: 0.75rem 0; /* Slightly more padding */
         }
 
         .nav-container {
@@ -53,7 +67,19 @@
 
         .nav-main {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem; /* Increased gap between main nav items */
+        }
+
+        /* Hamburger button for mobile */
+        .hamburger-btn {
+            display: none; /* Hidden by default on desktop */
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001; /* Ensure it's above other content */
         }
 
         /* Dropdown styles */
@@ -64,20 +90,24 @@
         .dropdown-btn {
             background-color: transparent;
             color: var(--text-color);
-            padding: 0.75rem 1.25rem;
+            padding: 0.85rem 1.5rem; /* Increased padding */
             font-size: 1rem;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem; /* Increased gap */
             border-radius: 0.5rem;
             transition: all 0.3s ease;
+            font-weight: 500; /* Slightly bolder */
         }
 
-        .dropdown-btn:hover {
+        .dropdown-btn:hover,
+        .dropdown-btn:focus { /* Added focus state */
             background-color: var(--light-bg);
             color: var(--primary-color);
+            outline: 2px solid var(--primary-color); /* Visual focus indicator */
+            outline-offset: 2px;
         }
 
         .dropdown-btn::after {
@@ -86,14 +116,15 @@
             transition: transform 0.3s ease;
         }
 
-        .dropdown:hover .dropdown-btn::after {
+        .dropdown:hover .dropdown-btn::after,
+        .dropdown-btn.active::after { /* Active class for JS toggle */
             transform: rotate(180deg);
         }
 
         .dropdown-content {
             position: absolute;
             background-color: white;
-            min-width: 250px;
+            min-width: 280px; /* Slightly wider */
             box-shadow: var(--shadow);
             border-radius: 0.5rem;
             opacity: 0;
@@ -103,13 +134,12 @@
             z-index: 1;
             max-height: none;
             overflow: visible;
-            padding: 0.5rem 1.5rem;
-            /* Increased padding for more space */
+            padding: 1rem 0; /* Padding for the whole content area */
             box-sizing: border-box;
-            /* Ensures padding is included in the width */
         }
 
-        .dropdown:hover .dropdown-content {
+        .dropdown:hover .dropdown-content,
+        .dropdown-btn.active + .dropdown-content { /* Active class for JS toggle */
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -118,17 +148,13 @@
         /* New style for side-by-side links */
         .side-by-side-links {
             display: flex;
-            gap: 20px;
-            /* Space between the two columns */
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            gap: 30px; /* More space between columns */
+            padding: 1rem 1.5rem; /* Padding for the container */
         }
 
         .side-by-side-links>div {
             flex: 1;
-            /* Each column takes equal width */
-            min-width: 200px;
-            /* Ensure minimum width for content */
+            min-width: 220px; /* Ensure minimum width for content */
         }
 
         /* Topic dropdown styles */
@@ -138,7 +164,7 @@
 
         .topic-btn {
             width: 100%;
-            padding: 0.75rem 1.25rem;
+            padding: 0.85rem 1.5rem;
             text-align: left;
             background-color: transparent;
             border: none;
@@ -146,22 +172,31 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, color 0.2s;
+            font-weight: 500;
         }
 
-        .topic-btn:hover {
+        .topic-btn:hover,
+        .topic-btn:focus { /* Added focus state */
             background-color: var(--light-bg);
             color: var(--primary-color);
+            outline: none; /* Handled by parent dropdown-btn focus */
         }
 
         .topic-btn::after {
             content: "▶";
-            font-size: 0.8rem;
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
+        }
+
+        .topic-dropdown:hover .topic-btn::after,
+        .topic-btn.active::after { /* Active class for JS toggle */
+            transform: rotate(90deg);
         }
 
         .topic-content {
             position: absolute;
-            left: 105%;
+            left: 100%; /* Adjusted to be right next to the parent */
             top: 0;
             background-color: white;
             box-shadow: var(--shadow);
@@ -172,17 +207,15 @@
             transition: all 0.3s ease;
             max-height: none;
             overflow: visible;
-            columns: 2;
-            column-gap: 20px;
-            width: 550px;
-            /* Increased width to accommodate more padding/content */
-            padding: 0.5rem 1.5rem;
-            /* Increased padding for more space */
+            columns: 2; /* Two columns for wider screens */
+            column-gap: 25px; /* Increased column gap */
+            width: 600px; /* Increased width */
+            padding: 1rem 1.5rem; /* Increased padding */
             box-sizing: border-box;
-            /* Ensures padding is included in the width */
         }
 
-        .topic-dropdown:hover .topic-content {
+        .topic-dropdown:hover .topic-content,
+        .topic-btn.active + .topic-content { /* Active class for JS toggle */
             opacity: 1;
             visibility: visible;
             transform: translateX(0);
@@ -195,77 +228,221 @@
         }
 
         .menu-item {
-            padding: 0.85rem 1.25rem;
+            padding: 0.75rem 1.5rem; /* Consistent padding */
             color: var(--text-color);
             text-decoration: none;
             display: block;
             transition: all 0.2s ease;
             border-radius: 0.25rem;
-            padding-left: 0.75rem;
         }
 
-        .menu-item:hover {
+        .menu-item:hover,
+        .menu-item:focus { /* Added focus state */
             background-color: var(--light-bg);
             color: var(--primary-color);
+            outline: none; /* No outline for individual menu items */
         }
 
         .section-title {
-            font-weight: 600;
-            padding: 0.75rem 1.25rem;
+            font-weight: 700; /* Bolder title */
+            padding: 0.75rem 1.5rem;
             color: var(--primary-color);
-            border-bottom: 1px solid #e5e7eb;
-            margin: 0;
+            border-bottom: 1px solid var(--border-color);
+            margin: 0 0 0.5rem 0; /* Margin below title */
+            font-size: 1.1rem;
         }
 
         .container {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 2.5rem auto; /* More vertical margin */
+            padding: 0 1.5rem; /* More horizontal padding */
+        }
+
+        .container h2 {
+            font-family: 'Lato', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .container p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #tutorials a {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        #tutorials a:hover,
+        #tutorials a:focus {
+            background-color: #d97706; /* Darker accent on hover */
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
         }
 
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem; /* More padding */
             background-color: white;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05);
             color: var(--text-color);
+            font-size: 0.9rem;
+            margin-top: 3rem; /* More space above footer */
         }
 
         /* Responsive adjustments */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .nav-main {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .dropdown-content {
-                position: relative;
-                max-height: none;
-                overflow: visible;
-                transform: translateY(0);
-                padding: 0.5rem 1.25rem;
-                /* Adjusted for mobile, can be further tweaked */
+                gap: 1rem; /* Slightly reduce gap for smaller desktops/tablets */
             }
 
             .topic-content {
+                width: 500px; /* Adjust width for smaller screens */
+                column-gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: flex-end; /* Move hamburger to right */
+            }
+
+            .nav-main {
+                flex-direction: column;
+                width: 100%;
+                display: none; /* Hidden by default, toggled by JS */
+                position: absolute;
+                top: 100%; /* Position below the nav bar */
                 left: 0;
+                background-color: white;
+                box-shadow: var(--shadow);
+                padding: 1rem 0;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-main.nav-open { /* Class added by JavaScript */
+                display: flex;
+            }
+
+            .hamburger-btn {
+                display: block; /* Show hamburger button on mobile */
+            }
+
+            .dropdown-btn {
+                width: 100%; /* Make dropdown buttons full width on mobile */
+                justify-content: space-between; /* Keep arrow to the right */
+                padding: 1rem 1.25rem; /* Adjusted padding */
+                border-bottom: 1px solid var(--border-color); /* Separator */
+                border-radius: 0; /* No border-radius for stacked items */
+            }
+
+            .dropdown-btn:hover,
+            .dropdown-btn:focus {
+                outline: none; /* No outline for mobile buttons */
+            }
+
+            .dropdown-content {
+                position: relative; /* Stacks below the button */
+                max-height: none;
+                overflow: visible;
+                transform: translateY(0);
+                padding: 0; /* No padding for the container itself, items have padding */
+                width: 100%; /* Take full width of parent */
+                box-shadow: none; /* Remove shadow for nested dropdowns */
+                border-radius: 0; /* Remove border-radius for stacked appearance */
+            }
+
+            .dropdown:hover .dropdown-content { /* Disable hover effect on mobile */
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(15px);
+            }
+
+            .dropdown-btn.active + .dropdown-content { /* Only show with JS active class */
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .topic-dropdown {
+                width: 100%; /* Ensure topic dropdowns take full width */
+            }
+
+            .topic-btn {
+                width: 100%;
+                padding: 1rem 1.25rem; /* Consistent padding */
+                border-bottom: 1px solid var(--border-color); /* Separator */
+            }
+
+            .topic-content {
+                left: 0; /* Align to the left */
                 top: auto;
                 max-height: none;
                 overflow: visible;
-                columns: 1;
-                width: auto;
-                padding: 0.5rem 1.25rem;
+                columns: 1; /* Single column for topics on mobile */
+                width: 100%; /* Take full width */
+                padding: 0; /* No padding for the container itself */
+                transform: translateX(0);
+                box-shadow: none; /* Remove shadow for nested dropdowns */
+                border-radius: 0; /* Remove border-radius for stacked appearance */
+            }
+
+            .topic-dropdown:hover .topic-content { /* Disable hover effect on mobile */
+                opacity: 0;
+                visibility: hidden;
+                transform: translateX(15px);
+            }
+
+            .topic-btn.active + .topic-content { /* Only show with JS active class */
+                opacity: 1;
+                visibility: visible;
                 transform: translateX(0);
             }
 
             .topic-content .menu-item {
                 width: auto;
+                padding: 0.85rem 2rem; /* Indent menu items */
+                border-bottom: 1px solid var(--border-color); /* Separator */
             }
 
             /* Adjust for mobile: stack the useful links */
             .side-by-side-links {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
+                padding: 1rem 1.25rem; /* Adjusted padding */
+            }
+
+            .section-title {
+                padding: 0.75rem 1.25rem; /* Consistent padding */
+                margin-top: 1rem; /* Space above title */
+            }
+
+            .container {
+                margin: 1.5rem auto; /* Reduced margin for mobile */
+                padding: 0 1rem; /* Slightly less horizontal padding */
+            }
+
+            header h1 {
+                font-size: 2rem; /* Adjust header font size for mobile */
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 1.5rem;
+                margin-top: 2rem;
             }
         }
     </style>
@@ -279,6 +456,7 @@
 
     <nav>
         <div class="nav-container">
+            <button class="hamburger-btn" aria-label="Toggle navigation menu">&#9776;</button>
             <div class="nav-main">
                 <!-- Commerce Stream -->
                 <div class="dropdown">
@@ -461,6 +639,97 @@
     <footer>
         <p>&copy; 2025 Std 12th IT SOPs. Maharashtra State Board.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+            const navMain = document.querySelector('.nav-main');
+            const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+            const topicBtns = document.querySelectorAll('.topic-btn');
+
+            // Toggle main navigation on hamburger click
+            hamburgerBtn.addEventListener('click', () => {
+                navMain.classList.toggle('nav-open');
+                hamburgerBtn.classList.toggle('is-active'); // For potential icon animation
+            });
+
+            // Toggle dropdowns on click for mobile
+            dropdownBtns.forEach(btn => {
+                btn.addEventListener('click', (event) => {
+                    // Prevent default link behavior if it's a button
+                    event.preventDefault(); 
+
+                    // Close other open dropdowns at the same level
+                    dropdownBtns.forEach(otherBtn => {
+                        if (otherBtn !== btn && otherBtn.classList.contains('active')) {
+                            otherBtn.classList.remove('active');
+                            // Also close any nested topic dropdowns
+                            otherBtn.nextElementSibling.querySelectorAll('.topic-btn.active').forEach(tBtn => {
+                                tBtn.classList.remove('active');
+                            });
+                        }
+                    });
+
+                    btn.classList.toggle('active');
+                });
+            });
+
+            // Toggle topic dropdowns on click for mobile
+            topicBtns.forEach(btn => {
+                btn.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    // Close other open topic dropdowns within the same parent dropdown
+                    btn.closest('.dropdown-content').querySelectorAll('.topic-btn').forEach(otherBtn => {
+                        if (otherBtn !== btn && otherBtn.classList.contains('active')) {
+                            otherBtn.classList.remove('active');
+                        }
+                    });
+
+                    btn.classList.toggle('active');
+                });
+            });
+
+            // Close nav menu when a menu item is clicked (for single-page navigation)
+            // This assumes clicking a menu item should close the entire nav
+            navMain.querySelectorAll('.menu-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) { // Only close on mobile
+                        navMain.classList.remove('nav-open');
+                        hamburgerBtn.classList.remove('is-active');
+                        // Close all active dropdowns/topic dropdowns
+                        dropdownBtns.forEach(btn => btn.classList.remove('active'));
+                        topicBtns.forEach(btn => btn.classList.remove('active'));
+                    }
+                });
+            });
+
+            // Close nav menu if clicked outside (optional, more complex)
+            document.addEventListener('click', (event) => {
+                if (window.innerWidth <= 768) {
+                    const isClickInsideNav = navMain.contains(event.target) || hamburgerBtn.contains(event.target);
+                    if (!isClickInsideNav && navMain.classList.contains('nav-open')) {
+                        navMain.classList.remove('nav-open');
+                        hamburgerBtn.classList.remove('is-active');
+                        dropdownBtns.forEach(btn => btn.classList.remove('active'));
+                        topicBtns.forEach(btn => btn.classList.remove('active'));
+                    }
+                }
+            });
+
+            // Handle resize: if resized from mobile to desktop, ensure nav is visible
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navMain.classList.remove('nav-open'); // Ensure it's not stuck open
+                    hamburgerBtn.classList.remove('is-active');
+                    navMain.style.display = ''; // Remove inline style
+                    // Ensure dropdowns are in hover state for desktop
+                    dropdownBtns.forEach(btn => btn.classList.remove('active'));
+                    topicBtns.forEach(btn => btn.classList.remove('active'));
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
