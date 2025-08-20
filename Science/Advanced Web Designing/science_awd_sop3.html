@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOP 3: Interlinked Webpages with External Stylesheet - Science IT</title>
+  <link rel="stylesheet" href="SOP page Style.css">
+</head>
+
+<body>
+  <header>
+    <h1>SOP 3: Create Interlinked Webpages with External Stylesheet</h1>
+    <p>Std 12th IT Subject (Science Stream)</p>
+  </header>
+
+  <div class="container">
+    <h2>SOP 3: Create Interlinked Webpages with External Stylesheet  </h2>
+    <p>
+      The first webpage will accept the name of the traveller, date of travel ,
+      telephone number . It also has submit button as an image .
+      The second webpage has information about the name of transporter, time ,
+      seat no and destination displayed one below the other in the form of unordered
+      list as
+    <ul type="none">
+      <li>Name of transporter – Air Asia</li>
+      <li>Time - 09:30 am</li>
+      <li>Seat no – B39</li>
+      <li>Destination - Delhi</li>
+
+    </ul>
+
+    Both pages should be interlinked. Create external stylesheet with relevant
+    tags.
+    </p>
+
+    <h3>Program Code (Form.html - Main Page)</h3>
+    <pre id="htmlCode1">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="Style.css"&gt;
+    &lt;title&gt;Applicaiton Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Application Form&lt;/h1&gt;
+    &lt;form&gt;
+        Enter Your Name: &lt;input type="text" name="t1"&gt;&lt;br&gt;&lt;br&gt;
+        Select Date of Travel: &lt;input type="date" name="d1"&gt;&lt;br&gt;&lt;br&gt;
+        Enter Contact No: &lt;input type="tel" pattern="[0-9]{2}-[0-9]{10}" placeholder="00-0000000000" name="t2"&gt;&lt;br&gt;
+        &lt;input type="image" src="Submit.png" width="100" height="100"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;a href="Details.html"&gt;Details&lt;/a&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h3>Program Code (Details.html - Second Page)</h3>
+    <pre id="htmlCode2">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="Style.css"&gt;
+    &lt;title&gt;Applicaiton Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Detials&lt;/h1&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Name of transporter - Air Asia&lt;/li&gt;
+        &lt;li&gt;Time - 09:30 am&lt;/li&gt;
+        &lt;li&gt;Seat no - B39&lt;/li&gt;
+        &lt;li&gt;Destination - Delhi&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;a href="Form.html"&gt;Applicaiton Form&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h3>Program Code (style.css)</h3>
+    <pre id="stylesheet">
+h1 {
+  text-align: center;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+}
+    </pre>
+
+    <div class="preview-buttons">
+      <button class="preview-button" onclick="showPreview('Form')">Preview Form.html</button>
+      <button class="preview-button" onclick="showPreview('Details')">Preview Details.html</button>
+      <div class="dropdown">
+        <button class="download-button">Download</button>
+        <div class="dropdown-content">
+          <a href="https://drive.google.com/file/d/1PR7KJJLo-7t6dLUunhL1XSsjqD2IcQUD/view?usp=sharing">Code</a>
+          <a href="https://drive.google.com/file/d/1XbL97KBOkptO3j8XfoRrLB1DPYyKmWYQ/view?usp=sharing">Output</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="live-preview-container" id="previewContainer">
+      <h3 id="previewTitle">Live Preview</h3>
+      <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showPreview(page) {
+      const previewContainer = document.getElementById('previewContainer');
+      const previewIframe = document.getElementById('previewIframe');
+      const previewTitle = document.getElementById('previewTitle');
+      const codeId = page === 'Form' ? 'htmlCode1' : 'htmlCode2';
+
+      // Get the code content
+      const codeElement = document.getElementById(codeId);
+      let htmlCode = codeElement.textContent.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+      // Get the CSS content
+      const cssCode = document.getElementById('stylesheet').textContent;
+
+      // Combine the full preview HTML
+      const fullHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>${page}.html</title>
+  <style>
+${cssCode}
+  </style>
+</head>
+<body>
+${htmlCode}
+</body>
+</html>
+`;
+
+      // Write to the iframe
+      const doc = previewIframe.contentWindow.document;
+      doc.open();
+      doc.write(fullHTML);
+      doc.close();
+
+      // Show preview
+      previewTitle.textContent = `Live Preview: ${page}.html`;
+      previewContainer.style.display = 'block';
+
+      // Enable navigation within iframe
+      previewIframe.onload = () => {
+        const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+        const links = iframeDoc.querySelectorAll('a');
+
+        links.forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href === 'Form.html') showPreview('Form');
+            else if (href === 'Details.html') showPreview('Details');
+          });
+        });
+      };
+    }
+  </script>
+</body>
+
+</html>
