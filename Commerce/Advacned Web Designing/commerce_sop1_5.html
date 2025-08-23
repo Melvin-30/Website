@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOP 5: Use of Audio on web pages using HTML5 - Commerce IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SOP 5: Use of Audio on web pages using HTML5</h1>
+        <p>Std 12th IT Subject (Commerce Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 5: Use of Audio on web pages using HTML5</h2>
+        <p>Create a webpage named audio.html to set an audio file in web page with 
+controls such that it uses HTML5 elements. The audio file must play as soon 
+as the webpage loads in browser and it will start over again, every time 
+when it is completed.<br><br>
+Create another webpage named audio1.html which provides multiple source 
+file formats for the same audio file that plays a sound with controls. The 
+code must incorporate the list of sound files formats (like wav, MP3 or   
+ogg etc).
+        </p>
+        <h3>Program Code (Audio.html - Main Page)</h3>
+        <pre id="htmlCode1">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Audio with controls&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Audio With Single Source&lt;/h1&gt;
+    &lt;audio loop="-1" autoplay controls&gt;
+        &lt;source src="Song.mp3" type="audio/mp3"&gt;
+    &lt;/audio&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+        <h3>Program Code (Audio1.html - Second Page)</h3>
+        <pre id="htmlCode2">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Audio with controls&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Audio With Multiple Source&lt;/h1&gt;
+    list of Audio files
+    &lt;ol&gt;
+        &lt;li&gt;Song.mp3&lt;/li&gt;
+        &lt;li&gt;Song.ogg&lt;/li&gt;
+        &lt;li&gt;Song.wav&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;audio autoplay controls&gt;
+        &lt;source src="Song.mp3" type="audio/mp3"&gt;
+        &lt;source src="Song.ogg" type="audio/ogg"&gt;
+        &lt;source src="Song.wav" type="audio/wav"&gt;
+        Your computer doesn't support audio file
+    &lt;/audio&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <div class="preview-buttons">
+            <button class="preview-button" onclick="showPreview('Audio')">Preview Audio.html</button>
+            <button class="preview-button" onclick="showPreview('Audio1')">Preview Audio1.html</button>
+            <div class="dropdown">
+                <button class="download-button">Download</button>
+                <div class="dropdown-content">
+                    <a
+                        href="https://drive.google.com/file/d/1nbthuH35_HNh5A5JLDg0hQYWUsciIx_e/view?usp=sharing">Code</a>
+                    <a
+                        href="https://drive.google.com/file/d/12_qhJTLIc9T0qaIlMKMaBbz6Pbt-q-uL/view?usp=sharing">Output</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="live-preview-container" id="previewContainer">
+            <h3 id="previewTitle" >Live Preview</h3>
+            <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPreview(page) {
+            const previewContainer = document.getElementById('previewContainer');
+            const previewIframe = document.getElementById('previewIframe');
+            const previewTitle = document.getElementById('previewTitle');
+            const codeId = page === 'Audio' ? 'htmlCode1' : 'htmlCode2';
+
+            // Get the code
+            const codeElement = document.getElementById(codeId);
+            let htmlCode = codeElement.textContent;
+
+            // Decode HTML entities
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+            // Create full HTML
+            const fullHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Preview</title></head>
+<body>
+${htmlCode}
+</body>
+</html>`;
+
+            // Write to iframe
+            const doc = previewIframe.contentWindow.document;
+            doc.open();
+            doc.write(fullHTML);
+            doc.close();
+
+            // Show preview
+            previewTitle.textContent = `Live Preview: ${page}.html`;
+            previewContainer.style.display = 'block';
+
+            // Setup internal navigation
+            previewIframe.onload = () => {
+                const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+                const links = iframeDoc.querySelectorAll('a');
+
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        if (href === 'index.html') showPreview('index');
+                        else if (href === 'page2.html') showPreview('page2');
+                    });
+                });
+            };
+        }
+    </script>
+</body>
+
+</html>

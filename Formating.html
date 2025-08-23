@@ -1,17 +1,21 @@
-&lt;!doctype html&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;link rel="stylesheet" type="text/css" href="Style.css"&gt;
-    &lt;title&gt;Applicaiton Form&lt;/title&gt;
+    &lt;title&gt;Audio with controls&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;Detials&lt;/h1&gt;
-    &lt;ul&gt;
-        &lt;li&gt;Name of transporter - Air Asia&lt;/li&gt;
-        &lt;li&gt;Time - 09:30 am&lt;/li&gt;
-        &lt;li&gt;Seat no - B39&lt;/li&gt;
-        &lt;li&gt;Destination - Delhi&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;a href="Form.html"&gt;Applicaiton Form&lt;/a&gt;
+    &lt;h1&gt;Audio With Multiple Source&lt;/h1&gt;
+    list of Audio files
+    &lt;ol&gt;
+        &lt;li&gt;Songmp3&lt;/li&gt;
+        &lt;li&gt;Songogg&lt;/li&gt;
+        &lt;li&gt;Songwav&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;audio autoplay controls&gt;
+        &lt;source src="Songmp3" type="audio/mp3"&gt;
+        &lt;source src="Songogg" type="audio/ogg"&gt;
+        &lt;source src="Songwav" type="audio/wav"&gt;
+        Your computer doesn't support audio file
+    &lt;/audio&gt;
 &lt;/body&gt;
 &lt;/html&gt;
