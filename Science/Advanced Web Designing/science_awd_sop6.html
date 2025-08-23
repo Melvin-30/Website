@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOP 5: Use of Video on web pages using HTML5 - Science IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SOP 5: Use of Video on web pages using HTML5</h1>
+        <p>Std 12th IT Subject (Commerce Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 5: Use of Video on web pages using HTML5</h2>
+        <p> Create a webpage named video.HTML to display a video file on web page 
+and plays automatically. The dimension of video area should be 150 * 150 
+pixels.<br><br>
+ Create another webpage which video provide multiple source file formats 
+for the same video file that plays a video with controls. The dimension of 
+video area should be 300*300 pixels. The code must incorporate the 
+list of video files formats (like webM, MP4 or ogg etc).
+        </p>
+        <h3>Program Code (Video.html - Main Page)</h3>
+        <pre id="htmlCode1">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Video with controls&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Video With Single Source&lt;/h1&gt;
+    &lt;video width="150px" height="150px" autoplay&gt;
+        &lt;source src="Video.mp4" type="video/mp4"&gt;
+    &lt;/video&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+        <h3>Program Code (Video1.html - Second Page)</h3>
+        <pre id="htmlCode2">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Video with controls&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Video With Multiple Source&lt;/h1&gt; 
+    list of Video files
+    &lt;ol&gt;
+        &lt;li&gt;Video.mp4&lt;/li&gt;
+        &lt;li&gt;Video.ogg&lt;/li&gt;
+        &lt;li&gt;Video.webm&lt;/li&gt;
+    &lt;/ol&gt;   
+    &lt;video width="300px" height="300px" autoplay controls&gt;
+        &lt;source src="Video.mp4" type="video/mp4"&gt;
+        &lt;source src="Video.ogg" type="video/ogg"&gt;
+        &lt;source src="Video.webm" type="video/webm"&gt;    
+        Your computer doesn't support Video file    
+    &lt;/video&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <div class="preview-buttons">
+            <button class="preview-button" onclick="showPreview('Video')">Preview Video.html</button>
+            <button class="preview-button" onclick="showPreview('Video1')">Preview Video1.html</button>
+            <div class="dropdown">
+                <button class="download-button">Download</button>
+                <div class="dropdown-content">
+                    <a
+                        href="https://drive.google.com/file/d/167aI25xfxlAMqb0u5bOkSlT-KMp-gsbt/view?usp=sharing">Code</a>
+                    <a
+                        href="https://drive.google.com/file/d/1A2L5mYYYNWinaZyiuIcDnokn3Nw-PTGS/view?usp=sharing">Output</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="live-preview-container" id="previewContainer">
+            <h3 id="previewTitle" >Live Preview</h3>
+            <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPreview(page) {
+            const previewContainer = document.getElementById('previewContainer');
+            const previewIframe = document.getElementById('previewIframe');
+            const previewTitle = document.getElementById('previewTitle');
+            const codeId = page === 'Video' ? 'htmlCode1' : 'htmlCode2';
+
+            // Get the code
+            const codeElement = document.getElementById(codeId);
+            let htmlCode = codeElement.textContent;
+
+            // Decode HTML entities
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+            // Create full HTML
+            const fullHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Preview</title></head>
+<body>
+${htmlCode}
+</body>
+</html>`;
+
+            // Write to iframe
+            const doc = previewIframe.contentWindow.document;
+            doc.open();
+            doc.write(fullHTML);
+            doc.close();
+
+            // Show preview
+            previewTitle.textContent = `Live Preview: ${page}.html`;
+            previewContainer.style.display = 'block';
+
+            // Setup internal navigation
+            previewIframe.onload = () => {
+                const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+                const links = iframeDoc.querySelectorAll('a');
+
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        if (href === 'index.html') showPreview('index');
+                        else if (href === 'page2.html') showPreview('page2');
+                    });
+                });
+            };
+        }
+    </script>
+</body>
+
+</html>
