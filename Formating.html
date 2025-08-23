@@ -1,21 +1,15 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;Video with controls&lt;/title&gt;
+    &lt;title&gt;client side mapping&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;Video With Multiple Source&lt;/h1&gt; 
-    list of Video files
-    &lt;ol&gt;
-        &lt;li&gt;Video.mp4&lt;/li&gt;
-        &lt;li&gt;Video.ogg&lt;/li&gt;
-        &lt;li&gt;Video.webm&lt;/li&gt;
-    &lt;/ol&gt;   
-    &lt;video width="300px" height="300px" autoplay controls&gt;
-        &lt;source src="Video.mp4" type="video/mp4"&gt;
-        &lt;source src="Video.ogg" type="video/ogg"&gt;
-        &lt;source src="Video.webm" type="video/webm"&gt;    
-        Your computer doesn't support Video file    
-    &lt;/video&gt;
+    &lt;h1&gt;Client Side Image Mapping&lt;/h1&gt;
+    &lt;img src="School.jpg" usemap="#school" width="600"&gt;
+    &lt;map name="school"&gt;
+        &lt;area shape="rect" coords="19,15,266,79" href="http://www.google.com" alt="rectangle"&gt;
+        &lt;area shape="circle" coords="287,224,60" href="http://www.redifmail.com" alt="circle"&gt;
+        &lt;area shape="poly" coords="122,188,63,240,149,276,215,253" href="page1.html" alt="polygon"&gt;
+    &lt;/map&gt;
 &lt;/body&gt;
 &lt;/html&gt;

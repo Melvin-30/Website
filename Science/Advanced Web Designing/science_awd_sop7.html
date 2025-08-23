@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOP 7: Navigation on an image using Client side image Mapping in web page 
+using html 5 - Commerce IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SOP 7: Navigation on an image using Client side image Mapping in web page 
+using html 5</h1>
+        <p>Std 12th IT Subject (Commerce Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 7: Navigation on an image using Client side image Mapping in web page 
+using html 5</h2>
+        <p>Create a webpage named imagemap. html with an inserted image having jpeg, png or gif extension. Create 3 different shapes (like rectangle, circle and polygon) which do not overlap. Note down the co-ordinates making use of Ms-Paint/GIMP/IrfanView/Pinta. Each shape should be mapped or navigate with a different URL, one of the clickable area should navigate to a local webpage.</p>
+
+        <h3>Program Code (index.html - Main Page)</h3>
+        <pre id="htmlCode1">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;client side mapping&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Client Side Image Mapping&lt;/h1&gt;
+    &lt;img src="School.jpg" usemap="#school" width="600"&gt;
+    &lt;map name="school"&gt;
+        &lt;area shape="rect" coords="19,15,266,79" href="http://www.google.com" alt="rectangle"&gt;
+        &lt;area shape="circle" coords="287,224,60" href="http://www.redifmail.com" alt="circle"&gt;
+        &lt;area shape="poly" coords="122,188,63,240,149,276,215,253" href="page1.html" alt="polygon"&gt;
+    &lt;/map&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <div class="preview-buttons">
+            <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
+            <div class="dropdown">
+                <button class="download-button">Download</button>
+                <div class="dropdown-content">
+                    <a
+                        href="https://drive.google.com/file/d/1WHZB_eMkevejUzYbABBXKNtZIOy9uIX_/view?usp=sharing">Code</a>
+                    <a
+                        href="https://drive.google.com/file/d/1sBZME7vbNZP2ivTSbPlyRJy_dxhqo9ge/view?usp=sharing">Output</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="live-preview-container" id="previewContainer">
+            <h3 id="previewTitle">Live Preview</h3>
+            <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPreview(page) {
+            const previewContainer = document.getElementById('previewContainer');
+            const previewIframe = document.getElementById('previewIframe');
+            const previewTitle = document.getElementById('previewTitle');
+            const codeId = page === 'index' ? 'htmlCode1' : 'htmlCode2';
+
+            const codeElement = document.getElementById(codeId);
+            let htmlCode = codeElement.textContent;
+
+            // Decode HTML entities
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+            // Create complete HTML for iframe
+            const fullHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview - ${page}.html</title>
+</head>
+<body>
+${htmlCode}
+</body>
+</html>`;
+
+            const doc = previewIframe.contentWindow.document;
+            doc.open();
+            doc.write(fullHTML);
+            doc.close();
+
+            previewTitle.textContent = `Live Preview: ${page}.html`;
+            previewContainer.style.display = 'block';
+
+            // Handle internal links (not used here but ready)
+            previewIframe.onload = () => {
+                const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+                const links = iframeDoc.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        if (href === 'index.html') showPreview('index');
+                        else if (href === 'page2.html') showPreview('page2');
+                    });
+                });
+            };
+        }
+    </script>
+</body>
+
+</html>
