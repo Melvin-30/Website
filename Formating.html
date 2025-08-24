@@ -1,15 +1,43 @@
-&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;client side mapping&lt;/title&gt;
+    &lt;title&gt;Seven Color Changing&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;Client Side Image Mapping&lt;/h1&gt;
-    &lt;img src="School.jpg" usemap="#school" width="600"&gt;
-    &lt;map name="school"&gt;
-        &lt;area shape="rect" coords="19,15,266,79" href="http://www.google.com" alt="rectangle"&gt;
-        &lt;area shape="circle" coords="287,224,60" href="http://www.redifmail.com" alt="circle"&gt;
-        &lt;area shape="poly" coords="122,188,63,240,149,276,215,253" href="page1.html" alt="polygon"&gt;
-    &lt;/map&gt;
+    &lt;script language="javascript"&gt;
+        function color1() {
+            document.bgColor = "red";
+            window.setTimeout("color2()", 1000);
+        }
+        function color2() {
+            document.bgColor = "green";
+            window.setTimeout("color3()", 1000);
+        }
+        function color3() {
+            document.bgColor = "blue";
+            window.setTimeout("color4()", 1000);
+        }
+        function color4() {
+            document.bgColor = "cyan";
+            window.setTimeout("color5()", 1000);
+        }
+        function color5() {
+            document.bgColor = "magenta";
+            window.setTimeout("color6()", 1000);
+        }
+        function color6() {
+            document.bgColor = "yellow";
+            window.setTimeout("color7()", 1000);
+        }
+        function color7() {
+            document.bgColor = "lime";
+            window.setTimeout("color1()", 1000);
+        }
+        function msg() {
+            window.status = "7 Color Changing";
+        }
+    &lt;/script&gt;
+    &lt;h1&gt;7 Color Changing&lt;/h1&gt;
+    &lt;input type="button" value="Change Color" onmouseover="color1()"&gt;&lt;input type="button" value="Show Message"
+        onclick="msg()"&gt;
 &lt;/body&gt;
 &lt;/html&gt;
