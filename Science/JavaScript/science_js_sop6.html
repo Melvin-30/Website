@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create JavaScript program which computes the average marks of students  - Science IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SOP 6: Create JavaScript program which computes the average marks of students</h1>
+        <p>Std 12th IT Subject (Science Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 6: Create JavaScript program which computes the average marks of students. Accept six subject marks of student from user. Calculate average marks of student which is used to determine the corresponding grades.</h2>
+        <p> 
+            <table style="margin-left: 5%;">
+                <tr>
+                    <th>Range </th>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <td>35 to 60 </td>
+                    <td>F</td>
+                </tr>
+                <tr>
+                    <td>61 to 70 </td>
+                    <td>D</td>
+                </tr>
+                <tr>
+                    <td>71 to 80 </td>
+                    <td>C</td>
+                </tr>
+                <tr>
+                    <td>81 to 90 </td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>91 to 100 </td>
+                    <td>A</td>
+                </tr>
+            </table>                 
+        </p>
+        <h3>Program Code (index.html - Main Page)</h3>
+        <pre id="htmlCode1">
+&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Applicaiton Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;script type="text/javascript"&gt;
+    function Checkgrade() {
+        var m1 = parseInt(f1.t1.value),
+            m2 = parseInt(f1.t2.value),
+            m3 = parseInt(f1.t3.value),
+            m4 = parseInt(f1.t4.value),
+            m5 = parseInt(f1.t5.value),
+            m6 = parseInt(f1.t6.value),
+            avg, grade;
+        avg = (m1 + m2 + m3 + m4 + m5 + m6) / 6;
+        if (avg &gt;= 91) {
+            grade = "A"
+        } else if (avg &gt;= 81) {
+            grade = "B"
+        } else if (avg &gt;= 71) {
+            grade = "C"
+        } else if (avg &gt;= 61) {
+            grade = "D"
+        } else if (avg &gt;= 35) {
+
+            grade = "F"
+        }
+        document.getElementById("avg").innerHTML = "Average Marks: " + avg;
+        document.getElementById("grade").innerHTML = "Grade: " + grade;
+    }
+&lt;/script&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Calculate Grade&lt;/h1&gt;
+    &lt;form name="f1"&gt;
+        Enter 1st Subject Marks &lt;input type="number" name="t1"&gt;&lt;br&gt;&lt;br&gt;
+        Enter 2nd Subject Marks &lt;input type="number" name="t2"&gt;&lt;br&gt;&lt;br&gt;
+        Enter 3rd Subject Marks &lt;input type="number" name="t3"&gt;&lt;br&gt;&lt;br&gt;
+        Enter 4th Subject Marks &lt;input type="number" name="t4"&gt;&lt;br&gt;&lt;br&gt;
+        Enter 5th Subject Marks &lt;input type="number" name="t5"&gt;&lt;br&gt;&lt;br&gt;
+        Enter 6th Subject Marks &lt;input type="number" name="t6"&gt;
+        &lt;p id="avg"&gt;Average Marks:&lt;/p&gt;
+        &lt;p id="grade"&gt;Grade: &lt;/p&gt;
+        &lt;input type="button" value="Check Grade" onclick="Checkgrade()"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+
+        <div class="preview-buttons">
+            <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
+            <div class="dropdown">
+                <button class="download-button">Download</button>
+                <div class="dropdown-content">
+                    <a
+                        href="https://drive.google.com/file/d/16Mhur-8TeWxUaVTUoL6DFtFVXU1pev9G/view?usp=sharing">Code</a>
+                    <a
+                        href="https://drive.google.com/file/d/1Ezhk6C3GNuG0ySkf95YffGJP8fZryF0b/view?usp=sharing">Output</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="live-preview-container" id="previewContainer">
+            <h3 id="previewTitle">Live Preview</h3>
+            <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPreview(page) {
+            const previewContainer = document.getElementById('previewContainer');
+            const previewIframe = document.getElementById('previewIframe');
+            const previewTitle = document.getElementById('previewTitle');
+            const codeId = page === 'index' ? 'htmlCode1' : 'htmlCode2';
+
+            // Get the code
+            const codeElement = document.getElementById(codeId);
+            let htmlCode = codeElement.textContent;
+
+            // Decode HTML entities
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+            // Create full HTML
+            const fullHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Preview</title></head>
+<body>
+${htmlCode}
+</body>
+</html>`;
+
+            // Write to iframe
+            const doc = previewIframe.contentWindow.document;
+            doc.open();
+            doc.write(fullHTML);
+            doc.close();
+
+            // Show preview
+            previewTitle.textContent = `Live Preview: ${page}.html`;
+            previewContainer.style.display = 'block';
+
+            // Setup internal navigation
+            previewIframe.onload = () => {
+                const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+                const links = iframeDoc.querySelectorAll('a');
+
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        if (href === 'index.html') showPreview('index');
+                        else if (href === 'page2.html') showPreview('page2');
+                    });
+                });
+            };
+        }
+    </script>
+</body>
+
+</html>

@@ -230,3 +230,7 @@ footer {
   border: none;
   line-height: 1;
 }
+td,th{
+  padding: 10px;
+  text-align: center;
+}

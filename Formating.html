@@ -1,43 +1,48 @@
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Seven Color Changing&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;script language="javascript"&gt;
-        function color1() {
-            document.bgColor = "red";
-            window.setTimeout("color2()", 1000);
+<!doctype html>
+<html>
+
+<head>
+    <title>Applicaiton Form</title>
+</head>
+<script type="text/javascript">
+    function Checkgrade() {
+        var m1 = parseInt(f1.t1.value),
+            m2 = parseInt(f1.t2.value),
+            m3 = parseInt(f1.t3.value),
+            m4 = parseInt(f1.t4.value),
+            m5 = parseInt(f1.t5.value),
+            m6 = parseInt(f1.t6.value),
+            avg, grade;
+        avg = (m1 + m2 + m3 + m4 + m5 + m6) / 6;
+        if (avg >= 91) {
+            grade = "A"
+        } else if (avg >= 81) {
+            grade = "B"
+        } else if (avg >= 71) {
+            grade = "C"
+        } else if (avg >= 61) {
+            grade = "D"
+        } else if (avg >= 35) {
+            grade = "F"
         }
-        function color2() {
-            document.bgColor = "green";
-            window.setTimeout("color3()", 1000);
-        }
-        function color3() {
-            document.bgColor = "blue";
-            window.setTimeout("color4()", 1000);
-        }
-        function color4() {
-            document.bgColor = "cyan";
-            window.setTimeout("color5()", 1000);
-        }
-        function color5() {
-            document.bgColor = "magenta";
-            window.setTimeout("color6()", 1000);
-        }
-        function color6() {
-            document.bgColor = "yellow";
-            window.setTimeout("color7()", 1000);
-        }
-        function color7() {
-            document.bgColor = "lime";
-            window.setTimeout("color1()", 1000);
-        }
-        function msg() {
-            window.status = "7 Color Changing";
-        }
-    &lt;/script&gt;
-    &lt;h1&gt;7 Color Changing&lt;/h1&gt;
-    &lt;input type="button" value="Change Color" onmouseover="color1()"&gt;&lt;input type="button" value="Show Message"
-        onclick="msg()"&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+        document.getElementById("avg").innerHTML = "Average Marks: " + avg;
+        document.getElementById("grade").innerHTML = "Grade: " + grade;
+    }
+</script>
+
+<body>
+    <h1>Calculate Grade</h1>
+    <form name="f1">
+        Enter 1st Subject Marks <input type="number" name="t1"><br><br>
+        Enter 2nd Subject Marks <input type="number" name="t2"><br><br>
+        Enter 3rd Subject Marks <input type="number" name="t3"><br><br>
+        Enter 4th Subject Marks <input type="number" name="t4"><br><br>
+        Enter 5th Subject Marks <input type="number" name="t5"><br><br>
+        Enter 6th Subject Marks <input type="number" name="t6">
+        <p id="avg">Average Marks:</p>
+        <p id="grade">Grade: </p>
+        <input type="button" value="Check Grade" onclick="Checkgrade()">
+    </form>
+</body>
+
+</html>

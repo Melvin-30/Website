@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create javascript program for the form vaildations  - Science IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SOP 2: Create javascript program for the form vaildations  </h1>
+        <p>Std 12th IT Subject (Science Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 2: Create javascript program for the form vaildations </h2>
+        <p>Create JavaScript program for the following form validations. Make
+            use of HTML5 properties to do the following validations :
+        <ol>
+            <li>Name, address, contact number and email are required fields of the form.</li>
+            <li>Address field should show the hint value which will disappear when field gets focus or key press event.</li>
+            <li>Telephone number should be maximum 10 digit number only.</li>
+            <li>Email field should contain valid email address, @ should appear only once and not at the beginning or at end. It must contain at least one dot(.).</li>
+            <li>Make use of pattern attribute for email to accept lowercase, uppercase alphabets, digits and specified symbols.</li>
+        </ol>
+        </p>
+        <center><img class="QuestionImage" src="Form.png" alt="Form"></center>
+        <h3>Program Code (index.html - Main Page)</h3>
+        <pre id="htmlCode1">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Applicaiton Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;script type="text/javascript"&gt;
+    function validateemail() {
+        var str = f1.e1.value;
+        var dotpositon = str.lastIndexOf(".");
+        var atposition = str.indexOf("@");
+        if (atposition &lt; 1 || dotpositon &lt; atposition + 2 || dotpositon + 2 &gt; str.length) {
+            alert("Please Enter a valid email Id");
+        }
+    }
+&lt;/script&gt;
+&lt;body&gt;
+    &lt;h1&gt;Information Form&lt;/h1&gt;
+    &lt;form name="f1" onsubmit="validateemail()"&gt;
+        Enter Your Name: &lt;input type="text" name="t1" required&gt;&lt;br&gt;&lt;br&gt;
+        Enter Address: &lt;textarea name="a1" cols="30" rows="2" placeholder="permanent address"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+        Enter Contact No: &lt;input type="tel" max="10" name="c1" required&gt;&lt;br&gt;&lt;br&gt;
+        Enter Email: &lt;input type="text" name="e1" required&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <div class="preview-buttons">
+            <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
+            <div class="dropdown">
+                <button class="download-button">Download</button>
+                <div class="dropdown-content">
+                    <a
+                        href="https://drive.google.com/file/d/17EkTwsptbk53WGDVPviG9uvUEIP0SsU4/view?usp=sharingg">Code</a>
+                    <a
+                        href="https://drive.google.com/file/d/1uAuPIdN7sAWIao0P_Te_QWWqLb6KEtFq/view?usp=sharing">Output</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="live-preview-container" id="previewContainer">
+            <h3 id="previewTitle">Live Preview</h3>
+            <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPreview(page) {
+            const previewContainer = document.getElementById('previewContainer');
+            const previewIframe = document.getElementById('previewIframe');
+            const previewTitle = document.getElementById('previewTitle');
+            const codeId = page === 'index' ? 'htmlCode1' : 'htmlCode2';
+
+            // Get the code
+            const codeElement = document.getElementById(codeId);
+            let htmlCode = codeElement.textContent;
+
+            // Decode HTML entities
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+            // Create full HTML
+            const fullHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Preview</title></head>
+<body>
+${htmlCode}
+</body>
+</html>`;
+
+            // Write to iframe
+            const doc = previewIframe.contentWindow.document;
+            doc.open();
+            doc.write(fullHTML);
+            doc.close();
+
+            // Show preview
+            previewTitle.textContent = `Live Preview: ${page}.html`;
+            previewContainer.style.display = 'block';
+
+            // Setup internal navigation
+            previewIframe.onload = () => {
+                const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+                const links = iframeDoc.querySelectorAll('a');
+
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        if (href === 'index.html') showPreview('index');
+                        else if (href === 'page2.html') showPreview('page2');
+                    });
+                });
+            };
+        }
+    </script>
+</body>
+
+</html>
