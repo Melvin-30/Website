@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOP 3: Database Using LibreOffice Base - Commerce IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
+    <style>
+        .sop-image {
+            display: block;
+            margin: 15px auto;
+            max-width: 90%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SOP 3: Database Using LibreOffice Base</h1>
+        <p>Std 12th IT Subject (Commerce Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 3: Create table Product with fieldnames prodid, prodname, qty, rate, modelyear with appropriate data type. Insert minimum 8 records.
+            <ol>
+                <li>Generate report to display records in ascending order of Prodname.</li>
+                <li>Generate report to display records in descending order of Product rate.</li>
+                <li>Generate report to display model year wise product list.</li>
+                <li>Build a query to display amount (qty*rate).</li>
+                <li>Generate a bill report with appropriate titles and calculate amount for each record.</li>
+            </ol>
+        </h2>
+        <h3>Answer:</h3>
+
+        <h4>1. Creating a Database</h4>
+        <ul>
+            <li>Start → All Programs → LibreOffice → LibreOffice Base</li>
+            <li>In the Database Wizard, select "Create a new database" → Save and proceed → Finish</li>
+            <li>Save with an appropriate name and location</li>
+        </ul>
+
+        <h4>2. Creating a Table</h4>
+        <ul>
+            <li>Click on "Create Table in Design View"</li>
+            <li>Enter fields: prodid, prodname, qty, rate, modelyear with suitable data types</li>
+            <li>Right-click on prodid → Set as Primary Key</li>
+            <li>Save table as <strong>Product</strong></li>
+        </ul>
+        <img src="images/SOP3_1.jpg" alt="Table Design View" class="sop-image" />
+
+        <h4>3. Inserting Records</h4>
+        <ul>
+            <li>Double-click the Product table</li>
+            <li>Enter at least 8 records manually</li>
+        </ul>
+        <img src="images/SOP3_2.jpg" alt="Insert Records in Table" class="sop-image" />
+
+        <h4>4. Generating Reports</h4>
+        <strong>a) Ascending Order of Prodname</strong>
+        <ul>
+            <li>Click on Reports → Use Wizard to Create Report</li>
+            <li>Select Product table → Add fields → Next</li>
+            <li>Sort by prodname (ascending) → Choose layout → Title → Finish</li>
+        </ul>
+        <img src="images/SOP3_3.jpg" alt="LibreOffice Database Wizard" class="sop-image" />
+        <img src="images/SOP3_4.jpg" alt="LibreOffice Database Wizard" class="sop-image" />
+        <img src="images/sop3_5.jpg" alt="Report Sorted by Prodname Ascending" class="sop-image" />
+
+        <strong>b) Descending Order of Rate</strong>
+        <ul>
+            <li>Repeat steps above, but sort by rate (descending)</li>
+        </ul>
+        <img src="images/SOP3_6.jpg" alt="Report Sorted by Rate Descending" class="sop-image" />
+
+        <strong>c) Model Year Wise Product List</strong>
+        <ul>
+            <li>Repeat report wizard → Sort by modelyear</li>
+        </ul>
+        <img src="images/SOP3_7.jpg" alt="Report Sorted by Model Year" class="sop-image" />
+
+        <h4>5. Query to Display Amount (qty * rate)</h4>
+        <ul>
+            <li>Click Queries → Create Query in Design View</li>
+            <li>Add Product table → Select all fields</li>
+            <li>In a new column, type: <code>"qty" * "rate"</code> → Alias: <strong>Total Amount</strong></li>
+            <li>Run the query (F5)</li>
+        </ul>
+        <img src="images/SOP3_8.jpg" alt="Query to Calculate Amount" class="sop-image" />
+
+        <h4>6. Bill Report with Amount</h4>
+        <ul>
+            <li>Use Report Wizard → Add fields including calculated amount</li>
+            <li>Choose layout and orientation → Add title → Finish</li>
+        </ul>
+        <img src="images/SOP3_9.jpg" alt="Final Bill Report" class="sop-image" />
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
