@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>>SOP 2: Database Using LibreOffice Base - Commerce IT</title>
+    <link rel="stylesheet" href="SOP page Style.css" />
+    <style>
+        .sop-image {
+            display: block;
+            margin: 15px auto;
+            max-width: 90%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Database using LibreOffice Base - SOP 2</h1>
+      <p class="meta">Std 12th IT Subject (Commerce Stream)</p>
+    </header>
+
+    <div class="container">
+      <h2>
+        SOP 2: Create table <strong>employee</strong> with fields names - empid,
+        empname, empdept, empqual, empjoindate, empsal etc. Insert minimum 8
+        records and solve:
+        <ol>
+          <li>Where employee qualification is "MBA".</li>
+          <li>Where employee department is "Accounts".</li>
+          <li>Where employee salary &gt; 70000.</li>
+          <li>Where employee name is "Mr. Suhas Kale".</li>
+        </ol>
+      </h2>
+
+      <h3>Solution</h3>
+
+      <h4>i) Steps for creating a database</h4>
+      <ul>
+        <li>Click on Start → All Program → LibreOffice → LibreOffice Base.</li>
+        <li>
+          Database wizard window appears, select Save and Proceed → Click on
+          Finish button, select proper location where you wish to save the
+          database with appropriate name, and database will be created.
+        </li>
+      </ul>
+
+      <h4>ii) Steps for creating a table</h4>
+      <ul>
+        <li>
+          To create a table, click on
+          <strong>Create table in design view</strong> → Table design window
+          appears, in that window set fieldname and datatype as required.
+        </li>
+        <li>
+          To assign PRIMARY KEY to empid field, right click on the small button
+          present on the left side of the fieldname and select Primary key
+          option.
+        </li>
+        <li>
+          To save click on save button or press <code>CTRL+S</code>, give table
+          name as <strong>employee</strong> and click OK; table will be saved.
+        </li>
+      </ul>
+      <img src="images/SOP2_1.jpg" alt="Table Design View" class="sop-image" />
+
+      <h4>iii) Steps for inserting records in a table</h4>
+      <ul>
+        <li>
+          For inserting records, double click on the table in which data is to
+          be inserted; a window will appear on the screen; type data under each
+          field and complete all the records.
+        </li>
+      </ul>
+      <img src="images/SOP2_2.jpg" alt="Insert Records in Table" class="sop-image" />
+
+      <h4>iv) Steps for creating query</h4>
+      <ol>
+        <li>
+          Click on <strong>Queries</strong> object and in right pane click on
+          <strong>Create Query in Design View</strong> option.
+        </li>
+        <li>
+          From ADD table window select table and click on
+          <strong>ADD</strong> button and click on <strong>Close</strong>.
+        </li>
+        <li>
+          Select all the fields one by one by clicking on the field's columns
+          and solve the following queries.
+        </li>
+      </ol>
+      <img src="images/SOP2_3.jpg" alt="LibreOffice Query Creation" class="sop-image" />
+
+      <h4>a) To display records where employee qualification is "MBA"</h4>
+      <ul>
+        <li>
+          In Criteria under <strong>empqual</strong> type: <code>MBA</code> and
+          click Run query icon or press <code>F5</code>.
+        </li>
+      </ul>
+      <img src="images/SOP2_4.jpg" alt="LibreOffice Query Resut" class="sop-image" />
+
+      <h4>b) To display records where employee department is "ACCOUNTS"</h4>
+      <ul>
+        <li>
+          In Criteria under <strong>empdept</strong> type:
+          <code>ACCOUNTS</code> and click Run Query or press <code>F5</code>.
+        </li>
+      </ul>
+      <img src="images/SOP2_5.jpg" alt="LibreOffice Query Resut" class="sop-image" />
+
+      <h4>c) To display records where employee salary &gt; 70000</h4>
+      <ul>
+        <li>
+          In Criteria under <strong>empsal</strong> type:
+          <code>&gt;70000</code> (or enter 70000 depending on locale format) and
+          click Run Query icon or press <code>F5</code>.
+        </li>
+      </ul>
+      <img src="images/SOP2_6.jpg" alt="LibreOffice Query Resut" class="sop-image" />
+
+      <h4>d) To display records where employee name is "Mr. Suhas Kale"</h4>
+      <ul>
+        <li>
+          In Criteria under <strong>empname</strong> type:
+          <code>Mr. Suhas Kale</code> and click Run Query icon or press
+          <code>F5</code>.
+        </li>
+      </ul>
+      <img src="images/SOP2_7.jpg" alt="LibreOffice Query Resut" class="sop-image" />
+
+      <h4>Notes</h4>
+      <ul>
+        <li>
+          Ensure primary key is set for <strong>empid</strong> and correct
+          datatypes are chosen for date and numeric fields to prevent
+          input/formatting issues.
+        </li>
+        <li>
+          Save each query after successful run for future report generation and
+          evaluation.
+        </li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
