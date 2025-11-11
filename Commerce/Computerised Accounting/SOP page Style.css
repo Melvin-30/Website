@@ -1,0 +1,243 @@
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --hover-color: #3b82f6;
+  --text-color: #1f2937;
+  --light-bg: #f9fafb;
+  --shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  --border-radius: 0.5rem;
+  --container-padding: 1rem;
+  --max-width: 75rem;
+  /* 1200px */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+}
+
+h1,
+h3 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  border-bottom: 1px solid #ccc;
+  color: var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+pre {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-left: 0.25rem solid var(--primary-color);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  border-radius: 0.25rem;
+}
+
+.output-section {
+  margin-top: 2.5rem;
+  border-top: 0.15rem dashed #a0a0a0;
+  padding-top: 2rem;
+}
+
+.live-preview-container {
+  margin-top: 1.5rem;
+  border: 0.125rem solid var(--primary-color);
+  padding: 1rem;
+  background-color: var(--light-bg);
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.live-preview-container h4 {
+  margin-top: 0;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.live-preview-iframe {
+  width: 100%;
+  height: 70vh;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.preview-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.preview-button,
+.download-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.preview-button:hover,
+.download-button:hover {
+  background-color: var(--hover-color);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 0 -0.25rem 0.375rem rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
+  margin-top: 2rem;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 10rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.QuestionImage {
+  width: 100%;
+  max-width: 40rem;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  header {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .container {
+    padding: 0.75rem;
+  }
+
+  .preview-button,
+  .download-button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  pre {
+    font-size: 0.875rem;
+  }
+
+  .live-preview-iframe {
+    height: 60vh;
+  }
+}
+
+#previewTitle {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.live-preview-container {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.live-preview-iframe {
+  display: block;
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 60vh;
+  border: 0.1rem solid #ccc;
+  box-sizing: border-box;
+}
+
+.live-preview-container h3 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 1;
+}
+th,td{
+  padding: 10px;
+  text-align: center;
+  border: 2px,solid;
+}
+table{
+  border: 2px,solid;
+  margin: 1%;
+  margin-left: 5%;
+  border-collapse: collapse;
+}
