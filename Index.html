@@ -1,524 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Std 12th IT Subject SOPs (Maharashtra Board)</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Std 12th IT Subject SOPs (Maharashtra Board)</title>
 
-    <style>
-      :root {
-        --primary: #2563eb;
-        --secondary: #1e40af;
-        --accent: #3b82f6;
-        --bg-light: #f9fafb;
-        --bg-card: #ffffff;
-        --text-dark: #1f2937;
-        --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        --radius: 12px;
-        --transition: all 0.3s ease;
-      }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet" />
 
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Inter", sans-serif;
-        background: var(--bg-light);
-        color: var(--text-dark);
-        line-height: 1.6;
-      }
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #1e40af;
+      --accent: #3b82f6;
+      --bg-light: #f9fafb;
+      --bg-card: #ffffff;
+      --text-dark: #1f2937;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --transition: all 0.3s ease;
+    }
 
-      header {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: #fff;
-        text-align: center;
-        padding: 4rem 1rem 3rem;
-        box-shadow: var(--shadow);
-      }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
 
-      header h1 {
-        font-family: "Poppins", sans-serif;
-        font-size: 2.75rem;
-        margin: 0 0 0.5rem;
-      }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      box-shadow: var(--shadow);
+    }
 
-      header p {
-        font-size: 1.125rem;
-        opacity: 0.9;
-        margin: 0;
-      }
+    header h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: 2.75rem;
+      margin: 0 0 0.5rem;
+    }
 
-      /* Navigation Bar */
-      nav {
-        background: #fff;
-        box-shadow: var(--shadow);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
+    header p {
+      font-size: 1.125rem;
+      opacity: 0.9;
+      margin: 0;
+    }
 
+    /* Navigation Bar */
+    nav {
+      background: #fff;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-link,
+    .dropdown-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover,
+    .dropdown-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Dropdown Container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content */
+    .dropdown-content {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      background-color: var(--bg-card);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      min-width: 220px;
+      z-index: 10;
+
+      opacity: 0;
+      transform: translateY(10px);
+      visibility: hidden;
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    }
+
+    /* Dropdown links styling */
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.95rem;
+      border-radius: 6px;
+    }
+
+    .dropdown-content a:hover {
+      background: var(--bg-light);
+      color: var(--primary);
+    }
+
+    /* Dropdown arrow */
+    .dropdown-btn::after {
+      content: " ▾";
+      font-size: 0.75rem;
+    }
+
+    /* Show dropdown when active */
+    .dropdown.active .dropdown-content {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    /* Card Layout */
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    h2.section-heading {
+      font-family: "Poppins", sans-serif;
+      font-size: 2rem;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .info-text {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 1rem;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #ffffff, #f0f4ff);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 1.8rem 1.5rem;
+      transition: transform 0.35s ease, box-shadow 0.35s ease,
+        background 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(59, 130, 246, 0.05);
+      transform: rotate(25deg);
+      transition: all 0.5s ease;
+    }
+
+    .card:hover::before {
+      top: -20%;
+      left: -20%;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(145deg, #e0ebff, #ffffff);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .card h3::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 6px;
+      border-radius: 3px;
+    }
+
+    .card a {
+      display: block;
+      text-decoration: none;
+      color: var(--text-dark);
+      padding: 0.6rem 0;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+      font-size: 0.95rem;
+      position: relative;
+    }
+
+    .card a::before {
+      content: "→";
+      display: inline-block;
+      margin-right: 6px;
+      color: var(--accent);
+      opacity: 0;
+      transform: translateX(-5px);
+      transition: all 0.25s ease;
+    }
+
+    .card a:hover::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .card a:hover {
+      color: var(--primary);
+      padding-left: 0.8rem;
+    }
+
+    footer {
+      background: var(--bg-card);
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #555;
+      font-size: 0.95rem;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 700px) {
       .nav-container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 0.75rem 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
+        flex-direction: column;
       }
+    }
+  </style>
+</head>
 
-      .nav-link,
-      .dropdown-btn {
-        background: none;
-        border: none;
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--text-dark);
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-        border-radius: var(--radius);
-        transition: var(--transition);
-      }
+<body>
+  <header>
+    <h1>Std 12th IT Subject SOPs</h1>
+    <p>Maharashtra State Board - Science & Commerce Streams</p>
+  </header>
 
-      .nav-link:hover,
-      .dropdown-btn:hover {
-        background: var(--accent);
-        color: #fff;
-      }
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-container">
+      <button class="nav-link" onclick="document.getElementById('commerce').scrollIntoView({behavior:'smooth'})">
+        Commerce Stream
+      </button>
+      <button class="nav-link" onclick="document.getElementById('science').scrollIntoView({behavior:'smooth'})">
+        Science Stream
+      </button>
 
-      /* Dropdown Container */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-
-      /* Dropdown Content */
-      .dropdown-content {
-        position: absolute;
-        top: calc(100% + 0.5rem);
-        left: 0;
-        background-color: var(--bg-card);
-        box-shadow: var(--shadow);
-        border-radius: var(--radius);
-        min-width: 220px;
-        z-index: 10;
-
-        opacity: 0;
-        transform: translateY(10px);
-        visibility: hidden;
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-      }
-
-      /* Dropdown links styling */
-      .dropdown-content a {
-        display: block;
-        padding: 0.6rem 1rem;
-        color: var(--text-dark);
-        text-decoration: none;
-        transition: var(--transition);
-        font-size: 0.95rem;
-        border-radius: 6px;
-      }
-
-      .dropdown-content a:hover {
-        background: var(--bg-light);
-        color: var(--primary);
-      }
-
-      /* Dropdown arrow */
-      .dropdown-btn::after {
-        content: " ▾";
-        font-size: 0.75rem;
-      }
-
-      /* Show dropdown when active */
-      .dropdown.active .dropdown-content {
-        opacity: 1;
-        transform: translateY(0);
-        visibility: visible;
-      }
-
-      /* Card Layout */
-      .container {
-        max-width: 1200px;
-        margin: 3rem auto;
-        padding: 0 1rem;
-      }
-
-      h2.section-heading {
-        font-family: "Poppins", sans-serif;
-        font-size: 2rem;
-        color: var(--primary);
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-
-      .info-text {
-        text-align: center;
-        margin-bottom: 3rem;
-        font-size: 1rem;
-      }
-
-      .card {
-        background: linear-gradient(145deg, #ffffff, #f0f4ff);
-        border-radius: var(--radius);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-        padding: 1.8rem 1.5rem;
-        transition: transform 0.35s ease, box-shadow 0.35s ease,
-          background 0.35s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .card::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: rgba(59, 130, 246, 0.05);
-        transform: rotate(25deg);
-        transition: all 0.5s ease;
-      }
-
-      .card:hover::before {
-        top: -20%;
-        left: -20%;
-      }
-
-      .card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        background: linear-gradient(145deg, #e0ebff, #ffffff);
-      }
-
-      .card h3 {
-        font-size: 1.4rem;
-        color: var(--secondary);
-        font-weight: 700;
-        margin-bottom: 1rem;
-        position: relative;
-      }
-
-      .card h3::after {
-        content: "";
-        display: block;
-        width: 40px;
-        height: 3px;
-        background: var(--accent);
-        margin-top: 6px;
-        border-radius: 3px;
-      }
-
-      .card a {
-        display: block;
-        text-decoration: none;
-        color: var(--text-dark);
-        padding: 0.6rem 0;
-        border-radius: 6px;
-        transition: all 0.25s ease;
-        font-size: 0.95rem;
-        position: relative;
-      }
-
-      .card a::before {
-        content: "→";
-        display: inline-block;
-        margin-right: 6px;
-        color: var(--accent);
-        opacity: 0;
-        transform: translateX(-5px);
-        transition: all 0.25s ease;
-      }
-
-      .card a:hover::before {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .card a:hover {
-        color: var(--primary);
-        padding-left: 0.8rem;
-      }
-
-      footer {
-        background: var(--bg-card);
-        text-align: center;
-        padding: 2rem 1rem;
-        color: #555;
-        font-size: 0.95rem;
-        border-top: 1px solid #e5e7eb;
-        margin-top: 4rem;
-      }
-
-      @media (max-width: 700px) {
-        .nav-container {
-          flex-direction: column;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Std 12th IT Subject SOPs</h1>
-      <p>Maharashtra State Board - Science & Commerce Streams</p>
-    </header>
-
-    <!-- Navigation Bar -->
-    <nav>
-      <div class="nav-container">
-        <button
-          class="nav-link"
-          onclick="document.getElementById('commerce').scrollIntoView({behavior:'smooth'})"
-        >
-          Commerce Stream
-        </button>
-        <button
-          class="nav-link"
-          onclick="document.getElementById('science').scrollIntoView({behavior:'smooth'})"
-        >
-          Science Stream
-        </button>
-
-        <div class="dropdown">
-          <button class="dropdown-btn">Useful Links</button>
-          <div class="dropdown-content">
-            <a href="https://www.w3schools.com/html/" target="_blank"
-              >W3Schools HTML Tutorial</a
-            >
-            <a href="https://www.w3schools.com/css/" target="_blank"
-              >W3Schools CSS Tutorial</a
-            >
-            <a href="https://www.w3schools.com/js/" target="_blank"
-              >W3Schools JavaScript Tutorial</a
-            >
-            <a href="https://www.w3schools.com/php/" target="_blank"
-              >W3Schools PHP Tutorial</a
-            >
-          </div>
+      <div class="dropdown">
+        <button class="dropdown-btn">Useful Links</button>
+        <div class="dropdown-content">
+          <a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a>
+          <a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS Tutorial</a>
+          <a href="https://www.w3schools.com/js/" target="_blank">W3Schools JavaScript Tutorial</a>
+          <a href="https://www.w3schools.com/php/" target="_blank">W3Schools PHP Tutorial</a>
         </div>
-
-        <div class="dropdown">
-          <button class="dropdown-btn">Owner Info</button>
-          <div class="dropdown-content">
-            <a href="#">Created by: Sir Dominic</a>
-            <a href="#">YouTube Channel: <br />INFOTECH By Sir Dominic</a>
-            <a href="#">Email: example@email.com</a>
-          </div>
-        </div>
-        <button
-          class="nav-link"
-          onclick="window.open('https://youtube.com/@infotechbysirdominic7761?feature=shared', '_blank')"
-        >
-          YouTube Channel
-        </button>
       </div>
-    </nav>
 
-    <!-- Content -->
-    <div class="container">
-      <h2 class="section-heading">Welcome to the IT SOPs Portal</h2>
-      <p class="info-text">
-        Select your stream and topic from the navigation bar or scroll below to
-        access all Skill Oriented Practicals (SOPs) for Std 12th IT subject
-        under the Maharashtra State Board.
-      </p>
-
-      <!-- Commerce Stream -->
-      <section id="commerce">
-        <h2 class="section-heading">Commerce Stream</h2>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Advanced Web Designing</h3>
-            <a href="./Commerce/Advacned Web Designing/commerce_sop1_1.html"
-              >SOP 1: Creation of website using HTML5 and CSS</a
-            >
-            <a href="./Commerce/Advacned Web Designing/commerce_sop1_2.html"
-              >SOP 2: Design webpage layout using HTML and CSS</a
-            >
-            <a href="./Commerce/Advacned Web Designing/commerce_sop1_3.html"
-              >SOP 3: Create interlinked webpages with external stylesheet</a
-            >
-            <a href="./Commerce/Advacned Web Designing/commerce_sop1_4.html"
-              >SOP 4: Creation of website using HTML5 semantic tags and CSS</a
-            >
-            <a href="./Commerce/Advacned Web Designing/commerce_sop1_5.html"
-              >SOP 5: Use of Audio on web pages using HTML5</a
-            >
-            <a href="./Commerce/Advacned Web Designing/commerce_sop1_6.html"
-              >SOP 6: Use of Video on web pages using HTML5</a
-            >
-            <a href="./Commerce/Advacned Web Designing/commerce_sop1_7.html"
-              >SOP 7: Navigation on an image using Client side image Mapping</a
-            >
-          </div>
-
-          <div class="card">
-            <h3>Digital Marketing</h3>
-            <a href="./Commerce/Digital Marketing/commerce_sop2_1.html"
-              >SOP 1: SEO Optimization</a
-            >
-            <a href="./Commerce/Digital Marketing/commerce_sop2_2.html"
-              >SOP 2: Speed Improvement</a
-            >
-            <a href="./Commerce/Digital Marketing/commerce_sop2_3.html"
-              >SOP 3: Audit Tool</a
-            >
-            <a href="./Commerce/Digital Marketing/commerce_sop2_4.html"
-              >SOP 4: Detailed SEO</a
-            >
-          </div>
-
-          <div class="card">
-            <h3>Computerised Accounting</h3>
-            <a href="./Commerce/Computerised Accounting/commerce_sop3_1.html"
-              >SOP 1: Bitwise Trading</a
-            >
-            <a href="./Commerce/Computerised Accounting/commerce_sop3_2.html"
-              >SOP 2: Bags Traders</a
-            >
-            <a href="./Commerce/Computerised Accounting/commerce_sop3_3.html"
-              >SOP 3: Garment Suppliers</a
-            >
-            <a href="./Commerce/Computerised Accounting/commerce_sop3_4.html"
-              >SOP 4: World Tours</a
-            >
-          </div>
-
-          <div class="card">
-            <h3>Database Concepts</h3>
-            <a href="./Commerce/Database Concept/commerce_sop4_1.html"
-              >SOP 1: Student Table</a
-            >
-            <a href="./Commerce/Database Concept/commerce_sop4_2.html"
-              >SOP 2: Employee Table</a
-            >
-            <a href="./Commerce/Database Concept/commerce_sop4_3.html"
-              >SOP 3: Product Table</a
-            >
-          </div>
+      <div class="dropdown">
+        <button class="dropdown-btn">Owner Info</button>
+        <div class="dropdown-content">
+          <a href="#">Created by: Sir Dominic</a>
+          <a href="#">YouTube Channel: <br />INFOTECH By Sir Dominic</a>
+          <a href="#">Email: example@email.com</a>
         </div>
-      </section>
-
-      <!-- Science Stream -->
-      <section id="science">
-        <h2 class="section-heading">Science Stream</h2>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Advanced Web Designing</h3>
-            <a href="./Science/Advanced Web Designing/science_awd_sop1.html"
-              >SOP 1: Creation of website using HTML5 and CSS</a
-            >
-            <a href="./Science/Advanced Web Designing/science_awd_sop2.html"
-              >SOP 2: Design webpage layout using HTML and CSS</a
-            >
-            <a href="./Science/Advanced Web Designing/science_awd_sop3.html"
-              >SOP 3: Create interlinked webpages with external stylesheet</a
-            >
-            <a href="./Science/Advanced Web Designing/science_awd_sop4.html"
-              >SOP 4: Creation of website using HTML5 semantic tags and CSS</a
-            >
-            <a href="./Science/Advanced Web Designing/science_awd_sop5.html"
-              >SOP 5: Use of Audio on web pages using HTML5</a
-            >
-            <a href="./Science/Advanced Web Designing/science_awd_sop6.html"
-              >SOP 6: Use of Video on web pages using HTML5</a
-            >
-            <a href="./Science/Advanced Web Designing/science_awd_sop7.html"
-              >SOP 7: Navigation on an image using Client side image Mapping</a
-            >
-          </div>
-
-          <div class="card">
-            <h3>Advanced JavaScript</h3>
-            <a href="./Science/JavaScript/science_js_sop1.html"
-              >SOP 1: Change document colors</a
-            >
-            <a href="./Science/JavaScript/science_js_sop2.html"
-              >SOP 2: Form Validation</a
-            >
-            <a href="./Science/JavaScript/science_js_sop3.html"
-              >SOP 3: Checking no of vowel in string</a
-            >
-            <a href="./Science/JavaScript/science_js_sop4.html"
-              >SOP 4: Palindrome check</a
-            >
-            <a href="./Science/JavaScript/science_js_sop5.html"
-              >SOP 5: Temperature Conversion (&deg;Celsius To &deg;Fahrenheit)</a
-            >
-            <a href="./Science/JavaScript/science_js_sop6.html"
-              >SOP 6: Calculate average marks & grade</a
-            >
-            <a href="./Science/JavaScript/science_js_sop7.html"
-              >SOP 7: Difference between to dates</a
-            >
-          </div>
-
-          <div class="card">
-            <h3>Server-Side Scripting (PHP)</h3>
-            <a href="./Science/PHP/science_php_sop1.html"
-              >SOP 1: Age eligibility</a
-            >
-            <a href="./Science/PHP/science_php_sop2.html"
-              >SOP 2: Check total no of vowels in string</a
-            >
-            <a href="./Science/PHP/science_php_sop3.html"
-              >SOP 3: Operations on Array</a>
-            <a href="./Science/PHP/science_php_sop4.html"
-              >SOP 4: Storing & Displaying of Marks using Array</a
-            >
-            <a href="./Science/PHP/science_php_sop5.html"
-              >SOP 5: Storing & Displaying of Marks using Array (using foreach statement)</a
-            >
-            <a href="./Science/PHP/science_php_sop6.html"
-              >SOP 6: Electricity Bill Calculation</a
-            >
-            <a href="./Science/PHP/science_php_sop7.html"
-              >SOP 7: Connect PHP to MySQL</a
-            >
-          </div>
-        </div>
-      </section>
+      </div>
+      <button class="nav-link"
+        onclick="window.open('https://youtube.com/@infotechbysirdominic7761?feature=shared', '_blank')">
+        YouTube Channel
+      </button>
     </div>
+  </nav>
 
-    <footer>
-      <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board.</p>
-    </footer>
+  <!-- Content -->
+  <div class="container">
+    <h2 class="section-heading">Welcome to the IT SOPs Portal</h2>
+    <p class="info-text">
+      Select your stream and topic from the navigation bar or scroll below to
+      access all Skill Oriented Practicals (SOPs) for Std 12th IT subject
+      under the Maharashtra State Board.
+    </p>
 
-    <script>
-      // Select all dropdown buttons
-      const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+    <!-- Commerce Stream -->
+    <section id="commerce">
+      <h2 class="section-heading">Commerce Stream</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Advanced Web Designing</h3>
+          <a href="./Commerce/Advacned Web Designing/commerce_sop1_1.html">SOP 1: Creation of website using HTML5 and
+            CSS</a>
+          <a href="./Commerce/Advacned Web Designing/commerce_sop1_2.html">SOP 2: Design webpage layout using HTML and
+            CSS</a>
+          <a href="./Commerce/Advacned Web Designing/commerce_sop1_3.html">SOP 3: Create interlinked webpages with
+            external stylesheet</a>
+          <a href="./Commerce/Advacned Web Designing/commerce_sop1_4.html">SOP 4: Creation of website using HTML5
+            semantic tags and CSS</a>
+          <a href="./Commerce/Advacned Web Designing/commerce_sop1_5.html">SOP 5: Use of Audio on web pages using
+            HTML5</a>
+          <a href="./Commerce/Advacned Web Designing/commerce_sop1_6.html">SOP 6: Use of Video on web pages using
+            HTML5</a>
+          <a href="./Commerce/Advacned Web Designing/commerce_sop1_7.html">SOP 7: Navigation on an image using Client
+            side image Mapping</a>
+        </div>
 
-      dropdownButtons.forEach((button) => {
-        button.addEventListener("click", (e) => {
-          e.stopPropagation(); // Prevent the click from closing immediately
+        <div class="card">
+          <h3>Digital Marketing</h3>
+          <a href="./Commerce/Digital Marketing/commerce_sop2_1.html">SOP 1: SEO Optimization</a>
+          <a href="./Commerce/Digital Marketing/commerce_sop2_2.html">SOP 2: Speed Improvement</a>
+          <a href="./Commerce/Digital Marketing/commerce_sop2_3.html">SOP 3: Audit Tool</a>
+          <a href="./Commerce/Digital Marketing/commerce_sop2_4.html">SOP 4: Detailed SEO</a>
+        </div>
 
-          const dropdown = button.parentElement;
+        <div class="card">
+          <h3>Computerised Accounting</h3>
+          <a href="./Commerce/Computerised Accounting/commerce_sop3_1.html">SOP 1: Bitwise Trading</a>
+          <a href="./Commerce/Computerised Accounting/commerce_sop3_2.html">SOP 2: Bags Traders</a>
+          <a href="./Commerce/Computerised Accounting/commerce_sop3_3.html">SOP 3: Garment Suppliers</a>
+          <a href="./Commerce/Computerised Accounting/commerce_sop3_4.html">SOP 4: World Tours</a>
+        </div>
 
-          // Toggle active class
-          dropdown.classList.toggle("active");
+        <div class="card">
+          <h3>Database Concepts</h3>
+          <a href="./Commerce/Database Concept/commerce_sop4_1.html">SOP 1: Student Table</a>
+          <a href="./Commerce/Database Concept/commerce_sop4_2.html">SOP 2: Employee Table</a>
+          <a href="./Commerce/Database Concept/commerce_sop4_3.html">SOP 3: Product Table</a>
+        </div>
+      </div>
+    </section>
 
-          // Close other dropdowns
-          document.querySelectorAll(".dropdown").forEach((otherDropdown) => {
-            if (otherDropdown !== dropdown) {
-              otherDropdown.classList.remove("active");
-            }
-          });
+    <!-- Science Stream -->
+    <section id="science">
+      <h2 class="section-heading">Science Stream</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Advanced Web Designing</h3>
+          <a href="./Science/Advanced Web Designing/science_awd_sop1.html">SOP 1: Creation of website using HTML5 and
+            CSS</a>
+          <a href="./Science/Advanced Web Designing/science_awd_sop2.html">SOP 2: Design webpage layout using HTML and
+            CSS</a>
+          <a href="./Science/Advanced Web Designing/science_awd_sop3.html">SOP 3: Create interlinked webpages with
+            external stylesheet</a>
+          <a href="./Science/Advanced Web Designing/science_awd_sop4.html">SOP 4: Creation of website using HTML5
+            semantic tags and CSS</a>
+          <a href="./Science/Advanced Web Designing/science_awd_sop5.html">SOP 5: Use of Audio on web pages using
+            HTML5</a>
+          <a href="./Science/Advanced Web Designing/science_awd_sop6.html">SOP 6: Use of Video on web pages using
+            HTML5</a>
+          <a href="./Science/Advanced Web Designing/science_awd_sop7.html">SOP 7: Navigation on an image using Client
+            side image Mapping</a>
+        </div>
+
+        <div class="card">
+          <h3>Advanced JavaScript</h3>
+          <a href="./Science/JavaScript/science_js_sop1.html">SOP 1: Change document colors</a>
+          <a href="./Science/JavaScript/science_js_sop2.html">SOP 2: Form Validation</a>
+          <a href="./Science/JavaScript/science_js_sop3.html">SOP 3: Checking no of vowel in string</a>
+          <a href="./Science/JavaScript/science_js_sop4.html">SOP 4: Palindrome check</a>
+          <a href="./Science/JavaScript/science_js_sop5.html">SOP 5: Temperature Conversion (&deg;Celsius To
+            &deg;Fahrenheit)</a>
+          <a href="./Science/JavaScript/science_js_sop6.html">SOP 6: Calculate average marks & grade</a>
+          <a href="./Science/JavaScript/science_js_sop7.html">SOP 7: Difference between to dates</a>
+        </div>
+
+        <div class="card">
+          <h3>Server-Side Scripting (PHP)</h3>
+          <a href="./Science/PHP/science_php_sop1.html">SOP 1: Age eligibility</a>
+          <a href="./Science/PHP/science_php_sop2.html">SOP 2: Check total no of vowels in string</a>
+          <a href="./Science/PHP/science_php_sop3.html">SOP 3: Operations on Array</a>
+          <a href="./Science/PHP/science_php_sop4.html">SOP 4: Storing & Displaying of Marks using Array</a>
+          <a href="./Science/PHP/science_php_sop5.html">SOP 5: Storing & Displaying of Marks using Array (using foreach
+            statement)</a>
+          <a href="./Science/PHP/science_php_sop6.html">SOP 6: Electricity Bill Calculation</a>
+          <a href="./Science/PHP/science_php_sop7.html">SOP 7: Connect PHP to MySQL</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board.</p>
+  </footer>
+
+  <script>
+    // Select all dropdown buttons
+    const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+
+    dropdownButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent the click from closing immediately
+
+        const dropdown = button.parentElement;
+
+        // Toggle active class
+        dropdown.classList.toggle("active");
+
+        // Close other dropdowns
+        document.querySelectorAll(".dropdown").forEach((otherDropdown) => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove("active");
+          }
         });
       });
+    });
 
-      // Close dropdown if clicking outside
-      document.addEventListener("click", () => {
-        document.querySelectorAll(".dropdown").forEach((dropdown) => {
-          dropdown.classList.remove("active");
-        });
+    // Close dropdown if clicking outside
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown").forEach((dropdown) => {
+        dropdown.classList.remove("active");
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

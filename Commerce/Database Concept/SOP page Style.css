@@ -230,14 +230,3 @@ footer {
   border: none;
   line-height: 1;
 }
-th,td{
-  padding: 10px;
-  text-align: center;
-  border: 2px,solid;
-}
-table{
-  border: 2px,solid;
-  margin: 1%;
-  margin-left: 5%;
-  border-collapse: collapse;
-}
