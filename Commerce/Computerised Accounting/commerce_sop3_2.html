@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SOP 2: GST Company Creation - Commerce IT</title>
+  <link rel="stylesheet" href="SOP page Style.css" />
+  <style>
+    .sop-image {
+      display: block;
+      margin: 15px auto;
+      max-width: 90%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Tally SOP 2: GST Company Creation</h1>
+    <p class="meta">Practical steps for company setup, GST, ledgers, inventory and vouchers in Tally</p>
+  </header>
+
+  <div class="container">
+    <h2>SOP 2: With the help of any open source or free education version accounting software create a company and enter
+      the following transactions in appropriate vouchers.</h2>
+
+    <h3>Company Details</h3>
+    <div class="company-details">
+      <ul>
+        <li><strong>Company Name:</strong> M/s Bags and Baggage Traders</li>
+        <li><strong>Address:</strong> Sai Baba Nagar, D.P. Road, Navi Mumbai, Maharashtra, Pin Code 400039</li>
+        <li><strong>State:</strong> Maharashtra</li>
+        <li><strong>GSTIN:</strong> 27STUVW1234C2Z1</li>
+        <li><strong>Books Begin From:</strong> 01-04-2019</li>
+      </ul>
+      <ol>
+        <li>On 01/08/2019 purchased 150 pieces of Leather Handbags @Rs. 2500 per piece, GST 28% from Genuine Leather
+          Bags, Navi Mumbai.</li>
+        <li>On 02/09/2019 sold 80 pieces @Rs. 3500 per piece, GST 28% to M/s Shoppers Stock, Chiplun, Maharashtra.</li>
+      </ol>
+      <h4>Print GSTR-2 and Sales Tax Invoice</h4>
+    </div>
+
+    <h3>Solution</h3>
+    <h4>Key Notes</h4>
+    <ul>
+      <li>Both purchase and sale are intrastate (within Maharashtra).</li>
+      <li>GST 28% applies as CGST 14% + SGST 14%.</li>
+    </ul>
+
+    <h4>Step I Company Creation</h4>
+    <ol>
+      <li>Gateway of Tally → Company Info (Alt+F3) → Create Company.</li>
+      <li>Enter company details (name, address, state Maharashtra, GSTIN) and save.</li>
+      <li>Set Financial year and Books Begin From as required.</li>
+    </ol>
+
+    <h4>Step II Enable GST</h4>
+    <ul>
+      <li>Gateway of Tally → Features (F11) → Statutory & Taxation → Enable GST = YES.</li>
+      <li>Set/Alter GST details = YES → Enter State and GSTIN.</li>
+    </ul>
+
+    <h4>Step III Create Ledgers</h4>
+    <center>
+      <table>
+        <thead>
+          <tr>
+            <th>Ledger</th>
+            <th>Under Group</th>
+            <th>Statutory / Tax settings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SGST</td>
+            <td>Duties and Taxes</td>
+            <td>GST; State Tax; 14%</td>
+          </tr>
+          <tr>
+            <td>CGST</td>
+            <td>Duties and Taxes</td>
+            <td>GST; Central Tax; 14%</td>
+          </tr>
+          <tr>
+            <td>Genuine Leather Bags</td>
+            <td>Sundry Creditors</td>
+            <td>Enter address and GST details</td>
+          </tr>
+          <tr>
+            <td>M/s Shoppers Stock</td>
+            <td>Sundry Debtors</td>
+            <td>Enter address and GST details</td>
+          </tr>
+          <tr>
+            <td>Purchase Leather Handbags A/c</td>
+            <td>Purchase Accounts</td>
+            <td>GST Applicable: Yes; CGST+SGST 14%+14%</td>
+          </tr>
+          <tr>
+            <td>Sales Leather Handbags A/c</td>
+            <td>Sales Accounts</td>
+            <td>GST Applicable: Yes; CGST+SGST 14%+14%</td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+
+    <h4>Step IV Inventory Setup</h4>
+    <ul>
+      <li>Units of Measure: Create UOM "Pcs" (Pieces).</li>
+      <li>Stock Group: Create "Bags".</li>
+      <li>Stock Item: Create "Leather Handbags" under Bags with unit Pcs.</li>
+    </ul>
+
+    <h4>Step V Voucher Entries</h4>
+    <h4>Purchase Voucher (F9) — 01-08-2019</h4>
+    <ul>
+      <li>Gateway of Tally → Accounting Vouchers → Purchase (F9).</li>
+      <li>Date 01-08-2019; Party A/c: Genuine Leather Bags; Purchase Ledger: Purchase Leather Handbags A/c.</li>
+      <li>Item: Leather Handbags; Qty: 150 Pcs; Rate: 2500 each; Tax: SGST 14% + CGST 14% → Final Amount ₹4,80,000.</li>
+    </ul>
+
+    <h4>Sales Voucher (F8) — 02-09-2019</h4>
+    <ul>
+      <li>Accounting Vouchers → Sales (F8).</li>
+      <li>Date 02-09-2019; Party A/c: M/s Shoppers Stock; Sales Ledger: Sales Leather Handbags A/c.</li>
+      <li>Item: Leather Handbags; Qty: 80 Pcs; Rate: 3500 each; Tax: SGST 14% + CGST 14% → Final Amount ₹3,20,000.</li>
+    </ul>
+
+    <h4>Step VI Display and Print Reports</h4>
+    <ul>
+      <li>Print Purchase and Sales vouchers: Gateway of Tally → Display → Day Book → select voucher type and period →
+        Print.</li>
+      <li>GST Reports: Gateway of Tally → Display → Statutory Reports → GST → GSTR-2 or Annual Computation.</li>
+    </ul>
+    <img src="images/SOP3_1.jpg" alt="Taly" class="sop-image" />
+    <center><h4>GSTR-2</h4></center>
+    <img src="images/SOP3_2.jpg" alt="Taly" class="sop-image" />
+
+    <h4>Final Notes</h4>
+    <ul>
+      <li>Ensure statutory tax types and percentages are set correctly in ledger statutory information.</li>
+      <li>Check the period when printing Day Book to include voucher dates.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SOPs. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
