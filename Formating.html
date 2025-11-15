@@ -1,34 +1,33 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;Electricity Bill Calculator&lt;/title&gt;
+    &lt;title&gt;Date Difference Calculator&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h2&gt;Electricity Bill Calculator&lt;/h2&gt;
-    &lt;form method="post" action=""&gt;
-        Enter Units Consumed: &lt;input type="number" name="units" required&gt;
-        &lt;input type="submit" value="Calculate Bill"&gt;
+    &lt;h2&gt;Difference Between Two Dates (in Days)&lt;/h2&gt;
+
+    &lt;form name="f1"&gt;
+        Enter First Date:&lt;input type="date" name="date1"&gt;&lt;br&gt;&lt;br&gt;
+        Enter Second Date:&lt;input type="date" name="date2"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="button" value="Calculate Difference" onclick="calculateDifference()"&gt;
     &lt;/form&gt;
 
-    &lt;?php
-    function calculateBill($units) {
-        $bill = 0;
-
-        if ($units &lt;= 100) {
-            $bill = $units * 4;
-        } elseif ($units &lt;= 200) {
-            $bill = (100 * 4) + (($units - 100) * 5);
-        } else {
-            $bill = (100 * 4) + (100 * 5) + (($units - 200) * 6);
+    &lt;script&gt;
+        function calculateDifference() {
+            var d1 = f1.date1.value;
+            var d2 = f1.date2.value;
+            if (d1 === "" || d2 === "") {
+                alert("Please enter both dates.");
+            }
+            // Convert input values to Date objects
+            let date1 = new Date(d1);
+            let date2 = new Date(d2);
+            // Difference in milliseconds
+            let diffMs = Math.abs(date2 - date1);
+            // Convert to days
+            let diffDays = diffMs / (1000 * 60 * 60 * 24);
+            alert("Difference between dates: " + diffDays + " days");
         }
-        
-        echo "&lt;h3&gt;Total Units: $units&lt;/h3&gt;";
-        echo "&lt;h3&gt;Electricity Bill: Rs. $bill&lt;/h3&gt;";
-    }
-
-    if (isset($_POST["units"])) {
-        calculateBill($_POST["units"]);       
-    }
-    ?&gt;
+    &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
