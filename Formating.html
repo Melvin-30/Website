@@ -1,26 +1,34 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;SOP 3 - Count Vowels&lt;/title&gt;
+    &lt;title&gt;Electricity Bill Calculator&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h2&gt;Count Vowels in a String&lt;/h2&gt;
-    &lt;form name="f1"&gt;
-        &lt;input type="text" name="String"&gt;
-        &lt;input type="button" value="Check No of vowels" onclick="checkvowels()"&gt;
+    &lt;h2&gt;Electricity Bill Calculator&lt;/h2&gt;
+    &lt;form method="post" action=""&gt;
+        Enter Units Consumed: &lt;input type="number" name="units" required&gt;
+        &lt;input type="submit" value="Calculate Bill"&gt;
     &lt;/form&gt;
-    &lt;script&gt;
-        function checkvowels() {
-            var str = f1.String.value, count = 0;
-            str = str.toLowerCase();
-            for (var i = 0; i &lt; str.length; i++) {
-                ch=str[i];
-                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                    count++;
-                }
-            }
-            alert("Number of vowels: " + count);
+
+    &lt;?php
+    function calculateBill($units) {
+        $bill = 0;
+
+        if ($units &lt;= 100) {
+            $bill = $units * 4;
+        } elseif ($units &lt;= 200) {
+            $bill = (100 * 4) + (($units - 100) * 5);
+        } else {
+            $bill = (100 * 4) + (100 * 5) + (($units - 200) * 6);
         }
-    &lt;/script&gt;
+        
+        echo "&lt;h3&gt;Total Units: $units&lt;/h3&gt;";
+        echo "&lt;h3&gt;Electricity Bill: Rs. $bill&lt;/h3&gt;";
+    }
+
+    if (isset($_POST["units"])) {
+        calculateBill($_POST["units"]);       
+    }
+    ?&gt;
 &lt;/body&gt;
 &lt;/html&gt;

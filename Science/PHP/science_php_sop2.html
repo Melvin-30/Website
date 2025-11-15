@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHP program to count no of vowels in a string. - Science IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SOP 2: Write a PHP function to count the total number of vowels from the string.</h1>
+        <p>Std 12th IT Subject (Science Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 2: Write a PHP function to count the total number of vowels (a,e,i,o,u) from the string. <br>Accept a string by using HTML form.</h2>
+        <h3>Program Code (SOP.php - Main Page)</h3>
+        <pre id="htmlCode1">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Count Vowels in String&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;PHP program to count no of vowels in a string&lt;/h2&gt;
+    &lt;form method="post" action=""&gt;
+        Enter a string: &lt;input type="text" name="String" required&gt;
+        &lt;input type="submit" value="Count Vowels"&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    function countVowels($str) {
+        $str = strtolower($str);
+        $count = 0;
+        for ($i = 0; $i &lt; strlen($str); $i++) {
+            $ch = $str[$i];
+            if ($ch == 'a' || $ch == 'e' || $ch == 'i' || $ch == 'o' || $ch == 'u') {
+                $count++;
+            }
+        }
+        echo "&lt;p&gt;Total vowels in string: " . $count . "&lt;/p&gt;";
+    }
+    if (isset($_POST["String"])) {
+        countVowels($_POST["String"]);        
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <div class="preview-buttons">
+            <button class="preview-button" onclick="showPreview('index')">Preview SOP.php</button>
+            <div class="dropdown">
+                <button class="download-button">Download</button>
+                <div class="dropdown-content">
+                    <a
+                        href="https://drive.google.com/file/d/16Mhur-8TeWxUaVTUoL6DFtFVXU1pev9G/view?usp=sharing">Code</a>
+                    <a
+                        href="https://drive.google.com/file/d/1Ezhk6C3GNuG0ySkf95YffGJP8fZryF0b/view?usp=sharing">Output</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="live-preview-container" id="previewContainer">
+            <h3 id="previewTitle">Live Preview</h3>
+            <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPreview(page) {
+            alert("Coming Soon..")
+        }
+        /* function showPreview(page) {
+
+            // <-- Replace this URL with your real preview URL
+            const previewURL = "https://your-preview-website-link.com";
+
+            const previewContainer = document.getElementById("previewContainer");
+            const previewIframe = document.getElementById("previewIframe");
+            const previewTitle = document.getElementById("previewTitle");
+
+            // Set iframe source to your website
+            previewIframe.src = previewURL;
+
+            // Show preview box
+            previewContainer.style.display = "block";
+
+            // Change title
+            previewTitle.textContent = "Live Preview";
+        } */
+    </script>
+</body>
+
+</html>

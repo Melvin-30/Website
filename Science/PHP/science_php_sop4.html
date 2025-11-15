@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Write a PHP program to store mark in an array. - Science IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SOP 4: Write a PHP program to store mark in an array.</h1>
+        <p>Std 12th IT Subject (Science Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 4: Write a PHP program to save marks of English, Hindi, Marathi, Maths and Information Technology in an array. Display marks of individual subject along with total marks and percentage</h2>
+        <h3>Program Code (SOP.php - Main Page)</h3>
+        <pre id="htmlCode1">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;PHP program to store marks in an array&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Student Marks&lt;/h2&gt;
+
+    &lt;?php
+    $marks = array(
+        "English" =&gt; 78,
+        "Hindi" =&gt; 85,
+        "Marathi" =&gt; 74,
+        "Maths" =&gt; 92,
+        "Information Technology" =&gt; 88
+    );
+
+    echo "English : " . $marks["English"] . "&lt;br&gt;";
+    echo "Hindi : " . $marks["Hindi"] . "&lt;br&gt;";
+    echo "Marathi : " . $marks["Marathi"] . "&lt;br&gt;";
+    echo "Maths : " . $marks["Maths"] . "&lt;br&gt;";
+    echo "Information Technology : " . $marks["Information Technology"] . "&lt;br&gt;";
+
+    $total = $marks["English"]+$marks["Hindi"]+$marks["Marathi"]+$marks["Maths"]+$marks["Information Technology"];
+
+    $percentage = $total / count($marks);
+
+    echo "&lt;h3&gt;Total Marks: " . $total . "&lt;/h3&gt;";
+    echo "&lt;h3&gt;Percentage: " . $percentage . "%&lt;/h3&gt;";
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <div class="preview-buttons">
+            <button class="preview-button" onclick="showPreview('index')">Preview SOP.php</button>
+            <div class="dropdown">
+                <button class="download-button">Download</button>
+                <div class="dropdown-content">
+                    <a
+                        href="https://drive.google.com/file/d/16Mhur-8TeWxUaVTUoL6DFtFVXU1pev9G/view?usp=sharing">Code</a>
+                    <a
+                        href="https://drive.google.com/file/d/1Ezhk6C3GNuG0ySkf95YffGJP8fZryF0b/view?usp=sharing">Output</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="live-preview-container" id="previewContainer">
+            <h3 id="previewTitle">Live Preview</h3>
+            <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPreview(page) {
+            alert("Coming Soon..")
+        }
+        /* function showPreview(page) {
+
+            // <-- Replace this URL with your real preview URL
+            const previewURL = "https://your-preview-website-link.com";
+
+            const previewContainer = document.getElementById("previewContainer");
+            const previewIframe = document.getElementById("previewIframe");
+            const previewTitle = document.getElementById("previewTitle");
+
+            // Set iframe source to your website
+            previewIframe.src = previewURL;
+
+            // Show preview box
+            previewContainer.style.display = "block";
+
+            // Change title
+            previewTitle.textContent = "Live Preview";
+        } */
+    </script>
+</body>
+
+</html>
