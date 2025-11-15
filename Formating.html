@@ -1,48 +1,26 @@
-<!doctype html>
-<html>
-
-<head>
-    <title>Applicaiton Form</title>
-</head>
-<script type="text/javascript">
-    function Checkgrade() {
-        var m1 = parseInt(f1.t1.value),
-            m2 = parseInt(f1.t2.value),
-            m3 = parseInt(f1.t3.value),
-            m4 = parseInt(f1.t4.value),
-            m5 = parseInt(f1.t5.value),
-            m6 = parseInt(f1.t6.value),
-            avg, grade;
-        avg = (m1 + m2 + m3 + m4 + m5 + m6) / 6;
-        if (avg >= 91) {
-            grade = "A"
-        } else if (avg >= 81) {
-            grade = "B"
-        } else if (avg >= 71) {
-            grade = "C"
-        } else if (avg >= 61) {
-            grade = "D"
-        } else if (avg >= 35) {
-            grade = "F"
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;SOP 3 - Count Vowels&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Count Vowels in a String&lt;/h2&gt;
+    &lt;form name="f1"&gt;
+        &lt;input type="text" name="String"&gt;
+        &lt;input type="button" value="Check No of vowels" onclick="checkvowels()"&gt;
+    &lt;/form&gt;
+    &lt;script&gt;
+        function checkvowels() {
+            var str = f1.String.value, count = 0;
+            str = str.toLowerCase();
+            for (var i = 0; i &lt; str.length; i++) {
+                ch=str[i];
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                    count++;
+                }
+            }
+            alert("Number of vowels: " + count);
         }
-        document.getElementById("avg").innerHTML = "Average Marks: " + avg;
-        document.getElementById("grade").innerHTML = "Grade: " + grade;
-    }
-</script>
-
-<body>
-    <h1>Calculate Grade</h1>
-    <form name="f1">
-        Enter 1st Subject Marks <input type="number" name="t1"><br><br>
-        Enter 2nd Subject Marks <input type="number" name="t2"><br><br>
-        Enter 3rd Subject Marks <input type="number" name="t3"><br><br>
-        Enter 4th Subject Marks <input type="number" name="t4"><br><br>
-        Enter 5th Subject Marks <input type="number" name="t5"><br><br>
-        Enter 6th Subject Marks <input type="number" name="t6">
-        <p id="avg">Average Marks:</p>
-        <p id="grade">Grade: </p>
-        <input type="button" value="Check Grade" onclick="Checkgrade()">
-    </form>
-</body>
-
-</html>
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
