@@ -88,7 +88,7 @@
         function showPreview(page) {
 
             // <-- Replace this URL with your real preview URL
-            const previewURL = "https://myprojectwork.free.nf/SOP1.php";
+            const previewURL = `/.netlify/functions/preview-proxy?page=${page}`;
 
             const previewContainer = document.getElementById("previewContainer");
             const previewIframe = document.getElementById("previewIframe");
