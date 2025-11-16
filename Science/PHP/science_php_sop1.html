@@ -58,7 +58,9 @@
 &lt;/html&gt;</pre>
 
         <div class="preview-buttons">
-            <button class="preview-button" onclick="showPreview('SOP1')">Preview SOP.php</button>
+            <button class="preview-button" onclick="window.open('https://myprojectwork.free.nf/SOP1.php', '_blank')">
+                Preview SOP.php
+            </button>
             <div class="dropdown">
                 <button class="download-button">Download</button>
                 <div class="dropdown-content">
@@ -85,7 +87,7 @@
         /* function showPreview(page) {
             alert("Coming Soon..")
         } */
-        function showPreview(page) {
+        /* function showPreview(page) {
             const previewURL = `/.netlify/functions/preview-proxy?page=${page}`;
             const previewIframe = document.getElementById("previewIframe");
             const previewContainer = document.getElementById("previewContainer");
@@ -95,7 +97,7 @@
 
             // Change title
             previewTitle.textContent = "Live Preview";
-        }
+        } */
     </script>
 </body>
 
