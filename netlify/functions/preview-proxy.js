@@ -1,7 +1,7 @@
 export async function handler(event, context) {
   const page = event.queryStringParameters?.page;
 
-  // Map of SOP pages to PHP URLs
+  // Map SOP pages to HTTPS URLs
   const files = {
     "SOP1": "https://myprojectwork.free.nf/SOP1.php",
     "SOP2": "https://myprojectwork.free.nf/SOP2.php",
@@ -19,7 +19,7 @@ export async function handler(event, context) {
   }
 
   try {
-    // Fetch the PHP page from InfinityFree
+    // Fetch PHP page from InfinityFree
     const response = await fetch(files[page]);
 
     if (!response.ok) {
@@ -31,20 +31,20 @@ export async function handler(event, context) {
 
     let html = await response.text();
 
-    // Optional: Rewrite relative URLs in HTML so they work in iframe
-    html = html.replace(
-      /href="(?!https?:\/\/)/g,
-      'href="' + files[page].replace(/\/[^/]*$/, '/') // base URL
-    ).replace(
-      /src="(?!https?:\/\/)/g,
-      'src="' + files[page].replace(/\/[^/]*$/, '/')
-    );
+    // 1. Remove any insecure iframes (like cookies.html)
+    html = html.replace(/<iframe[^>]*cookies\.html[^>]*><\/iframe>/gi, '');
+
+    // 2. Rewrite relative URLs so CSS/JS/images still work
+    const baseURL = files[page].replace(/\/[^/]*$/, '/'); // base directory
+    html = html.replace(/(href|src)="(?!https?:\/\/)([^"]*)"/gi, (match, attr, url) => {
+      return `${attr}="${baseURL}${url}"`;
+    });
 
     return {
       statusCode: 200,
       headers: {
         "Content-Type": "text/html",
-        "Cache-Control": "no-cache" // optional, always fetch fresh
+        "Cache-Control": "no-cache"
       },
       body: html
     };
