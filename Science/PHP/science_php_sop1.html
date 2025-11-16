@@ -86,18 +86,11 @@
             alert("Coming Soon..")
         } */
         function showPreview(page) {
-
-            // <-- Replace this URL with your real preview URL
             const previewURL = `/.netlify/functions/preview-proxy?page=${page}`;
-
-            const previewContainer = document.getElementById("previewContainer");
             const previewIframe = document.getElementById("previewIframe");
-            const previewTitle = document.getElementById("previewTitle");
+            const previewContainer = document.getElementById("previewContainer");
 
-            // Set iframe source to your website
             previewIframe.src = previewURL;
-
-            // Show preview box
             previewContainer.style.display = "block";
 
             // Change title
