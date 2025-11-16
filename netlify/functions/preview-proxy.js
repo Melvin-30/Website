@@ -1,6 +1,7 @@
 export async function handler(event, context) {
-  const page = event.queryStringParameters.page;
+  const page = event.queryStringParameters?.page;
 
+  // Map of SOP pages to PHP URLs
   const files = {
     "SOP1": "https://myprojectwork.free.nf/SOP1.php",
     "SOP2": "https://myprojectwork.free.nf/SOP2.php",
@@ -9,7 +10,8 @@ export async function handler(event, context) {
     "SOP6": "https://myprojectwork.free.nf/SOP6.php"
   };
 
-  if (!files[page]) {
+  // Validate page
+  if (!page || !files[page]) {
     return {
       statusCode: 400,
       body: "Invalid or missing page parameter."
@@ -17,12 +19,33 @@ export async function handler(event, context) {
   }
 
   try {
+    // Fetch the PHP page from InfinityFree
     const response = await fetch(files[page]);
-    const html = await response.text();
+
+    if (!response.ok) {
+      return {
+        statusCode: response.status,
+        body: `Failed to fetch PHP page. Status: ${response.status}`
+      };
+    }
+
+    let html = await response.text();
+
+    // Optional: Rewrite relative URLs in HTML so they work in iframe
+    html = html.replace(
+      /href="(?!https?:\/\/)/g,
+      'href="' + files[page].replace(/\/[^/]*$/, '/') // base URL
+    ).replace(
+      /src="(?!https?:\/\/)/g,
+      'src="' + files[page].replace(/\/[^/]*$/, '/')
+    );
 
     return {
       statusCode: 200,
-      headers: { "Content-Type": "text/html" },
+      headers: {
+        "Content-Type": "text/html",
+        "Cache-Control": "no-cache" // optional, always fetch fresh
+      },
       body: html
     };
 
