@@ -1,33 +1,54 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;Date Difference Calculator&lt;/title&gt;
+    &lt;title&gt;News Layout&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h2&gt;Difference Between Two Dates (in Days)&lt;/h2&gt;
+    &lt;header&gt;
+        &lt;h1 class="heading"&gt;News&lt;/h1&gt;
+        &lt;p&gt;Local and National News&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;nav&gt;
+        &lt;a href="#"&gt;Home&lt;/a&gt;
+        &lt;a href="#"&gt;Archives&lt;/a&gt;
+        &lt;a href="#"&gt;About&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;section id="main"&gt;
+        &lt;div id="left"&gt;
+            &lt;div class="section-title"&gt;Local News&lt;/div&gt;
+            &lt;div class="article"&gt;
+                &lt;h3&gt;Fire fighters rescue man from building&lt;/h3&gt;
+                &lt;p&gt;(reporter name, date)&lt;/p&gt;
+                &lt;p&gt;This is the story of the rescue. Details of the event go here.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="article"&gt;
+                &lt;h3&gt;New Library to be built&lt;/h3&gt;
+                &lt;p&gt;(reporter name, date)&lt;/p&gt;
+                &lt;p&gt;Details about the library project.&lt;/p&gt;
+            &lt;/div&gt;
 
-    &lt;form name="f1"&gt;
-        Enter First Date:&lt;input type="date" name="date1"&gt;&lt;br&gt;&lt;br&gt;
-        Enter Second Date:&lt;input type="date" name="date2"&gt;&lt;br&gt;&lt;br&gt;
-        &lt;input type="button" value="Calculate Difference" onclick="calculateDifference()"&gt;
-    &lt;/form&gt;
+            &lt;div class="section-title"&gt;National News&lt;/div&gt;
+            &lt;div class="article"&gt;
+                &lt;h3&gt;Snow storm is making travel difficult&lt;/h3&gt;
+                &lt;p&gt;(reporter name, date)&lt;/p&gt;
+                &lt;p&gt;Storm details and affected areas.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="article"&gt;
+                &lt;h3&gt;Thousands are without power&lt;/h3&gt;
+                &lt;p&gt;(reporter name, date)&lt;/p&gt;
+                &lt;p&gt;Power outage information and updates.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
 
-    &lt;script&gt;
-        function calculateDifference() {
-            var d1 = f1.date1.value;
-            var d2 = f1.date2.value;
-            if (d1 === "" || d2 === "") {
-                alert("Please enter both dates.");
-            }
-            // Convert input values to Date objects
-            let date1 = new Date(d1);
-            let date2 = new Date(d2);
-            // Difference in milliseconds
-            let diffMs = Math.abs(date2 - date1);
-            // Convert to days
-            let diffDays = diffMs / (1000 * 60 * 60 * 24);
-            alert("Difference between dates: " + diffDays + " days");
-        }
-    &lt;/script&gt;
+        &lt;aside&gt;
+            &lt;h3&gt;Be a news reporter&lt;/h3&gt;
+            &lt;p&gt;If you see news happening - Send us a text.&lt;/p&gt;
+        &lt;/aside&gt;
+    &lt;/section&gt;
+    &lt;footer&gt;
+        Footer Information
+    &lt;/footer&gt;
+
 &lt;/body&gt;
 &lt;/html&gt;
