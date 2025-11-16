@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create event driven JavaScript program to convert temperature - Science IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SOP 5: Create event driven JavaScript program to convert temperature.</h1>
+        <p>Std 12th IT Subject (Science Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 5: Create event driven JavaScript program to convert temperature to and from Celsius, Fahrenheit.</h2>
+        <p>
+            Formula: c/5= (f-32)/9<br>
+            [where c=Temperature in Celsius and f=Temperature in Fahrenheit.]
+        </p>
+        <h3>Program Code (index.html - Main Page)</h3>
+        <pre id="htmlCode1">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Temperature Converter&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Temperature Converter&lt;/h2&gt;
+    &lt;form name="f1"&gt;
+        Enter Temperature: &lt;input type="number" name="Temp"&gt;
+        &lt;select name="s1"&gt;
+            &lt;option value=""&gt;Select Conversion&lt;/option&gt;
+            &lt;option value="Celsius"&gt;to Celsius&lt;/option&gt;
+            &lt;option value="Fahrenheit"&gt;to Fahrenheit&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;input type="button" value="Convert" onclick="ConvertTemp()"&gt;
+    &lt;/form&gt;
+    &lt;script&gt;
+        function ConvertTemp() {
+            var temp = parseFloat(f1.Temp.value);
+            var convertto = f1.s1.value;
+            var ans;
+            if (convertto == "Fahrenheit") {
+                ans = (temp * 9 / 5) + 32;
+                alert("Temperature in Fahrenheit is: " + ans);
+            } else if (convertto == "Celsius") {
+                ans = (temp - 32) * 5 / 9;
+                alert("Temperature in Celsius is: " + ans);
+            } else {
+                alert("Select a Conversion type!");
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <div class="preview-buttons">
+            <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
+            <div class="dropdown">
+                <button class="download-button">Download</button>
+                <div class="dropdown-content">
+                    <a href="">Code</a>
+                    <a href="">Output</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="live-preview-container" id="previewContainer">
+            <h3 id="previewTitle">Live Preview</h3>
+            <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPreview(page) {
+            const previewContainer = document.getElementById('previewContainer');
+            const previewIframe = document.getElementById('previewIframe');
+            const previewTitle = document.getElementById('previewTitle');
+            const codeId = page === 'index' ? 'htmlCode1' : 'htmlCode2';
+
+            // Get the code
+            const codeElement = document.getElementById(codeId);
+            let htmlCode = codeElement.textContent;
+
+            // Decode HTML entities
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+            // Create full HTML
+            const fullHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Preview</title></head>
+<body>
+${htmlCode}
+</body>
+</html>`;
+
+            // Write to iframe
+            const doc = previewIframe.contentWindow.document;
+            doc.open();
+            doc.write(fullHTML);
+            doc.close();
+
+            // Show preview
+            previewTitle.textContent = `Live Preview: ${page}.html`;
+            previewContainer.style.display = 'block';
+
+            // Setup internal navigation
+            previewIframe.onload = () => {
+                const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+                const links = iframeDoc.querySelectorAll('a');
+
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        if (href === 'index.html') showPreview('index');
+                        else if (href === 'page2.html') showPreview('page2');
+                    });
+                });
+            };
+        }
+    </script>
+</body>
+
+</html>

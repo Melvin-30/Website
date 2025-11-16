@@ -1,54 +1,34 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;News Layout&lt;/title&gt;
-    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;title&gt;Temperature Converter&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;header&gt;
-        &lt;h1 class="heading"&gt;News&lt;/h1&gt;
-        &lt;p&gt;Local and National News&lt;/p&gt;
-    &lt;/header&gt;
-    &lt;nav&gt;
-        &lt;a href="#"&gt;Home&lt;/a&gt;
-        &lt;a href="#"&gt;Archives&lt;/a&gt;
-        &lt;a href="#"&gt;About&lt;/a&gt;
-    &lt;/nav&gt;
-    &lt;section id="main"&gt;
-        &lt;div id="left"&gt;
-            &lt;div class="section-title"&gt;Local News&lt;/div&gt;
-            &lt;div class="article"&gt;
-                &lt;h3&gt;Fire fighters rescue man from building&lt;/h3&gt;
-                &lt;p&gt;(reporter name, date)&lt;/p&gt;
-                &lt;p&gt;This is the story of the rescue. Details of the event go here.&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class="article"&gt;
-                &lt;h3&gt;New Library to be built&lt;/h3&gt;
-                &lt;p&gt;(reporter name, date)&lt;/p&gt;
-                &lt;p&gt;Details about the library project.&lt;/p&gt;
-            &lt;/div&gt;
-
-            &lt;div class="section-title"&gt;National News&lt;/div&gt;
-            &lt;div class="article"&gt;
-                &lt;h3&gt;Snow storm is making travel difficult&lt;/h3&gt;
-                &lt;p&gt;(reporter name, date)&lt;/p&gt;
-                &lt;p&gt;Storm details and affected areas.&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class="article"&gt;
-                &lt;h3&gt;Thousands are without power&lt;/h3&gt;
-                &lt;p&gt;(reporter name, date)&lt;/p&gt;
-                &lt;p&gt;Power outage information and updates.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;aside&gt;
-            &lt;h3&gt;Be a news reporter&lt;/h3&gt;
-            &lt;p&gt;If you see news happening - Send us a text.&lt;/p&gt;
-        &lt;/aside&gt;
-    &lt;/section&gt;
-    &lt;footer&gt;
-        Footer Information
-    &lt;/footer&gt;
-
+    &lt;h2&gt;Temperature Converter&lt;/h2&gt;
+    &lt;form name="f1"&gt;
+        Enter Temperature: &lt;input type="number" name="Temp"&gt;
+        &lt;select name="s1"&gt;
+            &lt;option value=""&gt;Select Conversion&lt;/option&gt;
+            &lt;option value="Celsius"&gt;to Celsius&lt;/option&gt;
+            &lt;option value="Fahrenheit"&gt;to Fahrenheit&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;input type="button" value="Convert" onclick="ConvertTemp()"&gt;
+    &lt;/form&gt;
+    &lt;script&gt;
+        function ConvertTemp() {
+            var temp = parseFloat(f1.Temp.value);
+            var convertto = f1.s1.value;
+            var ans;
+            if (convertto == "Fahrenheit") {
+                ans = (temp * 9 / 5) + 32;
+                alert("Temperature in Fahrenheit is: " + ans);
+            } else if (convertto == "Celsius") {
+                ans = (temp - 32) * 5 / 9;
+                alert("Temperature in Celsius is: " + ans);
+            } else {
+                alert("Select a Conversion type!");
+            }
+        }
+    &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
