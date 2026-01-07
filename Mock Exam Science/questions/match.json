@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "left": ["HTML", "CSS", "JS", "PHP"],
+      "right": ["Scripting Language", "Styling Language", "Markup Language", "Server-side Language"],
+      "answer": ["A-3", "B-2", "C-1", "D-4"]
+    },
+    {
+      "left": ["CPU", "RAM", "SSD", "GPU"],
+      "right": ["Graphics Processing", "Temporary Memory", "Central Processing Unit", "Permanent Storage"],
+      "answer": ["A-3", "B-2", "C-4", "D-1"]
+    },
+    {
+      "left": ["Google", "Apple", "Microsoft", "Amazon"],
+      "right": ["Azure", "AWS", "iCloud", "Google Cloud"],
+      "answer": ["A-4", "B-3", "C-1", "D-2"]
+    },
+    {
+      "left": ["TCP", "UDP", "HTTP", "FTP"],
+      "right": ["File Transfer", "Web Browsing", "Reliable communication", "Fast communication"],
+      "answer": ["A-3", "B-4", "C-2", "D-1"]
+    }
+  ]
+}

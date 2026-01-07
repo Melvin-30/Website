@@ -1,0 +1,132 @@
+[
+  {
+    "question": "Following are the values of type attribute of <input> tag",
+    "options": ["Minimum", "Maximum", "date", "email"],
+    "answer": [2, 3]
+  },
+  {
+    "question": "Following are the values of the http-equiv attribute of <meta> tag.",
+    "options": ["month", "refresh", "image", "expires"],
+    "answer": [1, 3]
+  },
+  {
+    "question": "The text decoration property is used to add.",
+    "options": ["line-through", "strike-through", "underline", "justify"],
+    "answer": [0, 2]
+  },
+  {
+    "question": "Following are the values of Display properties",
+    "options": ["Middle", "Inline", "Block", "top"],
+    "answer": [1, 2]
+  },
+  {
+    "question": "An ordered list can be _____or______. ",
+    "options": ["Static", "Numerical", "Constant", "Alphabetical"],
+    "answer": [1, 3]
+  },
+  {
+    "question": "To create items in a definition list, the _________ and ______ tag are used.",
+    "options": ["<dt>", "<cd>", "<dd>", "<ld>"],
+    "answer": [0, 2]
+  },
+  {
+    "question": "Following are attributes of <audio> tag.",
+    "options": ["Width", "autoplay", "muted", "height"],
+    "answer": [1, 2]
+  },
+  {
+    "question": "Following are common video formats.",
+    "options": [".mp3", ".aae", ".mp4", ".webM"],
+    "answer": [2, 3]
+  },
+  {
+    "question": "Following are the attributes of <video> tag.",
+    "options": ["href", "Src", "loop", "link"],
+    "answer": [1, 2]
+  },
+  {
+    "question": "The preload attribute of <video> tag has the following values.",
+    "options": ["Src", "width", "auto", "Metadata"],
+    "answer": [2, 3]
+  },
+  {
+    "question": "Following are the attributes of <area> tag.",
+    "options": ["Href", "Src", "link", "coords"],
+    "answer": [0, 3]
+  },
+  {
+    "question": "Attributes of <iframe> tag are ______",
+    "options": ["Src", "href", "loop", "Srcdoc"],
+    "answer": [0, 3]
+  },
+  {
+    "question": "The page content optimization can be done by using keywords in ____ and ____. ",
+    "options": ["<font>", "<title>", "<hr>", "<meta>", "<input>"],
+    "answer": [1, 3]
+  },
+  {
+    "question": "Following are the built-in objects in JavaScript.",
+    "options": ["Math", "Time", "Array", "Month"],
+    "answer": [0, 2]
+  },
+  {
+    "question": "Following are the methods of the Document Object Model.",
+    "options": ["body", "writer()", "URL", "writeln()"],
+    "answer": [1, 3]
+  },
+  {
+    "question": "confirm() method displays dialog box containing message with ______ and ______ button.",
+    "options": ["GO", "OK", "Cancel", "Click"],
+    "answer": [1, 2]
+  },
+  {
+    "question": "Variables are used for storing values such as _____ and _____.",
+    "options": ["Methods", "Numeric values", "Character Strings"],
+    "answer": [1, 2]
+  },
+  {
+    "question": "Loop structures in PHP are _________.",
+    "options": ["for", "foreach", "if", "if-else statement"],
+    "answer": [0, 1]
+  },
+  {
+    "question": "Comments in PHP are possible in the following ways.",
+    "options": ["//", "ll", "/*and*/"],
+    "answer": [0, 2]
+  },
+  {
+    "question": "Form data can be submitted by _______ or _______ method.",
+    "options": ["Return", "forward", "GET", "POST"],
+    "answer": [2, 3]
+  },
+  {
+    "question": "The PHP super globals _____ and _____ are used to collect form data.",
+    "options": ["$_GET", "$_POST"],
+    "answer": [0, 1]
+  },
+  {
+    "question": "Examples of B2C model are_____,______. ",
+    "options": ["Linux", "Flipkart", "Amazon", "Windows"],
+    "answer": [1, 2]
+  },
+  {
+    "question": "Examples of C2C model are_______",
+    "options": ["Network provider", "OLX", "EDI", "Quikr"],
+    "answer": [1, 3]
+  },
+  {
+    "question": "The settlement phase consists of _____ and ________",
+    "options": ["Order", "Invoice", "Search", "Payment"],
+    "answer": [1, 3]
+  },
+  {
+    "question": "Examples of Bank Transfers are_______",
+    "options": ["EDI", "NEFT", "IMPS", "Cash Transfer"],
+    "answer": [1, 2]
+  },
+  {
+    "question": "Examples of E-Wallets are_______",
+    "options": ["Paytm Wallets", "EDI", "State Bank Buddy", "Trade Cycle"],
+    "answer": [0, 2]
+  }
+]

@@ -1,0 +1,292 @@
+{
+  "questions": [
+    {
+      "question": "HTML is an object-oriented programming language.",
+      "answer": false
+    },
+    {
+      "question": "charset is used for character encoding declaration.",
+      "answer": true
+    },
+    {
+      "question": "An unordered list can be numerical or alphabetical.",
+      "answer": false
+    },
+    {
+      "question": "A multilevel list can be created in HTML5.",
+      "answer": true
+    },
+    {
+      "question": "srccode specifies the HTML content of the webpage to show in the iframe.",
+      "answer": false
+    },
+    {
+      "question": "<input type='date'> defines a date picker with year, month, and day.",
+      "answer": true
+    },
+    {
+      "question": "The default range of range control is 100-200.",
+      "answer": false
+    },
+    {
+      "question": "The required attribute must specify that an input field must be filled out.",
+      "answer": true
+    },
+    {
+      "question": "<meta> tag is a paired tag.",
+      "answer": false
+    },
+    {
+      "question": "<meta charset='UTF-8'> is for Indian character.",
+      "answer": false
+    },
+    {
+      "question": "A CSS rule set contains a selector and a declaration block.",
+      "answer": true
+    },
+    {
+      "question": "<link> tag is placed inside the body section.",
+      "answer": false
+    },
+    {
+      "question": "The class selector is used with a period character.",
+      "answer": true
+    },
+    {
+      "question": "<ol> tag defines ordered list.",
+      "answer": true
+    },
+    {
+      "question": "The default value of the type attribute in an ordered list is 1.",
+      "answer": true
+    },
+    {
+      "question": "The list items in unordered lists are marked with numbers.",
+      "answer": false
+    },
+    {
+      "question": "HTML5 does not support the type attribute of <ul> tag, so you can use CSS style.",
+      "answer": true
+    },
+    {
+      "question": "To define a definition list, the <db> tag is used.",
+      "answer": false
+    },
+    {
+      "question": "The <dd> tag is used to define the term, whereas the <dt> tag defines the term's definition.",
+      "answer": false
+    },
+    {
+      "question": "A list within a list is called a nested list.",
+      "answer": true
+    },
+    {
+      "question": "Controls attribute displays play, pause buttons, etc.",
+      "answer": true
+    },
+    {
+      "question": "Autoplay, controls, and muted are the attributes without any values.",
+      "answer": true
+    },
+    {
+      "question": "The <video> tag is used to embed video in a web page.",
+      "answer": true
+    },
+    {
+      "question": "The usemap attribute acts as a pointer which indicates that the image is a client-side image map.",
+      "answer": true
+    },
+    {
+      "question": "<area> tag is a paired tag.",
+      "answer": false
+    },
+    {
+      "question": "Inline frames are used in online advertising.",
+      "answer": true
+    },
+    {
+      "question": "SEM is a subset of search engine optimization.",
+      "answer": false
+    },
+    {
+      "question": "SEO is useful in increasing the number of visitors to a website.",
+      "answer": true
+    },
+    {
+      "question": "On-page SEO includes good content and good keywords.",
+      "answer": true
+    },
+    {
+      "question": "Off-page SEO includes link building and increasing link popularity.",
+      "answer": true
+    },
+    {
+      "question": "White Hat strategies include duplicate content.",
+      "answer": false
+    },
+    {
+      "question": "Invisible text and stuffed keywords are part of Black Hat Strategies.",
+      "answer": true
+    },
+    {
+      "question": "Title content should be up to 60 characters.",
+      "answer": true
+    },
+    {
+      "question": "Meta Description should be between 70 and 160 characters.",
+      "answer": true
+    },
+    {
+      "question": "A website's mobile friendliness is not an important factor in ranking.",
+      "answer": false
+    },
+    {
+      "question": "Robots.txt file tells search engine which pages you want to include from indexing.",
+      "answer": false
+    },
+    {
+      "question": "JavaScript is not a case-sensitive language.",
+      "answer": false
+    },
+    {
+      "question": "Functions are declared in JavaScript using the var keyword.",
+      "answer": false
+    },
+    {
+      "question": "Client-side scripts are placed inside HTML documents.",
+      "answer": true
+    },
+    {
+      "question": "Client-side scripts are generally used for validation purposes.",
+      "answer": true
+    },
+    {
+      "question": "A for loop combines initializing, condition, and loop iteration in one statement.",
+      "answer": true
+    },
+    {
+      "question": "The while loop executes statements as long as the condition is false.",
+      "answer": false
+    },
+    {
+      "question": "The break statement is used to jump out of a loop.",
+      "answer": true
+    },
+    {
+      "question": "A JavaScript object is an entity having properties and objects.",
+      "answer": false
+    },
+    {
+      "question": "The window object is the parent object of all other objects.",
+      "answer": true
+    },
+    {
+      "question": "An object of window is created automatically by the browser.",
+      "answer": true
+    },
+    {
+      "question": "status property of window object sets the name of a window.",
+      "answer": false
+    },
+    {
+      "question": "The blur() method of the window object removes focus from the current window.",
+      "answer": true
+    },
+    {
+      "question": "Events are the actions done by the user or an application on the webpage.",
+      "answer": true
+    },
+    {
+      "question": "The length property returns the number of characters in a string.",
+      "answer": true
+    },
+    {
+      "question": "lastIndexOf method of string object returns the index of last occurrence of a character.",
+      "answer": true
+    },
+    {
+      "question": "The Internet of Things is the network of physical devices only.",
+      "answer": false
+    },
+    {
+      "question": "In IaaS, enterprises save the cost of buying and maintaining hardware.",
+      "answer": true
+    },
+    {
+      "question": "In SaaS, a service provider delivers software and applications through the Internet.",
+      "answer": true
+    },
+    {
+      "question": "Cloud computing solutions are more portable.",
+      "answer": true
+    },
+    {
+      "question": "5G technologies may use a variety of spectrum bands.",
+      "answer": true
+    },
+    {
+      "question": "PHP hides the code from the user.",
+      "answer": true
+    },
+    {
+      "question": "PHP is case-sensitive only at the time of variable declaration.",
+      "answer": false
+    },
+    {
+      "question": "A variable name can start with a number.",
+      "answer": false
+    },
+    {
+      "question": "A variable declared outside a function has a GLOBAL SCOPE.",
+      "answer": true
+    },
+    {
+      "question": "Comments are non-executable statements in PHP code.",
+      "answer": true
+    },
+    {
+      "question": "A function is a block of statements that can be used repeatedly.",
+      "answer": true
+    },
+    {
+      "question": "GET has limits on the amount of information to send.",
+      "answer": true
+    },
+    {
+      "question": "Information sent using POST is invisible to everyone.",
+      "answer": false
+    },
+    {
+      "question": "Session is used to store user information on the server.",
+      "answer": true
+    },
+    {
+      "question": "E-Commerce is 24 × 7.",
+      "answer": true
+    },
+    {
+      "question": "E-Commerce reduces paperwork.",
+      "answer": true
+    },
+    {
+      "question": "M-Commerce is buying and selling using smartphones and tablets.",
+      "answer": true
+    },
+    {
+      "question": "EDI is the non-electronic interchange of business information.",
+      "answer": false
+    },
+    {
+      "question": "Two most common documents exchanged using EDI are purchase orders and invoices.",
+      "answer": true
+    },
+    {
+      "question": "E-Governance delivers SMART governance.",
+      "answer": true
+    },
+    {
+      "question": "Digital India is a campaign launched to provide government services electronically.",
+      "answer": true
+    }
+  ]
+}
