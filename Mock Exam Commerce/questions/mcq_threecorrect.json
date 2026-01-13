@@ -55,21 +55,6 @@
     "answer": [0, 1, 3]
   },
   {
-    "question": "PHP is compatible with the following servers.",
-    "options": ["XAMPP", "Linux", "Apache", "Unix", "Lightpad", "Word"],
-    "answer": [0, 2, 3]
-  },
-  {
-    "question": "Features of PHP are ______.",
-    "options": ["Difficult", "Simple", "Error Creating", "Platform Independent", "Error Reporting", "Platform Dependent"],
-    "answer": [1, 3, 4]
-  },
-  {
-    "question": "The scope of variables in PHP is ________.",
-    "options": ["Local", "Regional", "National", "Global", "Static", "International"],
-    "answer": [0, 3, 4]
-  },
-  {
     "question": "Following are the Modes of Payment.",
     "options": ["Presale", "Execution", "Settlement", "Mobile payments", "Bank transfer", "E-wallets"],
     "answer": [3, 4, 5]
