@@ -1,0 +1,199 @@
+{
+  "questions": [
+    {
+      "question": "The <form> tag is used to create a form.",
+      "options": ["<input>", "<textarea>", "<select>", "<form>"],
+      "answer": "<form>"
+    },
+    {
+      "question": "<input type='_____'> defines a field for entering a number.",
+      "options": ["color", "number", "date", "email"],
+      "answer": "number"
+    },
+    {
+      "question": "The ______ attribute of <input> tag specifies a regular expression to check the input values.",
+      "options": ["required", "multiple", "pattern", "max"],
+      "answer": "pattern"
+    },
+    {
+      "question": "<meta charset='Big5'> is for _____ language.",
+      "options": ["Indian", "USA", "Chinese", "Italian"],
+      "answer": "Chinese"
+    },
+    {
+      "question": "The page session will expire using the value of http-equiv attribute.",
+      "options": ["expires", "refresh", "set-cookie", "content-type"],
+      "answer": "expires"
+    },
+    {
+      "question": "There are ____ methods of implementing styling information to an HTML document.",
+      "options": ["four", "five", "three", "six"],
+      "answer": "three"
+    },
+    {
+      "question": "Internal CSS is also called ________ CSS.",
+      "options": ["embedded", "inline", "inbuilt", "external"],
+      "answer": "embedded"
+    },
+    {
+      "question": "The value of text-decoration property used for strikethrough marks:",
+      "options": ["line-through", "underline", "none", "overline"],
+      "answer": "line-through"
+    },
+    {
+      "question": "A class selector is used with the ______ character.",
+      "options": [". (period)", "* (asterisk)", "# (hash)", "© (copyright)"],
+      "answer": ". (period)"
+    },
+    {
+      "question": "There are ______ types of positioning in CSS.",
+      "options": ["one", "four", "six", "three"],
+      "answer": "four"
+    },
+    {
+      "question": "The ______ attribute of <audio> tag sets the audio to repeat.",
+      "options": ["loop", "controls", "src", "muted"],
+      "answer": "loop"
+    },
+    {
+      "question": "The ______ attribute specifies that the list items are in reverse order.",
+      "options": ["type", "reverse", "order"],
+      "answer": "reverse"
+    },
+    {
+      "question": "The ______ attribute specifies the starting number of an ordered list.",
+      "options": ["type", "reversed", "start", "name"],
+      "answer": "start"
+    },
+    {
+      "question": "_____ is the default value of the type attribute of <ul>.",
+      "options": ["disc", "square", "circle", "bullet"],
+      "answer": "disc"
+    },
+    {
+      "question": "The list within another list is called a ______ list.",
+      "options": ["listed", "tested", "none", "nested"],
+      "answer": "nested"
+    },
+    {
+      "question": "The ______ attribute of <audio> tag specifies the URL of the audio file.",
+      "options": ["muted", "loop", "src", "controls"],
+      "answer": "src"
+    },
+    {
+      "question": "The attribute for an image shown while the video is downloading.",
+      "options": ["poster", "url", "autoplay", "muted"],
+      "answer": "poster"
+    },
+    {
+      "question": "The <img> tag inserts an image on a web page.",
+      "options": ["<image>", "<img>", "<body>", "<head>"],
+      "answer": "<img>"
+    },
+    {
+      "question": "usemap attribute of <img> tag is used with a value preceded by a ____ symbol.",
+      "options": ["#", "@", "$", "."],
+      "answer": "#"
+    },
+    {
+      "question": "_________ are paid hosting servers for large websites.",
+      "options": ["free", "dedicated hosting", "fixed", "shared"],
+      "answer": "dedicated hosting"
+    },
+    {
+      "question": "________ is a set of instructions used to produce outputs.",
+      "options": ["design", "software", "program", "hardware"],
+      "answer": "program"
+    },
+    {
+      "question": "IoT helps to _______ human efforts.",
+      "options": ["remove", "reduce", "increase", "stop"],
+      "answer": "reduce"
+    },
+    {
+      "question": "In cloud services, all data is protected behind firewall.",
+      "options": ["public", "private", "secure", "hybrid"],
+      "answer": "private"
+    },
+    {
+      "question": "LTE stands for ___________.",
+      "options": ["Long Term Evolution", "Long Term Evolve", "Large Term Evolution", "Long Test Evolution"],
+      "answer": "Long Term Evolution"
+    },
+    {
+      "question": "Commerce is limited to business hours.",
+      "options": ["Traditional", "Digital", "Electronic", "E-governance"],
+      "answer": "Traditional"
+    },
+    {
+      "question": "In the ____ model, a business sells to customer.",
+      "options": ["C2B", "B2C", "B2B", "C2C"],
+      "answer": "B2C"
+    },
+    {
+      "question": "Online auction is an example of ______ model.",
+      "options": ["C2B", "B2C", "B2B", "C2C"],
+      "answer": "C2C"
+    },
+    {
+      "question": "_______ phase consists of order and delivery.",
+      "options": ["Presale", "Execution", "Settlement", "After sales"],
+      "answer": "Execution"
+    },
+    {
+      "question": "Social commerce involves social media.",
+      "options": ["Local", "Divisional", "National", "Social"],
+      "answer": "Social"
+    },
+    {
+      "question": "The ______ type of e-governance is Govt to Govt.",
+      "options": ["G2C", "G2B", "G2G", "G2E"],
+      "answer": "G2G"
+    },
+    {
+      "question": "PKI stands for __________.",
+      "options": ["Public Key Infrastructure", "Publish Key Certificate", "Personal Key Certificate", "Person Key Certificate"],
+      "answer": "Public Key Infrastructure"
+    },
+    {
+      "question": "____ phase consists of service and warranty.",
+      "options": ["Presale", "Execution", "Settlement", "After sales"],
+      "answer": "After sales"
+    },
+    {
+      "question": "_______ phase consists of search & negotiation.",
+      "options": ["Presale", "Execution", "Settlement", "After sales"],
+      "answer": "Presale"
+    },
+    {
+      "question": "_______ is of two types: symmetric & asymmetric.",
+      "options": ["Encryption", "Private key", "Public key", "Decryption"],
+      "answer": "Encryption"
+    },
+    {
+      "question": "License renewals & tax payment can be done using:",
+      "options": ["G2E", "G2G", "G2C", "G2B"],
+      "answer": "G2C"
+    },
+    {
+      "question": "HSN Stands for ________:",
+      "options": ["Harmonized Supply of Nomenclature", "Harmonized Service of Nomenclature", "Harmonized Sales of Nomenclature", "Harmonized System of Nomenclature"],
+      "answer": "Harmonized System of Nomenclature"
+    },
+    {
+      "question": "Invoice and Payment are included in _______ Phase of Trade Cycle",
+      "options": ["Presales", "Execution", "Settlement", "Execution"],
+      "answer": "Settlement"
+    },
+    {
+      "question": "Basic Unit of storing data in database is ______",
+      "options": ["Querry", "Table", "Form", "Report"],
+      "answer": "Table"
+    },
+    {
+      "question": "_____ module of ERP enables an enterprice to combine technology and business process to get integrated solution",
+      "options": ["Production planning", "HR", "G2Quality Management", "Manufacturing"],
+      "answer": "Manufacturing"
+    }
+  ]
+}

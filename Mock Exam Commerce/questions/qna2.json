@@ -1,0 +1,13 @@
+{
+  "questions": [
+    {
+      "question": "Write Html Program to create a form to accept Patient Name,his mobile no and Date of Birth. Keep all Fields Compulsory."
+    },
+    {
+      "question": "Write Html Program to create a form to accept Student Roll no, Unit test mark(max 25), Terminal Exam Marks(max 50), Include the name of the subject teacher and send the data to the server."
+    },
+    {
+      "question": "What is E-Governance? Explain its advantages."
+    }
+  ]
+}

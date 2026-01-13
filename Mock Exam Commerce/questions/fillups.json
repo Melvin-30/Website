@@ -1,0 +1,208 @@
+{
+    "questions": [
+        {
+            "question": "The ______ tag is used to create a form.",
+            "answer": "form"
+        },
+        {
+            "question": "CSS stands for _________.",
+            "answer": "Cascading Style Sheets"
+        },
+        {
+            "question": "The _______ attribute of <input> tag specifies that an input field is required.",
+            "answer": "required"
+        },
+        {
+            "question": "The _____ tag describes aspects of the contents of a web page.",
+            "answer": "meta"
+        },
+        {
+            "question": "CSS stands for",
+            "answer": "Cascading Style Sheets"
+        },
+        {
+            "question": "External style sheet file extension is",
+            "answer": ".css"
+        },
+        {
+            "question": "The _____ selector is used as a wildcard character.",
+            "answer": "*"
+        },
+        {
+            "question": "The ______ positioning is the default position for HTML elements.",
+            "answer": "static"
+        },
+        {
+            "question": "The _______ tag is used to define an ordered list.",
+            "answer": "ol"
+        },
+        {
+            "question": "The _______ tag is used to define an unordered list.",
+            "answer": "ul"
+        },
+        {
+            "question": "To define a definition list, the ________ tag is used.",
+            "answer": "dl"
+        },
+        {
+            "question": "MPEG stands for",
+            "answer": "Moving Picture Experts Group"
+        },
+        {
+            "question": "The ______ attribute of <audio> tag sets the audio to start over again.",
+            "answer": "loop"
+        },
+        {
+            "question": "An image with multiple hyperlinks is called a _________.",
+            "answer": "image map"
+        },
+        {
+            "question": "The clickable region of an image map is called _________.",
+            "answer": "hotspot"
+        },
+        {
+            "question": "To create a client-side image map, the ______ attribute of <img> tag is used.",
+            "answer": "usemap"
+        },
+        {
+            "question": "The _______ element creates an inline frame.",
+            "answer": "iframe"
+        },
+        {
+            "question": "Website is made available on the internet with the help of _________.",
+            "answer": "web hosting"
+        },
+        {
+            "question": "_____________ will not be displayed on the web page.",
+            "answer": "comments"
+        },
+        {
+            "question": "The ___________ attribute of <input> tag is used to identify the HTML element uniquely.",
+            "answer": "id"
+        },
+        {
+            "question": "SEO stands for ________.",
+            "answer": "Search Engine Optimization"
+        },
+        {
+            "question": "__________ is a subset of search engine marketing.",
+            "answer": "SEO"
+        },
+        {
+            "question": "__________ SEO techniques that search engines recommend as a part of good design.",
+            "answer": "White hat"
+        },
+        {
+            "question": "Title contents should be up to __________ characters.",
+            "answer": "60"
+        },
+        {
+            "question": "The meta description should be between 70 and __ characters.",
+            "answer": "160"
+        },
+        {
+            "question": "_______ is a powerful tool in promoting a website.",
+            "answer": "Social media"
+        },
+        {
+            "question": "SMO stands for __________.",
+            "answer": "Social Media Optimization"
+        },
+        {
+            "question": "An ________ helps to find out what can be done to improve ranking on search engines.",
+            "answer": "SEO audit"
+        },
+        {
+            "question": "_________ backlinks are the links on the website that take the user to another site.",
+            "answer": "External"
+        },
+        {
+            "question": "The ______ file tells the search engine which pages to exclude from indexing.",
+            "answer": "robots.txt"
+        },
+        {
+            "question": "IoT stands for __________.",
+            "answer": "Internet of Things"
+        },
+        {
+            "question": "SAAS stands for __________.",
+            "answer": "Software as a Service"
+        },
+        {
+            "question": "IAAS stands for _________.",
+            "answer": "Infrastructure as a Service"
+        },
+        {
+            "question": "PAAS stands for __________.",
+            "answer": "Platform as a Service"
+        },
+        {
+            "question": "GitHub is an example of __________.",
+            "answer": "Version control platform"
+        },
+        {
+            "question": "5G is the next generation of __________ communication.",
+            "answer": "wireless"
+        },
+        {
+            "question": "LTE stands for __________.",
+            "answer": "Long Term Evolution"
+        },
+        {
+            "question": "Amazon is the _________ Service provider.",
+            "answer": "Cloud"
+        },
+        {
+            "question": "E-commerce scope is ____________.",
+            "answer": "global"
+        },
+        {
+            "question": "EDI is a ____________ exchange of information.",
+            "answer": "computer-to-computer"
+        },
+        {
+            "question": "E-Wallet is a type of _________ account.",
+            "answer": "prepaid"
+        },
+        {
+            "question": "________ converts plain text into ciphertext.",
+            "answer": "Encryption"
+        },
+        {
+            "question": "A_________ is also known as an electronic signature.",
+            "answer": "digital signature"
+        },
+        {
+            "question": "A _______ is an electronic password used for secure data exchange.",
+            "answer": "digital certificate"
+        },
+        {
+            "question": "The ________ phase consists of Order and Delivery.",
+            "answer": "transaction"
+        },
+        {
+            "question": "G2G stands for _____ to _____.",
+            "answer": "Government to Government"
+        },
+        {
+            "question": "Digital Marketing occur electrically and _________",
+            "answer": "Online"
+        },
+        {
+            "question": "A _____ is prenumbered accounting document used for recording daily transaction.",
+            "answer": "Voucher"
+        },
+        {
+            "question": "_______ bar is present below title bar.",
+            "answer": "Menu bar"
+        },
+        {
+            "question": "______ module contain business rule to manage the entire production process.",
+            "answer": "Manufacturing"
+        },
+        {
+            "question": "Without payment one can rank website doing SEO process called as _______ search.",
+            "answer": "Organic"
+        }
+    ]
+}
