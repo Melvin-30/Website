@@ -5,7 +5,7 @@ Welcome to the ultimate resource hub for **Maharashtra State Board 12th Standard
 ---
 
 ## 🌐 Live Website
-**🔗 [Paste Live Website URL Here]**
+**🔗 [12thITSOP](https://12thitsop.netlify.app/)**
 
 ---
 
