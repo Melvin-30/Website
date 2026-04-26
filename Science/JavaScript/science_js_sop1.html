@@ -10,16 +10,20 @@
 
 <body>
     <header>
-        <h1>SOP 1: Write javascript code to change 7 colours of a document</h1>
-        <p>Std 12th IT Subject (Science Stream)</p>
+        <h1>Science Stream Practicals</h1>
+        <p>Std 12th IT Subject - Skill Oriented Practical (Science Stream)</p>
     </header>
 
     <div class="container">
         <h2>SOP 1: Write javascript code to change 7 colours of a document</h2>
-        <p>Create a web page in HTML having a white background and one Button Object. Write code using JavaScript such that when the mouse is placed over the first button object without clicking, the color of the background of the page should change after every seconds. There should be at least 7 different and visibly distinct background colors excluding the default color.<br>
-Create another web page using JavaScript where the background color changes automatically after every seconds. This event must be triggered automatically after the page gets loaded in the browser. There should be at least 7 different and visibly distinct background colors.
-        </p>
-        <h3>Program Code (index.html - Main Page)</h3>
+        <p>Create a web page in HTML having a white background and one Button Object. Write code using JavaScript such
+            that when the mouse is placed over the first button object without clicking, the color of the background of
+            the page should change after every seconds. There should be at least 7 different and visibly distinct
+            background colors excluding the default color.<br>
+            Create another web page using JavaScript where the background color changes automatically after every
+            seconds. This event must be triggered automatically after the page gets loaded in the browser. There should
+            be at least 7 different and visibly distinct background colors.</p>
+        <h3><span class="code-keyword">Source Code:</span> index.html</h3>
         <pre id="htmlCode1">
 &lt;html&gt;
 &lt;head&gt;
@@ -66,7 +70,7 @@ Create another web page using JavaScript where the background color changes auto
 &lt;/html&gt;
     </pre>
 
-        <h3>Program Code (page2.html - Second Page)</h3>
+        <h3><span class="code-keyword">Source Code:</span> page2.html</h3>
         <pre id="htmlCode2">
 &lt;html&gt;
 &lt;head&gt;
@@ -114,25 +118,25 @@ Create another web page using JavaScript where the background color changes auto
             <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
             <button class="preview-button" onclick="showPreview('page2')">Preview page2.html</button>
             <div class="dropdown">
-                <button class="download-button">Download</button>
+                <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a
-                        href="https://drive.google.com/file/d/1-AI7dMFWPuguxCEjGiNDW-Qb_92URz2D/view?usp=sharing">Code</a>
-                    <a
-                        href="https://drive.google.com/file/d/1q47036pznNodVEvEXwYpnsNvG6Juio2e/view?usp=sharing">Output</a>
+                    <a href="https://drive.google.com/file/d/1-AI7dMFWPuguxCEjGiNDW-Qb_92URz2D/view?usp=sharing"
+                        target="_blank">Download Source Code</a>
+                    <a href="https://drive.google.com/file/d/1q47036pznNodVEvEXwYpnsNvG6Juio2e/view?usp=sharing"
+                        target="_blank">Download Output PDF</a>
                 </div>
             </div>
         </div>
 
 
         <div class="live-preview-container" id="previewContainer">
-            <h3 id="previewTitle" >Live Preview</h3>
+            <h3 id="previewTitle">Live Preview</h3>
             <iframe id="previewIframe" class="live-preview-iframe"></iframe>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+        <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
     </footer>
 
     <script>
@@ -147,13 +151,17 @@ Create another web page using JavaScript where the background color changes auto
             let htmlCode = codeElement.textContent;
 
             // Decode HTML entities
-            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 
             // Create full HTML
             const fullHTML = `
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Preview</title></head>
+<head><meta charset="UTF-8"><title>Preview</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.5; }
+        iframe { border: none; }
+    </style></head>
 <body>
 ${htmlCode}
 </body>
@@ -168,6 +176,7 @@ ${htmlCode}
             // Show preview
             previewTitle.textContent = `Live Preview: ${page}.html`;
             previewContainer.style.display = 'block';
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             // Setup internal navigation
             previewIframe.onload = () => {

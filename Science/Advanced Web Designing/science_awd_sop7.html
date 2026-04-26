@@ -4,24 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOP 7: Navigation on an image using Client side image Mapping in web page 
-using html 5 - Commerce IT</title>
+    <title>SOP 7: Navigation on an image using Client side image Mapping in web page
+        using html 5 - Commerce IT</title>
     <link rel="stylesheet" href="SOP page Style.css">
 </head>
 
 <body>
     <header>
-        <h1>SOP 7: Navigation on an image using Client side image Mapping in web page 
-using html 5</h1>
-        <p>Std 12th IT Subject (Commerce Stream)</p>
+        <h1>Science Stream Practicals</h1>
+        <p>Std 12th IT Subject (Science Stream)</p>
     </header>
 
     <div class="container">
-        <h2>SOP 7: Navigation on an image using Client side image Mapping in web page 
-using html 5</h2>
-        <p>Create a webpage named imagemap. html with an inserted image having jpeg, png or gif extension. Create 3 different shapes (like rectangle, circle and polygon) which do not overlap. Note down the co-ordinates making use of Ms-Paint/GIMP/IrfanView/Pinta. Each shape should be mapped or navigate with a different URL, one of the clickable area should navigate to a local webpage.</p>
+        <h2>SOP 7: Navigation on an image using Client side image Mapping in web page
+            using html 5</h2>
+        <p>Create a webpage named imagemap. html with an inserted image having jpeg, png or gif extension. Create 3
+            different shapes (like rectangle, circle and polygon) which do not overlap. Note down the co-ordinates
+            making use of Ms-Paint/GIMP/IrfanView/Pinta. Each shape should be mapped or navigate with a different URL,
+            one of the clickable area should navigate to a local webpage.</p>
 
-        <h3>Program Code (index.html - Main Page)</h3>
+        <h3><span class="code-keyword">Source Code:</span> index.html</h3>
         <pre id="htmlCode1">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -42,12 +44,12 @@ using html 5</h2>
         <div class="preview-buttons">
             <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
             <div class="dropdown">
-                <button class="download-button">Download</button>
+                <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a
-                        href="https://drive.google.com/file/d/1WHZB_eMkevejUzYbABBXKNtZIOy9uIX_/view?usp=sharing">Code</a>
-                    <a
-                        href="https://drive.google.com/file/d/1sBZME7vbNZP2ivTSbPlyRJy_dxhqo9ge/view?usp=sharing">Output</a>
+                    <a href="https://drive.google.com/file/d/1WHZB_eMkevejUzYbABBXKNtZIOy9uIX_/view?usp=sharing"
+                        target="_blank">Download Source Code</a>
+                    <a href="https://drive.google.com/file/d/1sBZME7vbNZP2ivTSbPlyRJy_dxhqo9ge/view?usp=sharing"
+                        target="_blank">Download Output PDF</a>
                 </div>
             </div>
         </div>
@@ -59,7 +61,7 @@ using html 5</h2>
     </div>
 
     <footer>
-        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+        <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
     </footer>
 
     <script>
@@ -73,7 +75,7 @@ using html 5</h2>
             let htmlCode = codeElement.textContent;
 
             // Decode HTML entities
-            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 
             // Create complete HTML for iframe
             const fullHTML = `
@@ -82,6 +84,10 @@ using html 5</h2>
 <head>
 <meta charset="UTF-8">
 <title>Preview - ${page}.html</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.5; }
+        iframe { border: none; }
+    </style>
 </head>
 <body>
 ${htmlCode}
@@ -95,6 +101,7 @@ ${htmlCode}
 
             previewTitle.textContent = `Live Preview: ${page}.html`;
             previewContainer.style.display = 'block';
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             // Handle internal links (not used here but ready)
             previewIframe.onload = () => {

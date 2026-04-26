@@ -4,47 +4,48 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create JavaScript program which computes the average marks of students  - Science IT</title>
+    <title>Create JavaScript program which computes the average marks of students - Science IT</title>
     <link rel="stylesheet" href="SOP page Style.css">
 </head>
 
 <body>
     <header>
-        <h1>SOP 6: Create JavaScript program which computes the average marks of students</h1>
-        <p>Std 12th IT Subject (Science Stream)</p>
+        <h1>Science Stream Practicals</h1>
+        <p>Std 12th IT Subject - Skill Oriented Practical (Science Stream)</p>
     </header>
 
     <div class="container">
-        <h2>SOP 6: Create JavaScript program which computes the average marks of students. Accept six subject marks of student from user. Calculate average marks of student which is used to determine the corresponding grades.</h2>
-        <p> 
-            <table style="margin-left: 5%;">
-                <tr>
-                    <th>Range </th>
-                    <th>Grade</th>
-                </tr>
-                <tr>
-                    <td>35 to 60 </td>
-                    <td>F</td>
-                </tr>
-                <tr>
-                    <td>61 to 70 </td>
-                    <td>D</td>
-                </tr>
-                <tr>
-                    <td>71 to 80 </td>
-                    <td>C</td>
-                </tr>
-                <tr>
-                    <td>81 to 90 </td>
-                    <td>B</td>
-                </tr>
-                <tr>
-                    <td>91 to 100 </td>
-                    <td>A</td>
-                </tr>
-            </table>                 
+        <h2>SOP 6: Create JavaScript program which computes the average marks of students</h2>
+        <p>Accept six subject marks of student from user. Calculate average marks of student which is used to determine
+            the corresponding grades.
+        <table style="margin-left: 5%;">
+            <tr>
+                <th>Range </th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>35 to 60 </td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>61 to 70 </td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td>71 to 80 </td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>81 to 90 </td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td>91 to 100 </td>
+                <td>A</td>
+            </tr>
+        </table>
         </p>
-        <h3>Program Code (index.html - Main Page)</h3>
+        <h3><span class="code-keyword">Source Code:</span> index.html</h3>
         <pre id="htmlCode1">
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -99,12 +100,12 @@
         <div class="preview-buttons">
             <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
             <div class="dropdown">
-                <button class="download-button">Download</button>
+                <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a
-                        href="https://drive.google.com/file/d/16Mhur-8TeWxUaVTUoL6DFtFVXU1pev9G/view?usp=sharing">Code</a>
-                    <a
-                        href="https://drive.google.com/file/d/1Ezhk6C3GNuG0ySkf95YffGJP8fZryF0b/view?usp=sharing">Output</a>
+                    <a href="https://drive.google.com/file/d/16Mhur-8TeWxUaVTUoL6DFtFVXU1pev9G/view?usp=sharing"
+                        target="_blank">Download Source Code</a>
+                    <a href="https://drive.google.com/file/d/1Ezhk6C3GNuG0ySkf95YffGJP8fZryF0b/view?usp=sharing"
+                        target="_blank">Download Output PDF</a>
                 </div>
             </div>
         </div>
@@ -117,7 +118,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+        <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
     </footer>
 
     <script>
@@ -132,13 +133,17 @@
             let htmlCode = codeElement.textContent;
 
             // Decode HTML entities
-            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 
             // Create full HTML
             const fullHTML = `
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Preview</title></head>
+<head><meta charset="UTF-8"><title>Preview</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.5; }
+        iframe { border: none; }
+    </style></head>
 <body>
 ${htmlCode}
 </body>
@@ -153,6 +158,7 @@ ${htmlCode}
             // Show preview
             previewTitle.textContent = `Live Preview: ${page}.html`;
             previewContainer.style.display = 'block';
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             // Setup internal navigation
             previewIframe.onload = () => {

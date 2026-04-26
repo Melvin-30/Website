@@ -10,23 +10,30 @@
 
 <body>
     <header>
-        <h1>SOP 2: Design Webpage Layout using HTML and CSS</h1>
-        <p>Std 12th IT Subject (Commerce Stream)</p>
+        <h1>Commerce Stream Practicals</h1>
+        <p>Std 12th IT Subject - Skill Oriented Practical (Commerce Stream)</p>
     </header>
 
     <div class="container">
         <h2>SOP 2: Design Webpage Layout using HTML and CSS</h2>
-        <p>The top section will display the heading , ‘Tourist places’ in header. The
-            section on the left has list of cities. The right hand side displays tourist places
-            of any one of the city.<br>Use Inline style sheet in the top section to display background color for the
-            text ‘Tourist places’. Use internal stylesheet for the left and right section
-            with background color and font styles.</p>
+        <p>
+        <ul>
+            <li>top section will display the heading, ‘Tourist places’ in
+                header. The section on the left has list of cities.</li>
+            <li>The right hand side displays tourist places
+                of any one of the city.</li>
+            <li>Use Inline style sheet in the top section to display background color for the
+                text ‘Tourist places’.</li>
+            <li>Use internal stylesheet for the left and right section
+                with background color and font styles.</li>
+        </ul>
+        </p>
 
         <center>
             <img class="QuestionImage" src="SOP2Q.png" alt="SOP Question Image" />
         </center>
 
-        <h3>Program Code (index.html - Main Page)</h3>
+        <h3><span class="code-keyword">Source Code:</span> index.html</h3>
         <pre id="htmlCode1">
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -86,12 +93,12 @@
         <div class="preview-buttons">
             <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
             <div class="dropdown">
-                <button class="download-button">Download</button>
+                <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a
-                        href="https://drive.google.com/file/d/1PR7KJJLo-7t6dLUunhL1XSsjqD2IcQUD/view?usp=sharing">Code</a>
-                    <a
-                        href="https://drive.google.com/file/d/1XbL97KBOkptO3j8XfoRrLB1DPYyKmWYQ/view?usp=sharing">Output</a>
+                    <a href="https://drive.google.com/file/d/1PR7KJJLo-7t6dLUunhL1XSsjqD2IcQUD/view?usp=sharing"
+                        target="_blank">Download Source Code</a>
+                    <a href="https://drive.google.com/file/d/1XbL97KBOkptO3j8XfoRrLB1DPYyKmWYQ/view?usp=sharing"
+                        target="_blank">Download Output PDF</a>
                 </div>
             </div>
         </div>
@@ -103,7 +110,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+        <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
     </footer>
 
     <script>
@@ -117,7 +124,7 @@
             let htmlCode = codeElement.textContent;
 
             // Decode HTML entities
-            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 
             // Create complete HTML for iframe
             const fullHTML = `
@@ -126,6 +133,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Preview - ${page}.html</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.5; }
+        iframe { border: none; }
+    </style>
 </head>
 <body>
 ${htmlCode}
@@ -139,6 +150,7 @@ ${htmlCode}
 
             previewTitle.textContent = `Live Preview: ${page}.html`;
             previewContainer.style.display = 'block';
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             // Handle internal links (not used here but ready)
             previewIframe.onload = () => {

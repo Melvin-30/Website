@@ -10,15 +10,15 @@
 
 <body>
     <header>
-        <h1>SOP 7: Write a JavaScript function to get difference between two dates in days.</h1>
-        <p>Std 12th IT Subject (Science Stream)</p>
+        <h1>Science Stream Practicals</h1>
+        <p>Std 12th IT Subject - Skill Oriented Practical (Science Stream)</p>
     </header>
 
     <div class="container">
-        <h2>SOP 7: Write a JavaScript function to get difference between two dates in days. Create a page in HTML that
-            contains input box to accept date from user. The input boxes should be used by users to enter their date of
-            birth in the format dd-mm-yyyy. Do not make use of any dropdown boxes. </h2>
-        <h3>Program Code (index.html - Main Page)</h3>
+        <h2>SOP 7: Write a JavaScript function to get difference between two dates in days.</h2>
+        <p>Create a page in HTML that contains input box to accept date from user. The input boxes should be used by
+            users to enter their date of birth in the format dd-mm-yyyy. Do not make use of any dropdown boxes.</p>
+        <h3><span class="code-keyword">Source Code:</span> index.html</h3>
         <pre id="htmlCode1">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -57,7 +57,7 @@
         <div class="preview-buttons">
             <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
             <div class="dropdown">
-                <button class="download-button">Download</button>
+                <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
                     <a href="">Code</a>
                     <a href="">Output</a>
@@ -73,7 +73,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+        <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
     </footer>
 
     <script>
@@ -88,13 +88,17 @@
             let htmlCode = codeElement.textContent;
 
             // Decode HTML entities
-            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 
             // Create full HTML
             const fullHTML = `
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Preview</title></head>
+<head><meta charset="UTF-8"><title>Preview</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.5; }
+        iframe { border: none; }
+    </style></head>
 <body>
 ${htmlCode}
 </body>
@@ -109,6 +113,7 @@ ${htmlCode}
             // Show preview
             previewTitle.textContent = `Live Preview: ${page}.html`;
             previewContainer.style.display = 'block';
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             // Setup internal navigation
             previewIframe.onload = () => {

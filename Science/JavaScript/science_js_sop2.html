@@ -4,30 +4,33 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create javascript program for the form vaildations  - Science IT</title>
+    <title>Create javascript program for the form vaildations - Science IT</title>
     <link rel="stylesheet" href="SOP page Style.css">
 </head>
 
 <body>
     <header>
-        <h1>SOP 2: Create javascript program for the form vaildations  </h1>
-        <p>Std 12th IT Subject (Science Stream)</p>
+        <h1>Science Stream Practicals</h1>
+        <p>Std 12th IT Subject - Skill Oriented Practical (Science Stream)</p>
     </header>
 
     <div class="container">
-        <h2>SOP 2: Create javascript program for the form vaildations </h2>
+        <h2>SOP 2: Create javascript program for the form vaildations</h2>
         <p>Create JavaScript program for the following form validations. Make
             use of HTML5 properties to do the following validations :
         <ol>
             <li>Name, address, contact number and email are required fields of the form.</li>
-            <li>Address field should show the hint value which will disappear when field gets focus or key press event.</li>
+            <li>Address field should show the hint value which will disappear when field gets focus or key press event.
+            </li>
             <li>Telephone number should be maximum 10 digit number only.</li>
-            <li>Email field should contain valid email address, @ should appear only once and not at the beginning or at end. It must contain at least one dot(.).</li>
-            <li>Make use of pattern attribute for email to accept lowercase, uppercase alphabets, digits and specified symbols.</li>
+            <li>Email field should contain valid email address, @ should appear only once and not at the beginning or at
+                end. It must contain at least one dot(.).</li>
+            <li>Make use of pattern attribute for email to accept lowercase, uppercase alphabets, digits and specified
+                symbols.</li>
         </ol>
         </p>
         <center><img class="QuestionImage" src="Form.png" alt="Form"></center>
-        <h3>Program Code (index.html - Main Page)</h3>
+        <h3><span class="code-keyword">Source Code:</span> index.html</h3>
         <pre id="htmlCode1">
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -59,12 +62,12 @@
         <div class="preview-buttons">
             <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
             <div class="dropdown">
-                <button class="download-button">Download</button>
+                <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a
-                        href="https://drive.google.com/file/d/17EkTwsptbk53WGDVPviG9uvUEIP0SsU4/view?usp=sharingg">Code</a>
-                    <a
-                        href="https://drive.google.com/file/d/1uAuPIdN7sAWIao0P_Te_QWWqLb6KEtFq/view?usp=sharing">Output</a>
+                    <a href="https://drive.google.com/file/d/17EkTwsptbk53WGDVPviG9uvUEIP0SsU4/view?usp=sharingg"
+                        target="_blank">Download Source Code</a>
+                    <a href="https://drive.google.com/file/d/1uAuPIdN7sAWIao0P_Te_QWWqLb6KEtFq/view?usp=sharing"
+                        target="_blank">Download Output PDF</a>
                 </div>
             </div>
         </div>
@@ -77,7 +80,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+        <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
     </footer>
 
     <script>
@@ -92,13 +95,17 @@
             let htmlCode = codeElement.textContent;
 
             // Decode HTML entities
-            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 
             // Create full HTML
             const fullHTML = `
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Preview</title></head>
+<head><meta charset="UTF-8"><title>Preview</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.5; }
+        iframe { border: none; }
+    </style></head>
 <body>
 ${htmlCode}
 </body>
@@ -113,6 +120,7 @@ ${htmlCode}
             // Show preview
             previewTitle.textContent = `Live Preview: ${page}.html`;
             previewContainer.style.display = 'block';
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             // Setup internal navigation
             previewIframe.onload = () => {

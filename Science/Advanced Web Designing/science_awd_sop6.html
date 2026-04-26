@@ -10,21 +10,24 @@
 
 <body>
     <header>
-        <h1>SOP 6: Use of Video on web pages using HTML5</h1>
-        <p>Std 12th IT Subject (Commerce Stream)</p>
+        <h1>Science Stream Practicals</h1>
+        <p>Std 12th IT Subject (Science Stream)</p>
     </header>
 
     <div class="container">
         <h2>SOP 6: Use of Video on web pages using HTML5</h2>
-        <p> Create a webpage named video.HTML to display a video file on web page 
-and plays automatically. The dimension of video area should be 150 * 150 
-pixels.<br><br>
- Create another webpage which video provide multiple source file formats 
-for the same video file that plays a video with controls. The dimension of 
-video area should be 300*300 pixels. The code must incorporate the 
-list of video files formats (like webM, MP4 or ogg etc).
+        <p>
+        <ul>
+            <li>Create a webpage named video.HTML to display a video file on web page
+                and plays automatically. The dimension of video area should be 150 * 150
+                pixels.</li>
+            <li>Create another webpage which video provide multiple source file formats
+                for the same video file that plays a video with controls. The dimension of
+                video area should be 300*300 pixels. The code must incorporate the
+                list of video files formats (like webM, MP4 or ogg etc).</li>
+        </ul>
         </p>
-        <h3>Program Code (Video.html - Main Page)</h3>
+        <h3><span class="code-keyword">Source Code:</span> Video.html</h3>
         <pre id="htmlCode1">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -40,7 +43,7 @@ list of video files formats (like webM, MP4 or ogg etc).
 &lt;/html&gt;
     </pre>
 
-        <h3>Program Code (Video1.html - Second Page)</h3>
+        <h3><span class="code-keyword">Source Code:</span> Video1.html</h3>
         <pre id="htmlCode2">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -68,25 +71,25 @@ list of video files formats (like webM, MP4 or ogg etc).
             <button class="preview-button" onclick="showPreview('Video')">Preview Video.html</button>
             <button class="preview-button" onclick="showPreview('Video1')">Preview Video1.html</button>
             <div class="dropdown">
-                <button class="download-button">Download</button>
+                <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a
-                        href="https://drive.google.com/file/d/167aI25xfxlAMqb0u5bOkSlT-KMp-gsbt/view?usp=sharing">Code</a>
-                    <a
-                        href="https://drive.google.com/file/d/1A2L5mYYYNWinaZyiuIcDnokn3Nw-PTGS/view?usp=sharing">Output</a>
+                    <a href="https://drive.google.com/file/d/167aI25xfxlAMqb0u5bOkSlT-KMp-gsbt/view?usp=sharing"
+                        target="_blank">Download Source Code</a>
+                    <a href="https://drive.google.com/file/d/1A2L5mYYYNWinaZyiuIcDnokn3Nw-PTGS/view?usp=sharing"
+                        target="_blank">Download Output PDF</a>
                 </div>
             </div>
         </div>
 
 
         <div class="live-preview-container" id="previewContainer">
-            <h3 id="previewTitle" >Live Preview</h3>
+            <h3 id="previewTitle">Live Preview</h3>
             <iframe id="previewIframe" class="live-preview-iframe"></iframe>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+        <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
     </footer>
 
     <script>
@@ -101,13 +104,17 @@ list of video files formats (like webM, MP4 or ogg etc).
             let htmlCode = codeElement.textContent;
 
             // Decode HTML entities
-            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 
             // Create full HTML
             const fullHTML = `
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Preview</title></head>
+<head><meta charset="UTF-8"><title>Preview</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.5; }
+        iframe { border: none; }
+    </style></head>
 <body>
 ${htmlCode}
 </body>
@@ -122,6 +129,7 @@ ${htmlCode}
             // Show preview
             previewTitle.textContent = `Live Preview: ${page}.html`;
             previewContainer.style.display = 'block';
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             // Setup internal navigation
             previewIframe.onload = () => {

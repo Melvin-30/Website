@@ -10,31 +10,33 @@
 
 <body>
   <header>
-    <h1>SOP 3: Create Interlinked Webpages with External Stylesheet</h1>
-    <p>Std 12th IT Subject (Science Stream)</p>
+    <h1>Science Stream Practicals</h1>
+    <p>Std 12th IT Subject - Skill Oriented Practical (Science Stream)</p>
   </header>
 
   <div class="container">
-    <h2>SOP 3: Create Interlinked Webpages with External Stylesheet  </h2>
+    <h2>SOP 3: Create Interlinked Webpages with External Stylesheet</h2>
     <p>
-      The first webpage will accept the name of the traveller, date of travel ,
-      telephone number . It also has submit button as an image .
-      The second webpage has information about the name of transporter, time ,
-      seat no and destination displayed one below the other in the form of unordered
-      list as
-    <ul type="none">
-      <li>Name of transporter – Air Asia</li>
-      <li>Time - 09:30 am</li>
-      <li>Seat no – B39</li>
-      <li>Destination - Delhi</li>
+    <ul>
+      <li>The first webpage will accept the name of the traveller, date of travel ,
+        telephone number . It also has submit button as an image .</li>
+      <li>The second webpage has information about the name of transporter, time ,
+        seat no and destination displayed one below the other in the form of unordered
+        list as</li>
+      <ul type="none">
+        <li>Name of transporter – Air Asia</li>
+        <li>Time - 09:30 am</li>
+        <li>Seat no – B39</li>
+        <li>Destination - Delhi</li>
 
+      </ul>
+
+      <li>Both pages should be interlinked. Create external stylesheet with relevant
+        tags.</li>
     </ul>
-
-    Both pages should be interlinked. Create external stylesheet with relevant
-    tags.
     </p>
 
-    <h3>Program Code (Form.html - Main Page)</h3>
+    <h3><span class="code-keyword">Source Code:</span> Form.html</h3>
     <pre id="htmlCode1">
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -55,7 +57,7 @@
 &lt;/html&gt;
     </pre>
 
-    <h3>Program Code (Details.html - Second Page)</h3>
+    <h3><span class="code-keyword">Source Code:</span> Details.html</h3>
     <pre id="htmlCode2">
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -90,10 +92,12 @@ h1 {
       <button class="preview-button" onclick="showPreview('Form')">Preview Form.html</button>
       <button class="preview-button" onclick="showPreview('Details')">Preview Details.html</button>
       <div class="dropdown">
-        <button class="download-button">Download</button>
+        <button class="download-button">Download Materials</button>
         <div class="dropdown-content">
-          <a href="https://drive.google.com/file/d/1-U1mEWLnRppzyCseUgFaEt91cPuyv_ed/view?usp=sharing">Code</a>
-          <a href="https://drive.google.com/file/d/1KLcX23eWtmmySgPDmq6B7n1QTHbRx_2m/view?usp=sharing">Output</a>
+          <a href="https://drive.google.com/file/d/1-U1mEWLnRppzyCseUgFaEt91cPuyv_ed/view?usp=sharing"
+            target="_blank">Download Source Code</a>
+          <a href="https://drive.google.com/file/d/1KLcX23eWtmmySgPDmq6B7n1QTHbRx_2m/view?usp=sharing"
+            target="_blank">Download Output PDF</a>
         </div>
       </div>
     </div>
@@ -105,7 +109,7 @@ h1 {
   </div>
 
   <footer>
-    <p>&copy; 2025 Std 12th IT SOPs. All rights reserved.</p>
+    <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
   </footer>
 
   <script>
@@ -117,7 +121,7 @@ h1 {
 
       // Get the code content
       const codeElement = document.getElementById(codeId);
-      let htmlCode = codeElement.textContent.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+      let htmlCode = codeElement.textContent.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 
       // Get the CSS content
       const cssCode = document.getElementById('stylesheet').textContent;
@@ -148,6 +152,7 @@ ${htmlCode}
       // Show preview
       previewTitle.textContent = `Live Preview: ${page}.html`;
       previewContainer.style.display = 'block';
+      previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
       // Enable navigation within iframe
       previewIframe.onload = () => {

@@ -2,437 +2,314 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Std 12th IT Subject SOPs (Maharashtra Board)</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
-    rel="stylesheet" />
-
-  <style>
-    :root {
-      --primary: #2563eb;
-      --secondary: #1e40af;
-      --accent: #3b82f6;
-      --bg-light: #f9fafb;
-      --bg-card: #ffffff;
-      --text-dark: #1f2937;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-      --radius: 12px;
-      --transition: all 0.3s ease;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Inter", sans-serif;
-      background: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #fff;
-      text-align: center;
-      padding: 4rem 1rem 3rem;
-      box-shadow: var(--shadow);
-    }
-
-    header h1 {
-      font-family: "Poppins", sans-serif;
-      font-size: 2.75rem;
-      margin: 0 0 0.5rem;
-    }
-
-    header p {
-      font-size: 1.125rem;
-      opacity: 0.9;
-      margin: 0;
-    }
-
-    /* Navigation Bar */
-    nav {
-      background: #fff;
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0.75rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-link,
-    .dropdown-btn {
-      background: none;
-      border: none;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-dark);
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius);
-      transition: var(--transition);
-    }
-
-    .nav-link:hover,
-    .dropdown-btn:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    /* Dropdown Container */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    /* Dropdown Content */
-    .dropdown-content {
-      position: absolute;
-      top: calc(100% + 0.5rem);
-      left: 0;
-      background-color: var(--bg-card);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      min-width: 220px;
-      z-index: 10;
-
-      opacity: 0;
-      transform: translateY(10px);
-      visibility: hidden;
-      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    }
-
-    /* Dropdown links styling */
-    .dropdown-content a {
-      display: block;
-      padding: 0.6rem 1rem;
-      color: var(--text-dark);
-      text-decoration: none;
-      transition: var(--transition);
-      font-size: 0.95rem;
-      border-radius: 6px;
-    }
-
-    .dropdown-content a:hover {
-      background: var(--bg-light);
-      color: var(--primary);
-    }
-
-    /* Dropdown arrow */
-    .dropdown-btn::after {
-      content: " ▾";
-      font-size: 0.75rem;
-    }
-
-    /* Show dropdown when active */
-    .dropdown.active .dropdown-content {
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
-    }
-
-    /* Card Layout */
-    .container {
-      max-width: 1200px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
-    h2.section-heading {
-      font-family: "Poppins", sans-serif;
-      font-size: 2rem;
-      color: var(--primary);
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .info-text {
-      text-align: center;
-      margin-bottom: 3rem;
-      font-size: 1rem;
-    }
-
-    .card {
-      background: linear-gradient(145deg, #ffffff, #f0f4ff);
-      border-radius: var(--radius);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-      padding: 1.8rem 1.5rem;
-      transition: transform 0.35s ease, box-shadow 0.35s ease,
-        background 0.35s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: rgba(59, 130, 246, 0.05);
-      transform: rotate(25deg);
-      transition: all 0.5s ease;
-    }
-
-    .card:hover::before {
-      top: -20%;
-      left: -20%;
-    }
-
-    .card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-      background: linear-gradient(145deg, #e0ebff, #ffffff);
-    }
-
-    .card h3 {
-      font-size: 1.4rem;
-      color: var(--secondary);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      position: relative;
-    }
-
-    .card h3::after {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 3px;
-      background: var(--accent);
-      margin-top: 6px;
-      border-radius: 3px;
-    }
-
-    .card a {
-      display: block;
-      text-decoration: none;
-      color: var(--text-dark);
-      padding: 0.6rem 0;
-      border-radius: 6px;
-      transition: all 0.25s ease;
-      font-size: 0.95rem;
-      position: relative;
-    }
-
-    .card a::before {
-      content: "→";
-      display: inline-block;
-      margin-right: 6px;
-      color: var(--accent);
-      opacity: 0;
-      transform: translateX(-5px);
-      transition: all 0.25s ease;
-    }
-
-    .card a:hover::before {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .card a:hover {
-      color: var(--primary);
-      padding-left: 0.8rem;
-    }
-
-    footer {
-      background: var(--bg-card);
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #555;
-      font-size: 0.95rem;
-      border-top: 1px solid #e5e7eb;
-      margin-top: 4rem;
-    }
-
-    @media (max-width: 700px) {
-      .nav-container {
-        flex-direction: column;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Std 12th IT Subject SOPs | Maharashtra Board</title>
+    <meta name="description"
+        content="Access all Skill Oriented Practicals (SOPs) for Std 12th IT subject under the Maharashtra State Board for Science and Commerce streams.">
+    <link rel="stylesheet" href="home_style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-  <header>
-    <h1>Std 12th IT Subject SOPs</h1>
-    <p>Maharashtra State Board - Science & Commerce Streams</p>
-  </header>
+    <!-- Theme Toggle -->
+    <button class="theme-switch" id="theme-toggle" title="Toggle Theme">
+        <i data-lucide="sun" id="theme-icon"></i>
+    </button>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="nav-container">
-      <button class="nav-link" onclick="document.getElementById('commerce').scrollIntoView({behavior:'smooth'})">
-        Commerce Stream
-      </button>
-      <button class="nav-link" onclick="document.getElementById('science').scrollIntoView({behavior:'smooth'})">
-        Science Stream
-      </button>
+    <header>
+        <h1>Std 12th IT Subject SOPs</h1>
+        <p>A comprehensive resource for Maharashtra State Board Science & Commerce Students</p>
+    </header>
 
-      <div class="dropdown">
-        <button class="dropdown-btn">Mock Test</button>
-        <div class="dropdown-content">
-          <a href="Mock Exam Commerce/Exam Site.html" target="_blank">Commerce</a>
-          <a href="Mock Exam Science/Exam Site.html" target="_blank">Science</a>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <button class="nav-link" onclick="document.getElementById('commerce').scrollIntoView({behavior:'smooth'})">
+                <i data-lucide="briefcase"></i> Commerce Stream
+            </button>
+            <button class="nav-link" onclick="document.getElementById('science').scrollIntoView({behavior:'smooth'})">
+                <i data-lucide="microscope"></i> Science Stream
+            </button>
+
+            <div class="dropdown">
+                <button class="dropdown-btn"><i data-lucide="file-text"></i> Mock Test</button>
+                <div class="dropdown-content">
+                    <a href="Mock Exam Commerce/Exam Site.html" target="_blank"><i data-lucide="graduation-cap"></i>
+                        Commerce Exam</a>
+                    <a href="Mock Exam Science/Exam Site.html" target="_blank"><i data-lucide="graduation-cap"></i>
+                        Science Exam</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-btn"><i data-lucide="book-open"></i> Resources</button>
+                <div class="dropdown-content">
+                    <a href="https://www.w3schools.com/html/" target="_blank"><i data-lucide="code"></i> HTML
+                        Tutorial</a>
+                    <a href="https://www.w3schools.com/css/" target="_blank"><i data-lucide="palette"></i> CSS
+                        Tutorial</a>
+                    <a href="https://www.w3schools.com/js/" target="_blank"><i data-lucide="terminal"></i> JavaScript
+                        Tutorial</a>
+                    <a href="https://www.w3schools.com/php/" target="_blank"><i data-lucide="server"></i> PHP
+                        Tutorial</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-btn"><i data-lucide="info"></i> Credits</button>
+                <div class="dropdown-content">
+                    <a href="#"><i data-lucide="user"></i> Instructor: Sir Dominic</a>
+                    <a href="https://youtube.com/@infotechbysirdominic7761" target="_blank"><i
+                            data-lucide="youtube"></i> YouTube: INFOTECH By Sir Dominic</a>
+                    <a href="mailto:example@email.com"><i data-lucide="mail"></i> Email Support</a>
+                </div>
+            </div>
+
+            <a href="https://youtube.com/@infotechbysirdominic7761" target="_blank" class="nav-link">
+                <i data-lucide="play-circle"></i> Watch Tutorials
+            </a>
         </div>
-      </div>
+    </nav>
 
-      <div class="dropdown">
-        <button class="dropdown-btn">Useful Links</button>
-        <div class="dropdown-content">
-          <a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a>
-          <a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS Tutorial</a>
-          <a href="https://www.w3schools.com/js/" target="_blank">W3Schools JavaScript Tutorial</a>
-          <a href="https://www.w3schools.com/php/" target="_blank">W3Schools PHP Tutorial</a>
-        </div>
-      </div>
+    <div class="container">
+        <section class="section-intro">
+            <h2>IT Practicals</h2>
+            <p>Select your stream below to access step-by-step guides, source code, and live previews for all Skill
+                Oriented Practicals (SOPs).</p>
+        </section>
 
-      <div class="dropdown">
-        <button class="dropdown-btn">Owner Info</button>
-        <div class="dropdown-content">
-          <a href="#">Created by: Sir Dominic</a>
-          <a href="#">YouTube Channel: <br />INFOTECH By Sir Dominic</a>
-          <a href="#">Email: example@email.com</a>
-        </div>
-      </div>
-      <button class="nav-link"
-        onclick="window.open('https://youtube.com/@infotechbysirdominic7761?feature=shared', '_blank')">
-        YouTube Channel
-      </button>
+        <!-- Commerce Stream -->
+        <section id="commerce">
+            <div class="stream-heading">
+                <i data-lucide="briefcase"></i>
+                <h2>Commerce Stream</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h3><i data-lucide="layout"></i> Advanced Web Designing</h3>
+                    <div class="card-links">
+                        <a href="./Commerce/Advacned Web Designing/commerce_awd_sop1.html">SOP 1: Creation of website
+                            using HTML5 and CSS.</a>
+                        <a href="./Commerce/Advacned Web Designing/commerce_awd_sop2.html">SOP 2: Design webpage layout
+                            using HTML and CSS.</a>
+                        <a href="./Commerce/Advacned Web Designing/commerce_awd_sop3.html">SOP 3: Create interlinked
+                            webpages with external stylesheet.</a>
+                        <a href="./Commerce/Advacned Web Designing/commerce_awd_sop4.html">SOP 4: Creation of website
+                            using HTML5 semantic tags and CSS.</a>
+                        <a href="./Commerce/Advacned Web Designing/commerce_awd_sop5.html">SOP 5: Use of Audio on web
+                            pages using HTML5.</a>
+                        <a href="./Commerce/Advacned Web Designing/commerce_awd_sop6.html">SOP 6: Use of Video on web
+                            pages using HTML5.</a>
+                        <a href="./Commerce/Advacned Web Designing/commerce_awd_sop7.html">SOP 7: Navigation on an image
+                            using Client side image Mapping.</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i data-lucide="trending-up"></i> Digital Marketing</h3>
+                    <div class="card-links">
+                        <a href="./Commerce/Digital Marketing/commerce_dm_sop1.html">SOP 1: With the help of SEO tool
+                            Optimize the website.</a>
+                        <a href="./Commerce/Digital Marketing/commerce_dm_sop2.html">SOP 2: With the help of SEO tool
+                            suggest the client changes needed in the website.</a>
+                        <a href="coming_soon.html">SOP 3: By using any free auding
+                            tool, Audit the website.</a>
+                        <a href="coming_soon.html">SOP 4: With the help of SEO tool
+                            optimize the website and write down the finding.</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i data-lucide="calculator"></i> Computerised Accounting</h3>
+                    <div class="card-links">
+                        <a href="./Commerce/Computerised Accounting/commerce_ca_sop1.html">SOP 1: With the help any open
+                            source or free education accounting software create company.</a>
+                        <a href="./Commerce/Computerised Accounting/commerce_ca_sop2.html">SOP 2: With the help any open
+                            source or free education accounting software create company with GST.</a>
+                        <a href="./Commerce/Computerised Accounting/commerce_ca_sop3.html">SOP 3: With the help any open
+                            source or free education accounting software create company with GST.</a>
+                        <a href="coming_soon.html">SOP 4: With the help any open
+                            source or free education accounting software create company withthe name Happy World
+                            Tours.</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i data-lucide="database"></i> Database Concepts</h3>
+                    <div class="card-links">
+                        <a href="./Commerce/Database Concept/commerce_dc_sop1.html">SOP 1: Create the database with name
+                            Student and create a form.</a>
+                        <a href="./Commerce/Database Concept/commerce_dc_sop2.html">SOP 2: Create the database Employee
+                            and create a query.</a>
+                        <a href="./Commerce/Database Concept/commerce_dc_sop3.html">SOP 3: Create a database Product and
+                            generate the reports.</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Science Stream -->
+        <section id="science">
+            <div class="stream-heading">
+                <i data-lucide="microscope"></i>
+                <h2>Science Stream</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h3><i data-lucide="layout"></i> Advanced Web Designing</h3>
+                    <div class="card-links">
+                        <a href="./Science/Advanced Web Designing/science_awd_sop1.html">SOP 1: Creation of website
+                            using HTML5 and CSS.</a>
+                        <a href="./Science/Advanced Web Designing/science_awd_sop2.html">SOP 2: Design webpage layout
+                            using HTML and CSS.</a>
+                        <a href="./Science/Advanced Web Designing/science_awd_sop3.html">SOP 3: Create interlinked
+                            webpages with external stylesheet.</a>
+                        <a href="./Science/Advanced Web Designing/science_awd_sop4.html">SOP 4: Creation of website
+                            using HTML5 semantic tags and CSS.</a>
+                        <a href="./Science/Advanced Web Designing/science_awd_sop5.html">SOP 5: Use of Audio on web
+                            pages using HTML5.</a>
+                        <a href="./Science/Advanced Web Designing/science_awd_sop6.html">SOP 6: Use of Video on web
+                            pages using HTML5.</a>
+                        <a href="./Science/Advanced Web Designing/science_awd_sop7.html">SOP 7: Navigation on an image
+                            using Client side image Mapping.</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i data-lucide="code-2"></i> Advanced JavaScript</h3>
+                    <div class="card-links">
+                        <a href="./Science/JavaScript/science_js_sop1.html">SOP 1: Javascript program to Change document
+                            colors.</a>
+                        <a href="./Science/JavaScript/science_js_sop2.html">SOP 2: Javascript program for the Form
+                            Validation.</a>
+                        <a href="./Science/JavaScript/science_js_sop3.html">SOP 3: Javascript program to Checking no of
+                            vowel in string.</a>
+                        <a href="./Science/JavaScript/science_js_sop4.html">SOP 4: Javascript program to check the enter
+                            string is Palindrome or not.</a>
+                        <a href="./Science/JavaScript/science_js_sop5.html">SOP 5: Javascript program to convert
+                            Temperature celsius to fahrenheit (&deg;Celsius To &deg;Fahrenheit).</a>
+                        <a href="./Science/JavaScript/science_js_sop6.html">SOP 6: Javascript program to Calculate
+                            average marks & grade.</a>
+                        <a href="./Science/JavaScript/science_js_sop7.html">SOP 7: Javascript program to find Difference
+                            between two dates.</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i data-lucide="server"></i> Server-Side Scripting (PHP)</h3>
+                    <div class="card-links">
+                        <a href="./Science/PHP/science_php_sop1.html">SOP 1: PHP program to check Age eligibility.</a>
+                        <a href="./Science/PHP/science_php_sop2.html">SOP 2: PHP program to Check total no of vowels in
+                            string.</a>
+                        <a href="coming_soon.html">SOP 3: PHP program for associative Array.</a>
+                        <a href="./Science/PHP/science_php_sop4.html">SOP 4: PHP program to Store & Display of Marks
+                            using Array.</a>
+                        <a href="./Science/PHP/science_php_sop5.html">SOP 5: PHP program to Store & Display of Marks
+                            using Array (using foreach statement).</a>
+                        <a href="./Science/PHP/science_php_sop6.html">SOP 6: PHP program to calculate Electricity
+                            Bill.</a>
+                        <a href="coming_soon.html">SOP 7: PHP program to Connect PHP to MySQL.</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-  </nav>
 
-  <!-- Content -->
-  <div class="container">
-    <h2 class="section-heading">Welcome to the IT SOPs Portal</h2>
-    <p class="info-text">
-      Select your stream and topic from the navigation bar or scroll below to access all Skill Oriented Practicals (SOPs) for Std 12th IT subject under the Maharashtra State Board.
-    </p>
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs <br> Developed for educational excellence and
+            professional success.</p>
+    </footer>
 
-    <!-- Commerce Stream -->
-    <section id="commerce">
-      <h2 class="section-heading">Commerce Stream</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Advanced Web Designing</h3>
-          <a href="./Commerce/Advacned Web Designing/commerce_awd_sop1.html">SOP 1: Creation of website using HTML5 and CSS.</a>
-          <a href="./Commerce/Advacned Web Designing/commerce_awd_sop2.html">SOP 2: Design webpage layout using HTML and CSS.</a>
-          <a href="./Commerce/Advacned Web Designing/commerce_awd_sop3.html">SOP 3: Create interlinked webpages with external stylesheet.</a>
-          <a href="./Commerce/Advacned Web Designing/commerce_awd_sop4.html">SOP 4: Creation of website using HTML5 semantic tags and CSS.</a>
-          <a href="./Commerce/Advacned Web Designing/commerce_awd_sop5.html">SOP 5: Use of Audio on web pages using HTML5.</a>
-          <a href="./Commerce/Advacned Web Designing/commerce_awd_sop6.html">SOP 6: Use of Video on web pages using HTML5.</a>
-          <a href="./Commerce/Advacned Web Designing/commerce_awd_sop7.html">SOP 7: Navigation on an image using Client side image Mapping.</a>
-        </div>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
 
-        <div class="card">
-          <h3>Digital Marketing</h3>
-          <a href="./Commerce/Digital Marketing/commerce_dm_sop1.html">SOP 1: With the help of SEO tool Optimize the website.</a>
-          <a href="./Commerce/Digital Marketing/commerce_dm_sop2.html">SOP 2: With the help of SEO tool suggest the client changes needed in the website.</a>
-          <a href="./Commerce/Digital Marketing/commerce_dm_sop3.html">SOP 3: By using any free auding tool, Audit the website.</a>
-          <a href="./Commerce/Digital Marketing/commerce_dm_sop4.html">SOP 4: With the help of SEO tool optimize the website and write down the finding.</a>
-        </div>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'light';
 
-        <div class="card">
-          <h3>Computerised Accounting</h3>
-          <a href="./Commerce/Computerised Accounting/commerce_ca_sop1.html">SOP 1: With the help any open source or free education accounting software create company.</a>
-          <a href="./Commerce/Computerised Accounting/commerce_ca_sop2.html">SOP 2: With the help any open source or free education accounting software create company with GST.</a>
-          <a href="./Commerce/Computerised Accounting/commerce_ca_sop3.html">SOP 3: With the help any open source or free education accounting software create company with GST.</a>
-          <a href="./Commerce/Computerised Accounting/commerce_ca_sop4.html">SOP 4: With the help any open source or free education accounting software create company withthe name Happy World Tours.</a>
-        </div>
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.setAttribute('data-lucide', 'moon');
+            lucide.createIcons();
+        }
 
-        <div class="card">
-          <h3>Database Concepts</h3>
-          <a href="./Commerce/Database Concept/commerce_dc_sop1.html">SOP 1: Create the database with name Student and create a form.</a>
-          <a href="./Commerce/Database Concept/commerce_dc_sop2.html">SOP 2: Create the database Employee and create a query.</a>
-          <a href="./Commerce/Database Concept/commerce_dc_sop3.html">SOP 3: Create a database Product and generate the reports.</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Science Stream -->
-    <section id="science">
-      <h2 class="section-heading">Science Stream</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Advanced Web Designing</h3>
-          <a href="./Science/Advanced Web Designing/science_awd_sop1.html">SOP 1: Creation of website using HTML5 and CSS.</a>
-          <a href="./Science/Advanced Web Designing/science_awd_sop2.html">SOP 2: Design webpage layout using HTML and CSS.</a>
-          <a href="./Science/Advanced Web Designing/science_awd_sop3.html">SOP 3: Create interlinked webpages with external stylesheet.</a>
-          <a href="./Science/Advanced Web Designing/science_awd_sop4.html">SOP 4: Creation of website using HTML5 semantic tags and CSS.</a>
-          <a href="./Science/Advanced Web Designing/science_awd_sop5.html">SOP 5: Use of Audio on web pages using HTML5.</a>
-          <a href="./Science/Advanced Web Designing/science_awd_sop6.html">SOP 6: Use of Video on web pages using HTML5.</a>
-          <a href="./Science/Advanced Web Designing/science_awd_sop7.html">SOP 7: Navigation on an image using Client side image Mapping.</a>
-        </div>
-
-        <div class="card">
-          <h3>Advanced JavaScript</h3>
-          <a href="./Science/JavaScript/science_js_sop1.html">SOP 1: Javascript program to Change document colors.</a>
-          <a href="./Science/JavaScript/science_js_sop2.html">SOP 2: Javascript program for the Form Validation.</a>
-          <a href="./Science/JavaScript/science_js_sop3.html">SOP 3: Javascript program to Checking no of vowel in string.</a>
-          <a href="./Science/JavaScript/science_js_sop4.html">SOP 4: Javascript program to check the enter string is Palindrome or not.</a>
-          <a href="./Science/JavaScript/science_js_sop5.html">SOP 5: Javascript program to convert Temperature celsius to fahrenheit (&deg;Celsius To &deg;Fahrenheit).</a>
-          <a href="./Science/JavaScript/science_js_sop6.html">SOP 6: Javascript program to Calculate average marks & grade.</a>
-          <a href="./Science/JavaScript/science_js_sop7.html">SOP 7: Javascript program to find Difference between two dates.</a>
-        </div>
-
-        <div class="card">
-          <h3>Server-Side Scripting (PHP)</h3>
-          <a href="./Science/PHP/science_php_sop1.html">SOP 1: PHP program to check Age eligibility.</a>
-          <a href="./Science/PHP/science_php_sop2.html">SOP 2: PHP program to Check total no of vowels in string.</a>
-          <a href="./Science/PHP/science_php_sop3.html">SOP 3: PHP program for associative Array.</a>
-          <a href="./Science/PHP/science_php_sop4.html">SOP 4: PHP program to Store & Display of Marks using Array.</a>
-          <a href="./Science/PHP/science_php_sop5.html">SOP 5: PHP program to Store & Display of Marks using Array (using foreach statement).</a>
-          <a href="./Science/PHP/science_php_sop6.html">SOP 6: PHP program to calculate Electricity Bill.</a>
-          <a href="./Science/PHP/science_php_sop7.html">SOP 7: PHP program to Connect PHP to MySQL.</a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board.</p>
-  </footer>
-
-  <script>
-    // Select all dropdown buttons
-    const dropdownButtons = document.querySelectorAll(".dropdown-btn");
-
-    dropdownButtons.forEach((button) => {
-      button.addEventListener("click", (e) => {
-        e.stopPropagation(); // Prevent the click from closing immediately
-
-        const dropdown = button.parentElement;
-
-        // Toggle active class
-        dropdown.classList.toggle("active");
-
-        // Close other dropdowns
-        document.querySelectorAll(".dropdown").forEach((otherDropdown) => {
-          if (otherDropdown !== dropdown) {
-            otherDropdown.classList.remove("active");
-          }
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.setAttribute('data-lucide', 'sun');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.setAttribute('data-lucide', 'moon');
+            }
+            lucide.createIcons();
         });
-      });
-    });
 
-    // Close dropdown if clicking outside
-    document.addEventListener("click", () => {
-      document.querySelectorAll(".dropdown").forEach((dropdown) => {
-        dropdown.classList.remove("active");
-      });
-    });
-  </script>
+        // Dropdown toggle logic — smart positioning: opens below button normally, flips above when near top of screen
+        function positionDropdown(button) {
+            const dropdown = button.parentElement;
+            const content = dropdown.querySelector(".dropdown-content");
+            const rect = button.getBoundingClientRect();
+            const contentWidth = 260;
+            const gap = 6;
+
+            // Temporarily make visible off-screen to measure its height
+            content.style.visibility = 'hidden';
+            content.style.opacity = '0';
+            content.style.display = 'block';
+            const contentHeight = content.offsetHeight;
+            content.style.display = '';
+            content.style.visibility = '';
+            content.style.opacity = '';
+
+            // Horizontal: center under the button, clamped to viewport
+            let left = rect.left + rect.width / 2 - contentWidth / 2;
+            if (left < 8) left = 8;
+            if (left + contentWidth > window.innerWidth - 8) left = window.innerWidth - contentWidth - 8;
+            content.style.left = left + "px";
+
+            // Vertical: open below if space exists, otherwise flip above
+            const spaceBelow = window.innerHeight - rect.bottom;
+            const spaceAbove = rect.top;
+            if (spaceBelow >= contentHeight + gap || spaceBelow >= spaceAbove) {
+                // Open downward
+                content.style.top = (rect.bottom + gap) + "px";
+                content.style.bottom = 'auto';
+                content.style.transformOrigin = 'top center';
+            } else {
+                // Flip upward — anchor to button top
+                content.style.top = 'auto';
+                content.style.bottom = (window.innerHeight - rect.top + gap) + "px";
+                content.style.transformOrigin = 'bottom center';
+            }
+        }
+
+        document.querySelectorAll(".dropdown-btn").forEach((button) => {
+            button.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const dropdown = button.parentElement;
+                const isActive = dropdown.classList.contains("active");
+
+                // Close all first
+                document.querySelectorAll(".dropdown").forEach((d) => d.classList.remove("active"));
+
+                if (!isActive) {
+                    positionDropdown(button);
+                    dropdown.classList.add("active");
+                }
+            });
+        });
+
+        document.addEventListener("click", () => {
+            document.querySelectorAll(".dropdown").forEach((d) => d.classList.remove("active"));
+        });
+    </script>
 </body>
 
 </html>
