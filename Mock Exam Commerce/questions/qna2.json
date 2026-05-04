@@ -5,6 +5,66 @@
     },
     {
       "question": "Write Html Program to create a form to accept Student Roll no, Unit test mark(max 25), Terminal Exam Marks(max 50), Include the name of the subject teacher and send the data to the server."
+    },
+    {
+      "question": "Write an HTML5 program to display 'Flowers' and 'Fruits' in an unordered list format. Under 'Flowers', items should be 'Rose' and 'Sunflower' in an unordered list format, and under 'Fruits’, ‘Mango' and 'Apple' in an unordered list format."
+    },
+    {
+      "question": "Write an HTML5 program to display an ordered list of any four author names under 'Authors' (e.g., P. L. Deshpande, Kusumagraj, Acharya Atre, Chetan Bhagat) and any two singers under 'Singers' (e.g., Suresh Wadkar, Vaishali Samant). The list should be numbered in Roman numerals (I, II, III, ...)."
+    },
+    {
+      "question": "Write an HTML5 program to accept the voter's name and age using a form. The minimum age should be 18 and the maximum 120. Also, display a Submit button."
+    },
+    {
+      "question": "Write an HTML5 program to create a form with fields for the student’s name, previous school, and the percentage achieved in 10th standard. Make all fields compulsory and send the data to the server."
+    },
+    {
+      "question": "Write an HTML5 program to create a form with fields for the employee’s ID (number format), email ID, and salary (maximum ₹80,000). Ensure the data is sent to the server."
+    },
+    {
+      "question": "Write an HTML5 program to create an unordered list of electronic gadgets (Mobile and Tab). Under each device name, add an ordered list to display any two of its features using the type i, ii, iii… (Features of Mobile: Battery life – 48 hrs, Storage – 2GB; Features of Tab: Battery life – 24 hrs, Storage – 4GB)."
+    },
+    {
+      "question": "Write an HTML5 program to create a form that accepts the name of the college, email ID of the college and your favorite subject. Ensure the data is sent to the server."
+    },
+    {
+      "question": "Write an HTML5 program to create an ordered list of five input devices with type a, b, c, …, and an unordered list of three output devices with square bullets."
+    },
+    {
+      "question": "Write an HTML5 program to create an ordered list of five friends. Under each friend’s name, add an ordered list of their hobbies."
+    },
+    {
+      "question": "Write an HTML5 program to create a form with fields for the name of the college, telephone number of the college and web address of the college. Ensure the data is sent to the server."
+    },
+    {
+      "question": "Write an HTML5 program to create a registration form with fields for the user’s name, mobile number, and email ID. Include a submit button with the caption “Register”."
+    },
+    {
+      "question": "Write an HTML5 program to create a form that accepts the employee’s ID (in number format), employee’s department, and employee’s joining date. Send the data to the server."
+    },
+    {
+      "question": "Write an HTML5 program to display an ordered list of any two Nobel Prize Winner Indian scientists (e.g., C.V. Raman, Har Govind Khorana,) and their inventions (e.g., Raman Effect, interpretation of the genetic code) should be displayed in an unordered list format with the square type."
+    },
+    {
+      "question": "Write an HTML5 program to create an ordered list containing the names of five flowers, starting from number 5 in reverse order with type A, B, C, …"
+    },
+    {
+      "question": "Write an HTML5 program to create a form with fields for the hospital’s name, Incharge doctor, and number of admitted patients. Every field must be compulsory. Ensure the data is sent to the server."
+    },
+    {
+      "question": "Write an HTML5 program to create a form with fields for the name of the college, phone number of the college, and total number of teachers (up to 100). Ensure the data is sent to the server."
+    },
+    {
+      "question": "Write an HTML5 program to display an ordered list of any three author names under 'Authors' (e.g., P. L. Deshpande, Kusumagraj, Acharya Atre) and any two singers under 'Singers' (e.g., Suresh Wadkar, Vaishali Samant) with the numbering type A,B,C,…"
+    },
+    {
+      "question": "Write an HTML5 program to create a form with fields for the voter’s name, voter’s ID and voter’s address. Include a Submit button."
+    },
+    {
+      "question": "Write an HTML5 program that displays the stream names Science and Commerce in an ordered list. Include the subjects Physics and Chemistry in an unordered list under Science and Accountancy, SP in an unordered list under Commerce."
+    },
+    {
+      "question": "Write an HTML5 program to create a form with fields for the voter’s ID number, voter’s assembly (e.g. Mumbai) and age. Ensure the age is between 18 and 120. Include a Submit button."
     }
   ]
 }

@@ -1,10 +1,55 @@
 {
   "questions": [
     {
-      "question": "Write Html Program to create a form to accept Patient Name,his mobile no and Date of Birth. Keep all Fields Compulsory."
+      "question": "Write an event driven javascript program to display even numbers between 1 to 1000."
     },
     {
-      "question": "Write Html Program to create a form to accept Student Roll no, Unit test mark(max 25), Terminal Exam Marks(max 50), Include the name of the subject teacher and send the data to the server."
-    }
+      "question": "Write an event driven Javascript program to accept a number and multiply the accepted number by 10 and display it."
+    },
+    {
+      "question": "Write event driven JavaScript program to calculate and display factorial of 4."
+    },
+    {
+      "question": "Write an event driven JavaScript program to accept string and count number of characters in it"
+    },
+    {
+      "question": "Write an event driven javascript program to display odd numbers between 100 to 1."
+    },
+    {
+      "question": "Write an event driven javascript program to accept radius from the user and display circumference of a circle (circumference=2x3.14xradius)."
+    },
+    {
+      "question": "Write an event driven javascript program to display area of a rectangle.Accept length and breadth from the user (area = lxb)."
+    },
+    {
+      "question": "Write an event driven Javascript program to display multiplication and division of two accepted numbers using click event."
+    },
+    {
+      "question": "Write event driven JavaScript program to display area of circle accept radius from the user (Area=3.14 * r * r)."
+    },
+    {
+      "question": "Write an event driven Javascript program to accept length and breadth from the user and display perimeter of a rectangle.(Formula-P=2 *( l + b ) )"
+    },
+    {
+      "question": "Write event driven program in JavaScript to accept height and base from the user and find area of triangle. (Area=1/2 *base * height)."
+    },
+    {
+      "question": "Write an event driven JavaScript program to accept side from the user and find area of a square. (Area=square of side)."
+    },
+    {
+      "question": "Write an event driven Javascript program to display square of accepted number."
+    },
+    {
+      "question": "Write an event driven Javascript program to display Cube of accepted number on click of a button."
+    },
+    {
+      "question": "Write JavaScript event driven program to display table of accepted number."
+    },
+    {
+      "question": "Write an event driven Javascript program to display area of a parallelogram by accepting base and perpendicular height.(Area=base x height)"
+    },
+    {
+      "question": "Write event driven JavaScript program to display addition of 4 numbers and display it."
+    }       
   ]
 }
