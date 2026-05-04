@@ -65,6 +65,18 @@
     },
     {
       "question": "Write an HTML5 program to create a form with fields for the voter’s ID number, voter’s assembly (e.g. Mumbai) and age. Ensure the age is between 18 and 120. Include a Submit button."
+    },
+    {
+      "question": "Write an HTML program using inline CSS to display 'Information Technology' in bold and Calibri font. Below, add two sentences about the 'IT' subject in orange-colored text."
+    },
+    {
+      "question": "Write an HTML program to design a form that includes the following fields: A dropdown list for Title with options Shri and Smt. A text box to enter Your Name Submit and Reset buttons to submit and clear the form."
+    },
+    {
+      "question": "Write an html program to create an ordered list having names of two friends. Add nested unordered list of their hobbies under each name."
+    },
+    {
+      "question": "Write an html program to accept Name of the hospital , Email Id of the hospital , Number of beds in the hospital."
     }
   ]
 }
