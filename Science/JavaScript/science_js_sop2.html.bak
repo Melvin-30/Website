@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create javascript program for the form vaildations - Science IT</title>
-    <link rel="stylesheet" href="/Science/JavaScript/SOP page Style.css">
+    <link rel="stylesheet" href="SOP page Style.css">
 </head>
 
 <body>
@@ -15,11 +15,21 @@
     </header>
 
     <div class="container">
-        <h2>SOP 4: Create javascript program to check whether enter string is palindrome or not</h2>
-        <p>Create event driven JavaScript program for the following.Make use of appropriate variables,JavaScript inbuilt
-            string functions and control
-            structures.
-             To accept string from user and reverse the given string and check whether it is palindrome or not.</p>
+        <h2>SOP 2: Create javascript program for the form vaildations</h2>
+        <p>Create JavaScript program for the following form validations. Make
+            use of HTML5 properties to do the following validations :
+        <ol>
+            <li>Name, address, contact number and email are required fields of the form.</li>
+            <li>Address field should show the hint value which will disappear when field gets focus or key press event.
+            </li>
+            <li>Telephone number should be maximum 10 digit number only.</li>
+            <li>Email field should contain valid email address, @ should appear only once and not at the beginning or at
+                end. It must contain at least one dot(.).</li>
+            <li>Make use of pattern attribute for email to accept lowercase, uppercase alphabets, digits and specified
+                symbols.</li>
+        </ol>
+        </p>
+        <center><img class="QuestionImage" src="Form.png" alt="Form"></center>
         <h3><span class="code-keyword">Source Code:</span> index.html</h3>
         <pre id="htmlCode1">
 &lt;!doctype html&gt;
@@ -28,29 +38,23 @@
     &lt;title&gt;Applicaiton Form&lt;/title&gt;
 &lt;/head&gt;
 &lt;script type="text/javascript"&gt;
-    function palindrome() {
-        var str = f1.t1.value
-        var len = str.length;
-        var mid = Math.floor(len / 2);
-        var check = 0;
-        for (var i = 0; i &lt; mid; i++) {
-            if (str[i] !== str[len - 1 - i]) {
-                check = 1;
-            }
-        }
-        if (check == 0) {
-            alert("String is a palindrome");
-        } else {
-            alert("String is not a palindrome");
+    function validateemail() {
+        var str = f1.e1.value;
+        var dotpositon = str.lastIndexOf(".");
+        var atposition = str.indexOf("@");
+        if (atposition &lt; 1 || dotpositon &lt; atposition + 2 || dotpositon + 2 &gt; str.length) {
+            alert("Please Enter a valid email Id");
         }
     }
 &lt;/script&gt;
-
 &lt;body&gt;
-    &lt;h1&gt;HTML Program to check if the entered string is palindrome or not&lt;/h1&gt;
-    &lt;form name="f1"&gt;
-        Enter String: &lt;input type="text" name="t1"&gt;
-        &lt;input type="button" value="Check" onclick="palindrome()"&gt;
+    &lt;h1&gt;Information Form&lt;/h1&gt;
+    &lt;form name="f1" onsubmit="validateemail()"&gt;
+        Enter Your Name: &lt;input type="text" name="t1" required&gt;&lt;br&gt;&lt;br&gt;
+        Enter Address: &lt;textarea name="a1" cols="30" rows="2" placeholder="permanent address"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+        Enter Contact No: &lt;input type="tel" max="10" name="c1" required&gt;&lt;br&gt;&lt;br&gt;
+        Enter Email: &lt;input type="text" name="e1" required&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="Submit"&gt;
     &lt;/form&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
@@ -60,9 +64,9 @@
             <div class="dropdown">
                 <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a href="https://drive.google.com/file/d/17dg_h1RdayAr7Ya6WGTdbWuculVqRSd1/view?usp=sharing"
+                    <a href="https://drive.google.com/file/d/17EkTwsptbk53WGDVPviG9uvUEIP0SsU4/view?usp=sharingg"
                         target="_blank">Download Source Code</a>
-                    <a href="https://drive.google.com/file/d/1_hpXxWhfpVRajYEqC_hsCl7DiZFKF65Z/view?usp=sharing"
+                    <a href="https://drive.google.com/file/d/1uAuPIdN7sAWIao0P_Te_QWWqLb6KEtFq/view?usp=sharing"
                         target="_blank">Download Output PDF</a>
                 </div>
             </div>

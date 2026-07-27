@@ -1,0 +1,11 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local environment/IDE config
+.idea/
+.vscode/
+*.swp
+*.bak

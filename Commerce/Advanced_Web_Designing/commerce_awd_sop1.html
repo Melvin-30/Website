@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOP 1: Creation of Website Using HTML5 | Commerce IT</title>
+    <link rel="stylesheet" href="/Commerce/Advanced_Web_Designing/SOP page Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Commerce Stream Practicals</h1>
+        <p>Std 12th IT Subject - Skill Oriented Practical (Commerce Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 1: Creation of Website using HTML5</h2>
+        <p>Create a website using HTML5 and CSS using any 4 CSS properties. Write a code for 2 separate pages having
+            different file names such as first page as <code>index.html</code> and second page as
+            <code>page2.html</code>. Use any theme such as college profile or company profile etc. Every page must
+            contain proper Meta information and design web page as follows:
+        </p>
+        <ol>
+            <li>The index page must contain a heading which is highest among other text on pages and must be at centre
+                of the page. There must be a paragraph which introduces general information about the theme chosen. It
+                must have at least 3 physical style tags and one image with alternate text. This page must be connected
+                to other page with proper navigational links.</li>
+            <li>The 2nd page must contain the feedback or enrolment form related with theme chosen with features of
+                HTML5. The form must contain text element and email address of the company or person. Include the submit
+                button.</li>
+        </ol>
+
+        <h3><span class="code-keyword">Source Code:</span> index.html</h3>
+        <pre id="htmlCode1">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Home Page&lt;/title&gt;
+    &lt;style&gt;
+        h1 {
+            text-align: center;
+            background-color: blue;
+            color: white;
+            font-family: 'Times New Roman';
+        }
+    &lt;/style&gt;
+    &lt;meta name="description" content="Information of School"&gt;
+    &lt;meta charset="UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Don Bosco High School &amp; Junior College, Oros&lt;/h1&gt;
+    &lt;center&gt;
+        &lt;img src="School.jpg" alt="School image" height="300" width="400"&gt;
+    &lt;/center&gt;
+    &lt;p&gt;&lt;b&gt;Don Bosco High School, Oros&lt;/b&gt; is an &lt;u&gt;English medium&lt;/u&gt; school run by the &lt;i&gt;Salesians of Don Bosco.&lt;/i&gt; This institution is primarily for Catholics, established and administered by the Catholic Church but it is open to all irrespective of religion, caste or creed.&lt;/p&gt;
+    &lt;a href="page2.html"&gt;Go to fill Enrolment form&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <h3><span class="code-keyword">Source Code:</span> page2.html</h3>
+        <pre id="htmlCode2">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Application Form&lt;/title&gt;
+    &lt;style&gt;
+        h1 {
+            text-align: center;
+            background-color: blue;
+            color: white;
+            font-family: 'Times New Roman';
+        }
+    &lt;/style&gt;
+    &lt;meta name="description" content="Enrolment Form"&gt;
+    &lt;meta charset="UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Enrolment Form&lt;/h1&gt;
+    &lt;form&gt;
+        Enter Your Name: &lt;input type="text" name="t1"&gt;&lt;br&gt;&lt;br&gt;
+        Enter Contact No: &lt;input type="tel" pattern="[0-9]{2}-[0-9]{10}" placeholder="00-0000000000" name="t2"&gt;&lt;br&gt;&lt;br&gt;
+        Enter Email ID: &lt;input type="email" name="e1"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="Submit"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;a href="index.html"&gt;Back to home page&lt;/a&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <div class="preview-buttons">
+            <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
+            <button class="preview-button" onclick="showPreview('page2')">Preview page2.html</button>
+            <div class="dropdown">
+                <button class="download-button">Download Materials</button>
+                <div class="dropdown-content">
+                    <a href="https://drive.google.com/file/d/1HzR3OfACQmoLpTQk1l0hTRtITsvCGJU5/view?usp=sharing"
+                        target="_blank">Download Source Code</a>
+                    <a href="https://drive.google.com/file/d/1Xe29STfOPReDw1Iiqqtpn4m_Q3KzGpEV/view?usp=drive_link"
+                        target="_blank">Download Output PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="live-preview-container" id="previewContainer">
+            <h3 id="previewTitle">Live Interactive Preview</h3>
+            <iframe id="previewIframe" class="live-preview-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
+    </footer>
+
+    <script>
+        function showPreview(page) {
+            const previewContainer = document.getElementById('previewContainer');
+            const previewIframe = document.getElementById('previewIframe');
+            const previewTitle = document.getElementById('previewTitle');
+            const codeId = page === 'index' ? 'htmlCode1' : 'htmlCode2';
+
+            const codeElement = document.getElementById(codeId);
+            let htmlCode = codeElement.textContent;
+
+            // Decode HTML entities
+            htmlCode = htmlCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+
+            const fullHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preview: ${page}.html</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.5; }
+        iframe { border: none; }
+    </style>
+</head>
+<body>
+    ${htmlCode}
+</body>
+</html>`;
+
+            const doc = previewIframe.contentWindow.document;
+            doc.open();
+            doc.write(fullHTML);
+            doc.close();
+
+            previewTitle.textContent = `Live Preview: ${page}.html`;
+            previewContainer.style.display = 'block';
+            previewContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            previewIframe.onload = () => {
+                const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+                const links = iframeDoc.querySelectorAll('a');
+
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        const href = this.getAttribute('href');
+                        if (href === 'index.html' || href === 'page2.html') {
+                            e.preventDefault();
+                            showPreview(href.split('.')[0]);
+                        }
+                    });
+                });
+            };
+        }
+    </script>
+</body>
+
+</html>

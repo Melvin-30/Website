@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SOP 3: Tally GST Accounting - Commerce IT</title>
+    <link rel="stylesheet" href="/Commerce/Computerised_Accounting/SOP page Style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Commerce Stream Practicals</h1>
+        <p>Std 12th IT Subject - Skill Oriented Practical (Commerce Stream)</p>
+    </header>
+
+    <div class="container">
+        <h2>SOP 3: GST Accounting</h2>
+        <p>With the help of any open source or free education version accounting software enter the following
+            transactions in appropriate vouchers by creating a company.</p>
+        <h3>Company Details</h3>
+        <div class="company-details">
+            <p>
+            <ul>
+                <li><strong>Company Name:</strong> M/s Swastik Garment Suppliersy</li>
+                <li>
+                    <strong>Address:</strong> M. G. Road, Industrial Estate, Aurangabad, Maharashtra Pin Code 431001
+                </li>
+                <li><strong>State:</strong> Maharashtra</li>
+                <li><strong>Website:</strong> www.swastikgarments.com</li>
+                <li><strong>Email:</strong> info@swastikgarments.com</li>
+                <li><strong>GSTIN:</strong> 27KLMNA4321V1Z2</li>
+                <li><strong>Books Begin From:</strong> 01-04-2017</li>
+            </ul>
+            <ol>
+                <li>On 01/07/2017 Purchased 150 pieces of T-shirts @Rs. 450 per piece with GST 12% from M/s. Jalaram
+                    Textiles, 1/05 Sector B, Gandhi Nagar, Ahmadabad, Gujarat Pin code 382010.</li>
+                <li>On 02/07/2017 Sold 100 T-shirts @Rs.600 per piece with GST 12% to M/s Dress Align Garments, Shirdi.
+                    Ahmednagar, Maharashtra – 423107.</li>
+            </ol>
+            <h4>Print GST computation Report and Sales Tax Invoice</h4>
+            </p>
+        </div>
+
+        <h3>Solution</h3>
+        <h4>Key Notes</h4>
+        <ul>
+            <li>Interstate purchase: IGST applies at 12% (on taxable value).</li>
+            <li>Intrastate sale: CGST 6% + SGST 6% (total 12%).</li>
+        </ul>
+        <h4>Step I Company Creation</h4>
+        <ol>
+            <li>Gateway of Tally → Company Info (Alt+F3) → Create Company.</li>
+            <li>Enter company details (name, address, state Maharashtra, GSTIN) and save.</li>
+            <li>Set Financial year and Books Begin From as required during creation.</li>
+        </ol>
+
+        <h4>Step II Enable GST</h4>
+        <ul>
+            <li>Gateway of Tally → Features (F11) → Statutory & Taxation → Enable Goods and Service Tax (GST) = YES.
+            </li>
+            <li>Set/Alter GST details = YES → Enter State and GSTIN as provided.</li>
+        </ul>
+
+        <h4>Step III Create Ledgers</h4>
+        <p>Masters → Accounts Info → Ledgers → Single Ledger → Create. Create these ledgers and set statutory
+            details where relevant:</p>
+        <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ledger</th>
+                        <th>Under Group</th>
+                        <th>Statutory / Tax settings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IGST</td>
+                        <td>Duties and Taxes</td>
+                        <td>GST; Integrated Tax; 12%</td>
+                    </tr>
+                    <tr>
+                        <td>SGST</td>
+                        <td>Duties and Taxes</td>
+                        <td>GST; State Tax; 6%</td>
+                    </tr>
+                    <tr>
+                        <td>CGST</td>
+                        <td>Duties and Taxes</td>
+                        <td>GST; Central Tax; 6%</td>
+                    </tr>
+                    <tr>
+                        <td>M/s Jalaram Textiles</td>
+                        <td>Sundry Creditors</td>
+                        <td>Enter address and GST details</td>
+                    </tr>
+                    <tr>
+                        <td>M/s Dress Align Garments</td>
+                        <td>Sundry Debtors</td>
+                        <td>Enter address and GST details</td>
+                    </tr>
+                    <tr>
+                        <td>Purchase T-Shirt A/c</td>
+                        <td>Purchase Accounts</td>
+                        <td>GST Applicable: Yes; IGST 12%</td>
+                    </tr>
+                    <tr>
+                        <td>Sales T-Shirt A/c</td>
+                        <td>Sales Accounts</td>
+                        <td>GST Applicable: Yes; CGST+SGST 6%+6%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+
+        <h4>Step IV Inventory Setup</h4>
+        <ul>
+            <li>Units of Measure: Create UOM "Pcs" (Pieces).</li>
+            <li>Stock Group: Create "Garments".</li>
+            <li>Stock Item: Create "T-Shirt" under Garments with unit Pcs.</li>
+        </ul>
+
+        <h4>Step V Voucher Entries</h4>
+
+        <h4>Purchase Voucher (F9) — 01-07-2017</h4>
+        <ul>
+            <li>Gateway of Tally → Accounting Vouchers → Purchase (F9).</li>
+            <li>Date 01-07-2017; Party A/c: M/s Jalaram Textiles; Purchase Ledger: Purchase T-Shirt A/c.</li>
+            <li>Item: T-Shirt; Qty: 150 Pcs; Rate: 450 each; Tax: IGST 12% (₹8,100) → Final Amount ₹75,600.</li>
+        </ul>
+
+        <h4>Sales Voucher (F8) — 02-07-2017</h4>
+        <ul>
+            <li>Accounting Vouchers → Sales (F8).</li>
+            <li>Date 02-07-2017; Party A/c: M/s Dress Align Garments; Sales Ledger: Sales T-Shirt A/c.</li>
+            <li>Item: T-Shirt; Qty: 100 Pcs; Rate: 600 each; Tax: SGST 6% + CGST 6% (₹3,600 + ₹3,600 = ₹7,200) →
+                Final Amount ₹67,200.</li>
+        </ul>
+
+        <h4>Step VI Display and Print Reports</h4>
+        <ul>
+            <li>Print Purchase and Sales vouchers: Gateway of Tally → Display → Day Book → select voucher type and
+                period → Print.</li>
+            <li>GST Reports: Gateway of Tally → Display → Statutory Reports → GST → GST Annual Computation or
+                relevant GST report.</li>
+        </ul>
+
+        <h4>Voucher Analysis Summary</h4>
+        <center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Voucher Type<br>(Function Key)</th>
+                        <th>Details</th>
+                        <th>Debit Amt.</th>
+                        <th>Credit Amt.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01-07-2017</td>
+                        <td>Purchase<br>F9</td>
+                        <td style="text-align: left;">Purchase T-Shirt
+                            A/c...........Dr<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;M/s Jalaram
+                            Textiles...........Cr</td>
+                        <td>75,600<br><br></td>
+                        <td><br>75,600</td>
+                    </tr>
+                    <tr>
+                        <td>02-07-2017</td>
+                        <td>Sales<br>F8</td>
+                        <td style="text-align: left;">
+                            Cash/Party...........Dr.<br>&emsp;&emsp;&emsp;&emsp;Sales T-Shirt A/c; CGST 6% +
+                            SGST 6%...........Cr</td>
+                        <td>67,200<br><br></td>
+                        <td><br>67,200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+
+        <h4>Final Notes</h4>
+        <ul>
+            <li>Ensure statutory tax types and percentages are set correctly in ledger statutory information to
+                calculate IGST/CGST/SGST automatically.</li>
+            <li>Check the period when printing Day Book to include the voucher dates required for printout.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SOPs. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

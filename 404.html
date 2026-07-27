@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found - 404 Error</title>
+    <link rel="stylesheet" href="home_style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-switch" aria-label="Toggle dark mode">
+        <i data-lucide="moon" id="theme-icon"></i>
+    </button>
+
+    <header>
+        <h1>Page Not Found</h1>
+        <p>Maharashtra State Board Educational Resources</p>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="Index.html" class="nav-link"><i data-lucide="home"></i> Home</a>
+            <div class="dropdown">
+                <button class="dropdown-btn"><i data-lucide="book-open"></i> Commerce Stream <i
+                        data-lucide="chevron-down" class="chevron"></i></button>
+                <div class="dropdown-content">
+                    <a href="Index.html#commerce">Advanced Web Designing</a>
+                    <a href="Index.html#commerce">Digital Marketing</a>
+                    <a href="Index.html#commerce">Computerised Accounting</a>
+                    <a href="Index.html#commerce">Database Concepts</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-btn"><i data-lucide="microscope"></i> Science Stream <i
+                        data-lucide="chevron-down" class="chevron"></i></button>
+                <div class="dropdown-content">
+                    <a href="Index.html#science">Advanced Web Designing</a>
+                    <a href="Index.html#science">JavaScript</a>
+                    <a href="Index.html#science">PHP</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card" style="text-align: center; padding: 4rem 2rem; max-width: 800px; margin: 0 auto;">
+            <div style="display: flex; justify-content: center; margin-bottom: 2rem; color: var(--primary);">
+                <i data-lucide="alert-triangle" style="width: 80px; height: 80px;"></i>
+            </div>
+            <h2 id="error-title" style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-main);">Oops! Page Not Found</h2>
+            <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.2rem;">
+                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+            </p>
+            <a href="Index.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: var(--primary); color: white; border-radius: 8px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: var(--transition);">
+                <i data-lucide="arrow-left"></i> Return Home
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Std 12th IT SOPs | Maharashtra State Board Educational Resources</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Theme Toggle Logic
+        const themeToggle = document.querySelector('.theme-switch');
+        const themeIcon = document.getElementById('theme-icon');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'light') {
+                themeIcon.setAttribute('data-lucide', 'sun');
+            }
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.setAttribute('data-lucide', 'sun');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.setAttribute('data-lucide', 'moon');
+            }
+            lucide.createIcons();
+        });
+
+        // Dropdown Logic
+        function positionDropdown(button) {
+            const dropdown = button.parentElement;
+            const content = dropdown.querySelector(".dropdown-content");
+            const rect = button.getBoundingClientRect();
+            const contentWidth = 260;
+            const gap = 6;
+
+            content.style.visibility = 'hidden';
+            content.style.opacity = '0';
+            content.style.display = 'block';
+            const contentHeight = content.offsetHeight;
+            content.style.display = '';
+            content.style.visibility = '';
+            content.style.opacity = '';
+
+            let left = rect.left + rect.width / 2 - contentWidth / 2;
+            if (left < 8) left = 8;
+            if (left + contentWidth > window.innerWidth - 8) left = window.innerWidth - contentWidth - 8;
+            content.style.left = left + "px";
+
+            const spaceBelow = window.innerHeight - rect.bottom;
+            const spaceAbove = rect.top;
+            if (spaceBelow >= contentHeight + gap || spaceBelow >= spaceAbove) {
+                content.style.top = (rect.bottom + gap) + "px";
+                content.style.bottom = 'auto';
+                content.style.transformOrigin = 'top center';
+            } else {
+                content.style.top = 'auto';
+                content.style.bottom = (window.innerHeight - rect.top + gap) + "px";
+                content.style.transformOrigin = 'bottom center';
+            }
+        }
+
+        document.querySelectorAll(".dropdown-btn").forEach((button) => {
+            button.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const dropdown = button.parentElement;
+                const isActive = dropdown.classList.contains("active");
+
+                document.querySelectorAll(".dropdown").forEach((d) => d.classList.remove("active"));
+                if (!isActive) {
+                    dropdown.classList.add("active");
+                    positionDropdown(button);
+                }
+            });
+        });
+
+        document.addEventListener("click", () => {
+            document.querySelectorAll(".dropdown").forEach((d) => d.classList.remove("active"));
+        });
+
+        window.addEventListener('resize', () => {
+            document.querySelectorAll(".dropdown.active .dropdown-btn").forEach(button => {
+                positionDropdown(button);
+            });
+        });
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll(".dropdown.active .dropdown-btn").forEach(button => {
+                positionDropdown(button);
+            });
+        }, { passive: true });
+    </script>
+</body>
+
+</html>

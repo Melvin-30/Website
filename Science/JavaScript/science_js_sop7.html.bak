@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create javascript program for the form vaildations - Science IT</title>
-    <link rel="stylesheet" href="/Science/JavaScript/SOP page Style.css">
+    <title>Write a JavaScript function to get difference between two dates in days. - Science IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
 </head>
 
 <body>
@@ -15,43 +15,42 @@
     </header>
 
     <div class="container">
-        <h2>SOP 4: Create javascript program to check whether enter string is palindrome or not</h2>
-        <p>Create event driven JavaScript program for the following.Make use of appropriate variables,JavaScript inbuilt
-            string functions and control
-            structures.
-             To accept string from user and reverse the given string and check whether it is palindrome or not.</p>
+        <h2>SOP 7: Write a JavaScript function to get difference between two dates in days.</h2>
+        <p>Create a page in HTML that contains input box to accept date from user. The input boxes should be used by
+            users to enter their date of birth in the format dd-mm-yyyy. Do not make use of any dropdown boxes.</p>
         <h3><span class="code-keyword">Source Code:</span> index.html</h3>
         <pre id="htmlCode1">
-&lt;!doctype html&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;Applicaiton Form&lt;/title&gt;
+    &lt;title&gt;Date Difference Calculator&lt;/title&gt;
 &lt;/head&gt;
-&lt;script type="text/javascript"&gt;
-    function palindrome() {
-        var str = f1.t1.value
-        var len = str.length;
-        var mid = Math.floor(len / 2);
-        var check = 0;
-        for (var i = 0; i &lt; mid; i++) {
-            if (str[i] !== str[len - 1 - i]) {
-                check = 1;
-            }
-        }
-        if (check == 0) {
-            alert("String is a palindrome");
-        } else {
-            alert("String is not a palindrome");
-        }
-    }
-&lt;/script&gt;
-
 &lt;body&gt;
-    &lt;h1&gt;HTML Program to check if the entered string is palindrome or not&lt;/h1&gt;
+    &lt;h2&gt;Difference Between Two Dates (in Days)&lt;/h2&gt;
+
     &lt;form name="f1"&gt;
-        Enter String: &lt;input type="text" name="t1"&gt;
-        &lt;input type="button" value="Check" onclick="palindrome()"&gt;
+        Enter First Date:&lt;input type="date" name="date1"&gt;&lt;br&gt;&lt;br&gt;
+        Enter Second Date:&lt;input type="date" name="date2"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="button" value="Calculate Difference" onclick="calculateDifference()"&gt;
     &lt;/form&gt;
+
+    &lt;script&gt;
+        function calculateDifference() {
+            var d1 = f1.date1.value;
+            var d2 = f1.date2.value;
+            if (d1 === "" || d2 === "") {
+                alert("Please enter both dates.");
+            }
+            // Convert input values to Date objects
+            let date1 = new Date(d1);
+            let date2 = new Date(d2);
+            // Difference in milliseconds
+            let diffMs = Math.abs(date2 - date1);
+            // Convert to days
+            let diffDays = diffMs / (1000 * 60 * 60 * 24);
+            alert("Difference between dates: " + diffDays + " days");
+        }
+    &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
 
@@ -60,10 +59,8 @@
             <div class="dropdown">
                 <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a href="https://drive.google.com/file/d/17dg_h1RdayAr7Ya6WGTdbWuculVqRSd1/view?usp=sharing"
-                        target="_blank">Download Source Code</a>
-                    <a href="https://drive.google.com/file/d/1_hpXxWhfpVRajYEqC_hsCl7DiZFKF65Z/view?usp=sharing"
-                        target="_blank">Download Output PDF</a>
+                    <a href="">Code</a>
+                    <a href="">Output</a>
                 </div>
             </div>
         </div>

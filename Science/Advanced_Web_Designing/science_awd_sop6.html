@@ -4,65 +4,78 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create javascript program for the form vaildations - Science IT</title>
-    <link rel="stylesheet" href="/Science/JavaScript/SOP page Style.css">
+    <title>SOP 6: Use of Video on web pages using HTML5 - Science IT</title>
+    <link rel="stylesheet" href="/Science/Advanced_Web_Designing/SOP page Style.css">
 </head>
 
 <body>
     <header>
         <h1>Science Stream Practicals</h1>
-        <p>Std 12th IT Subject - Skill Oriented Practical (Science Stream)</p>
+        <p>Std 12th IT Subject (Science Stream)</p>
     </header>
 
     <div class="container">
-        <h2>SOP 4: Create javascript program to check whether enter string is palindrome or not</h2>
-        <p>Create event driven JavaScript program for the following.Make use of appropriate variables,JavaScript inbuilt
-            string functions and control
-            structures.
-             To accept string from user and reverse the given string and check whether it is palindrome or not.</p>
-        <h3><span class="code-keyword">Source Code:</span> index.html</h3>
+        <h2>SOP 6: Use of Video on web pages using HTML5</h2>
+        <p>
+        <ul>
+            <li>Create a webpage named video.HTML to display a video file on web page
+                and plays automatically. The dimension of video area should be 150 * 150
+                pixels.</li>
+            <li>Create another webpage which video provide multiple source file formats
+                for the same video file that plays a video with controls. The dimension of
+                video area should be 300*300 pixels. The code must incorporate the
+                list of video files formats (like webM, MP4 or ogg etc).</li>
+        </ul>
+        </p>
+        <h3><span class="code-keyword">Source Code:</span> Video.html</h3>
         <pre id="htmlCode1">
-&lt;!doctype html&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;Applicaiton Form&lt;/title&gt;
+    &lt;title&gt;Video with controls&lt;/title&gt;
 &lt;/head&gt;
-&lt;script type="text/javascript"&gt;
-    function palindrome() {
-        var str = f1.t1.value
-        var len = str.length;
-        var mid = Math.floor(len / 2);
-        var check = 0;
-        for (var i = 0; i &lt; mid; i++) {
-            if (str[i] !== str[len - 1 - i]) {
-                check = 1;
-            }
-        }
-        if (check == 0) {
-            alert("String is a palindrome");
-        } else {
-            alert("String is not a palindrome");
-        }
-    }
-&lt;/script&gt;
-
 &lt;body&gt;
-    &lt;h1&gt;HTML Program to check if the entered string is palindrome or not&lt;/h1&gt;
-    &lt;form name="f1"&gt;
-        Enter String: &lt;input type="text" name="t1"&gt;
-        &lt;input type="button" value="Check" onclick="palindrome()"&gt;
-    &lt;/form&gt;
+    &lt;h1&gt;Video With Single Source&lt;/h1&gt;
+    &lt;video width="150px" height="150px" autoplay&gt;
+        &lt;source src="Video.mp4" type="video/mp4"&gt;
+    &lt;/video&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+        <h3><span class="code-keyword">Source Code:</span> Video1.html</h3>
+        <pre id="htmlCode2">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Video with controls&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Video With Multiple Source&lt;/h1&gt; 
+    list of Video files
+    &lt;ol&gt;
+        &lt;li&gt;Video.mp4&lt;/li&gt;
+        &lt;li&gt;Video.ogg&lt;/li&gt;
+        &lt;li&gt;Video.webm&lt;/li&gt;
+    &lt;/ol&gt;   
+    &lt;video width="300px" height="300px" autoplay controls&gt;
+        &lt;source src="Video.mp4" type="video/mp4"&gt;
+        &lt;source src="Video.ogg" type="video/ogg"&gt;
+        &lt;source src="Video.webm" type="video/webm"&gt;    
+        Your computer doesn't support Video file    
+    &lt;/video&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
 
         <div class="preview-buttons">
-            <button class="preview-button" onclick="showPreview('index')">Preview index.html</button>
+            <button class="preview-button" onclick="showPreview('Video')">Preview Video.html</button>
+            <button class="preview-button" onclick="showPreview('Video1')">Preview Video1.html</button>
             <div class="dropdown">
                 <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a href="https://drive.google.com/file/d/17dg_h1RdayAr7Ya6WGTdbWuculVqRSd1/view?usp=sharing"
+                    <a href="https://drive.google.com/file/d/167aI25xfxlAMqb0u5bOkSlT-KMp-gsbt/view?usp=sharing"
                         target="_blank">Download Source Code</a>
-                    <a href="https://drive.google.com/file/d/1_hpXxWhfpVRajYEqC_hsCl7DiZFKF65Z/view?usp=sharing"
+                    <a href="https://drive.google.com/file/d/1A2L5mYYYNWinaZyiuIcDnokn3Nw-PTGS/view?usp=sharing"
                         target="_blank">Download Output PDF</a>
                 </div>
             </div>
@@ -84,7 +97,7 @@
             const previewContainer = document.getElementById('previewContainer');
             const previewIframe = document.getElementById('previewIframe');
             const previewTitle = document.getElementById('previewTitle');
-            const codeId = page === 'index' ? 'htmlCode1' : 'htmlCode2';
+            const codeId = page === 'Video' ? 'htmlCode1' : 'htmlCode2';
 
             // Get the code
             const codeElement = document.getElementById(codeId);

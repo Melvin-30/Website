@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create javascript program for the form vaildations - Science IT</title>
-    <link rel="stylesheet" href="/Science/JavaScript/SOP page Style.css">
+    <title>Create event driven JavaScript program to convert temperature - Science IT</title>
+    <link rel="stylesheet" href="SOP page Style.css">
 </head>
 
 <body>
@@ -15,43 +15,43 @@
     </header>
 
     <div class="container">
-        <h2>SOP 4: Create javascript program to check whether enter string is palindrome or not</h2>
-        <p>Create event driven JavaScript program for the following.Make use of appropriate variables,JavaScript inbuilt
-            string functions and control
-            structures.
-             To accept string from user and reverse the given string and check whether it is palindrome or not.</p>
+        <h2>SOP 5: Create event driven JavaScript program to convert temperature.</h2>
+        <p>to and from Celsius, Fahrenheit. Formula: c/5= (f-32)/9<br>
+            [where c=Temperature in Celsius and f=Temperature in Fahrenheit.]</p>
         <h3><span class="code-keyword">Source Code:</span> index.html</h3>
         <pre id="htmlCode1">
-&lt;!doctype html&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;Applicaiton Form&lt;/title&gt;
+    &lt;title&gt;Temperature Converter&lt;/title&gt;
 &lt;/head&gt;
-&lt;script type="text/javascript"&gt;
-    function palindrome() {
-        var str = f1.t1.value
-        var len = str.length;
-        var mid = Math.floor(len / 2);
-        var check = 0;
-        for (var i = 0; i &lt; mid; i++) {
-            if (str[i] !== str[len - 1 - i]) {
-                check = 1;
+&lt;body&gt;
+    &lt;h2&gt;Temperature Converter&lt;/h2&gt;
+    &lt;form name="f1"&gt;
+        Enter Temperature: &lt;input type="number" name="Temp"&gt;
+        &lt;select name="s1"&gt;
+            &lt;option value=""&gt;Select Conversion&lt;/option&gt;
+            &lt;option value="Celsius"&gt;to Celsius&lt;/option&gt;
+            &lt;option value="Fahrenheit"&gt;to Fahrenheit&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;input type="button" value="Convert" onclick="ConvertTemp()"&gt;
+    &lt;/form&gt;
+    &lt;script&gt;
+        function ConvertTemp() {
+            var temp = parseFloat(f1.Temp.value);
+            var convertto = f1.s1.value;
+            var ans;
+            if (convertto == "Fahrenheit") {
+                ans = (temp * 9 / 5) + 32;
+                alert("Temperature in Fahrenheit is: " + ans);
+            } else if (convertto == "Celsius") {
+                ans = (temp - 32) * 5 / 9;
+                alert("Temperature in Celsius is: " + ans);
+            } else {
+                alert("Select a Conversion type!");
             }
         }
-        if (check == 0) {
-            alert("String is a palindrome");
-        } else {
-            alert("String is not a palindrome");
-        }
-    }
-&lt;/script&gt;
-
-&lt;body&gt;
-    &lt;h1&gt;HTML Program to check if the entered string is palindrome or not&lt;/h1&gt;
-    &lt;form name="f1"&gt;
-        Enter String: &lt;input type="text" name="t1"&gt;
-        &lt;input type="button" value="Check" onclick="palindrome()"&gt;
-    &lt;/form&gt;
+    &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
 
@@ -60,10 +60,8 @@
             <div class="dropdown">
                 <button class="download-button">Download Materials</button>
                 <div class="dropdown-content">
-                    <a href="https://drive.google.com/file/d/17dg_h1RdayAr7Ya6WGTdbWuculVqRSd1/view?usp=sharing"
-                        target="_blank">Download Source Code</a>
-                    <a href="https://drive.google.com/file/d/1_hpXxWhfpVRajYEqC_hsCl7DiZFKF65Z/view?usp=sharing"
-                        target="_blank">Download Output PDF</a>
+                    <a href="">Code</a>
+                    <a href="">Output</a>
                 </div>
             </div>
         </div>
