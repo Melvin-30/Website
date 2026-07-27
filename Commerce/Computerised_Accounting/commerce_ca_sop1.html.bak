@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SOP 1: Computerized Accounting with GST - Commerce IT</title>
-  <link rel="stylesheet" href="SOP page Style.css" />
+  <link rel="stylesheet" href="/Commerce/Computerised_Accounting/SOP page Style.css" />
   <style>
     .sop-image {
       display: block;
@@ -250,13 +250,13 @@
     <h4>Step IV Viewing Reports</h4>
     <ul>
       <li>To view Trial Balance: Display → Trial Balance.</li>
-      <img src="images/SOP1_1.jpg" alt="Taly" class="sop-image" />
+      <img src="/Commerce/Computerised_Accounting/images/SOP1_1.jpg" alt="Taly" class="sop-image" />
       <li>To view Profit & Loss A/c: Reports → Profit & Loss A/c.</li>
-      <img src="images/SOP1_2.jpg" alt="Taly" class="sop-image" />
+      <img src="/Commerce/Computerised_Accounting/images/SOP1_2.jpg" alt="Taly" class="sop-image" />
       <li>To view Balance Sheet: Reports → Balance Sheet.</li>
-      <img src="images/SOP1_3.jpg" alt="Taly" class="sop-image" />
+      <img src="/Commerce/Computerised_Accounting/images/SOP1_3.jpg" alt="Taly" class="sop-image" />
       <li>To view Day Book: Display → Day Book → Detailed (Alt+F1).</li>
-      <img src="images/SOP1_4.jpg" alt="Taly" class="sop-image" />
+      <img src="/Commerce/Computerised_Accounting/images/SOP1_4.jpg" alt="Taly" class="sop-image" />
     </ul>
 
     <h4>Notes and Submission</h4>

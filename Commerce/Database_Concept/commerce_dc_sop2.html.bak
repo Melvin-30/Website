@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SOP 2: Database Using LibreOffice Base - Commerce IT</title>
-  <link rel="stylesheet" href="SOP page Style.css" />
+  <link rel="stylesheet" href="/Commerce/Database_Concept/SOP page Style.css" />
   <style>
     .sop-image {
       display: block;
@@ -65,7 +65,7 @@
         name as <strong>employee</strong> and click OK; table will be saved.
       </li>
     </ul>
-    <img src="images/SOP2_1.jpg" alt="Table Design View" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP2_1.jpg" alt="Table Design View" class="sop-image" />
 
     <h4>iii) Steps for inserting records in a table</h4>
     <ul>
@@ -75,7 +75,7 @@
         field and complete all the records.
       </li>
     </ul>
-    <img src="images/SOP2_2.jpg" alt="Insert Records in Table" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP2_2.jpg" alt="Insert Records in Table" class="sop-image" />
 
     <h4>iv) Steps for creating query</h4>
     <ol>
@@ -92,7 +92,7 @@
         and solve the following queries.
       </li>
     </ol>
-    <img src="images/SOP2_3.jpg" alt="LibreOffice Query Creation" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP2_3.jpg" alt="LibreOffice Query Creation" class="sop-image" />
 
     <h4>a) To display records where employee qualification is "MBA"</h4>
     <ul>
@@ -101,7 +101,7 @@
         click Run query icon or press <code>F5</code>.
       </li>
     </ul>
-    <img src="images/SOP2_4.jpg" alt="LibreOffice Query Resut" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP2_4.jpg" alt="LibreOffice Query Resut" class="sop-image" />
 
     <h4>b) To display records where employee department is "ACCOUNTS"</h4>
     <ul>
@@ -110,7 +110,7 @@
         <code>ACCOUNTS</code> and click Run Query or press <code>F5</code>.
       </li>
     </ul>
-    <img src="images/SOP2_5.jpg" alt="LibreOffice Query Resut" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP2_5.jpg" alt="LibreOffice Query Resut" class="sop-image" />
 
     <h4>c) To display records where employee salary &gt; 70000</h4>
     <ul>
@@ -120,7 +120,7 @@
         click Run Query icon or press <code>F5</code>.
       </li>
     </ul>
-    <img src="images/SOP2_6.jpg" alt="LibreOffice Query Resut" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP2_6.jpg" alt="LibreOffice Query Resut" class="sop-image" />
 
     <h4>d) To display records where employee name is "Mr. Suhas Kale"</h4>
     <ul>
@@ -130,7 +130,7 @@
         <code>F5</code>.
       </li>
     </ul>
-    <img src="images/SOP2_7.jpg" alt="LibreOffice Query Resut" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP2_7.jpg" alt="LibreOffice Query Resut" class="sop-image" />
 
     <h4>Notes</h4>
     <ul>

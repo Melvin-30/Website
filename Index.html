@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Std 12th IT Subject SOPs | Maharashtra Board</title>
+    <meta name="google-site-verification" content="O7c6hg3fuPdUoUwk0VMjNKgbbnhNDk0Ieime1obTyuI" />
     <meta name="description"
         content="Access all Skill Oriented Practicals (SOPs) for Std 12th IT subject under the Maharashtra State Board for Science and Commerce streams.">
     <link rel="stylesheet" href="home_style.css">
@@ -220,6 +221,11 @@
     <footer>
         <p>&copy; 2025 Std 12th IT SOPs <br> Developed for educational excellence and
             professional success.</p>
+        <div class="visitor-counter" id="visitor-counter" style="display: none;">
+            <i data-lucide="eye"></i>
+            <span>Total Visits:</span>
+            <span class="count-value" id="count-value">...</span>
+        </div>
     </footer>
 
     <script>
@@ -309,6 +315,26 @@
         document.addEventListener("click", () => {
             document.querySelectorAll(".dropdown").forEach((d) => d.classList.remove("active"));
         });
+
+        // Visitor Counter Fetch
+        async function updateVisitorCount() {
+            try {
+                const response = await fetch('https://api.counterapi.dev/v1/12thitsop/home/increment');
+                if (response.ok) {
+                    const data = await response.json();
+                    const counterEl = document.getElementById('visitor-counter');
+                    const valueEl = document.getElementById('count-value');
+                    if (counterEl && valueEl && data.value) {
+                        valueEl.textContent = Number(data.value).toLocaleString();
+                        counterEl.style.display = 'inline-flex';
+                        lucide.createIcons();
+                    }
+                }
+            } catch (err) {
+                console.warn("Visitor counter offline:", err);
+            }
+        }
+        updateVisitorCount();
     </script>
 </body>
 

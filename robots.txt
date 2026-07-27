@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://12thitsop.netlify.app/sitemap.xml

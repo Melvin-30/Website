@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOP 3: Database Using LibreOffice Base - Commerce IT</title>
-    <link rel="stylesheet" href="SOP page Style.css">
+    <link rel="stylesheet" href="/Commerce/Database_Concept/SOP page Style.css">
     <style>
         .sop-image {
             display: block;
@@ -52,14 +52,14 @@
             <li>Right-click on prodid → Set as Primary Key</li>
             <li>Save table as <strong>Product</strong></li>
         </ul>
-        <img src="images/SOP3_1.jpg" alt="Table Design View" class="sop-image" />
+        <img src="/Commerce/Database_Concept/images/SOP3_1.jpg" alt="Table Design View" class="sop-image" />
 
         <h4>3. Inserting Records</h4>
         <ul>
             <li>Double-click the Product table</li>
             <li>Enter at least 8 records manually</li>
         </ul>
-        <img src="images/SOP3_2.jpg" alt="Insert Records in Table" class="sop-image" />
+        <img src="/Commerce/Database_Concept/images/SOP3_2.jpg" alt="Insert Records in Table" class="sop-image" />
 
         <h4>4. Generating Reports</h4>
         <strong>a) Ascending Order of Prodname</strong>
@@ -68,21 +68,21 @@
             <li>Select Product table → Add fields → Next</li>
             <li>Sort by prodname (ascending) → Choose layout → Title → Finish</li>
         </ul>
-        <img src="images/SOP3_3.jpg" alt="LibreOffice Report Wizard" class="sop-image" />
-        <img src="images/SOP3_4.jpg" alt="LibreOffice Report Wizard" class="sop-image" />
-        <img src="images/sop3_5.jpg" alt="Report Sorted by Prodname Ascending" class="sop-image" />
+        <img src="/Commerce/Database_Concept/images/SOP3_3.jpg" alt="LibreOffice Report Wizard" class="sop-image" />
+        <img src="/Commerce/Database_Concept/images/SOP3_4.jpg" alt="LibreOffice Report Wizard" class="sop-image" />
+        <img src="/Commerce/Database_Concept/images/sop3_5.jpg" alt="Report Sorted by Prodname Ascending" class="sop-image" />
 
         <strong>b) Descending Order of Rate</strong>
         <ul>
             <li>Repeat steps above, but sort by rate (descending)</li>
         </ul>
-        <img src="images/SOP3_6.jpg" alt="Report Sorted by Rate Descending" class="sop-image" />
+        <img src="/Commerce/Database_Concept/images/SOP3_6.jpg" alt="Report Sorted by Rate Descending" class="sop-image" />
 
         <strong>c) Model Year Wise Product List</strong>
         <ul>
             <li>Repeat report wizard → Sort by modelyear</li>
         </ul>
-        <img src="images/SOP3_7.jpg" alt="Report Sorted by Model Year" class="sop-image" />
+        <img src="/Commerce/Database_Concept/images/SOP3_7.jpg" alt="Report Sorted by Model Year" class="sop-image" />
 
         <h4>5. Query to Display Amount (qty * rate)</h4>
         <ul>
@@ -91,14 +91,14 @@
             <li>In a new column, type: <code>"qty" * "rate"</code> → Alias: <strong>Total Amount</strong></li>
             <li>Run the query (F5)</li>
         </ul>
-        <img src="images/SOP3_8.jpg" alt="Query to Calculate Amount" class="sop-image" />
+        <img src="/Commerce/Database_Concept/images/SOP3_8.jpg" alt="Query to Calculate Amount" class="sop-image" />
 
         <h4>6. Bill Report with Amount</h4>
         <ul>
             <li>Use Report Wizard → Add fields including calculated amount</li>
             <li>Choose layout and orientation → Add title → Finish</li>
         </ul>
-        <img src="images/SOP3_9.jpg" alt="Final Bill Report" class="sop-image" />
+        <img src="/Commerce/Database_Concept/images/SOP3_9.jpg" alt="Final Bill Report" class="sop-image" />
     </div>
 
     <footer>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SOP 4: Creation of website using HTML5 and CSS. - Science IT</title>
-  <link rel="stylesheet" href="SOP page Style.css">
+  <link rel="stylesheet" href="/Science/Advanced_Web_Designing/SOP page Style.css">
   <style>
     .sop-image {
       display: block;
@@ -29,7 +29,7 @@
     <p>Create a webpage as given layout use &lt;nav&gt;,&lt;header&gt;,&lt;footer&gt;,&lt;aside&gt;,&lt;article&gt; with
       CSS</p>
 
-    <img src="Structure.png" alt="Taly" class="sop-image" />
+    <img src="/Science/Advanced_Web_Designing/Structure.png" alt="Taly" class="sop-image" />
     <h3><span class="code-keyword">Source Code:</span> Form.html</h3>
     <pre id="htmlCode1">
 &lt;!DOCTYPE html&gt;

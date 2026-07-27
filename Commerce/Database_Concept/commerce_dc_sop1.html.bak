@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SOP 2: Database Using LibreOffice Base - Commerce IT</title>
-  <link rel="stylesheet" href="SOP page Style.css" />
+  <link rel="stylesheet" href="/Commerce/Database_Concept/SOP page Style.css" />
   <style>
     .sop-image {
       display: block;
@@ -59,7 +59,7 @@
         to store it.
       </li>
     </ul>
-    <img src="images/SOP1_1.jpg" alt="Table Design View" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP1_1.jpg" alt="Table Design View" class="sop-image" />
 
     <h4>iii) Steps for inserting records in a table</h4>
     <ul>
@@ -69,7 +69,7 @@
         entries.
       </li>
     </ul>
-    <img src="images/SOP1_2.jpg" alt="Insert Records in Table" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP1_2.jpg" alt="Insert Records in Table" class="sop-image" />
 
     <h4>iv) Steps for creating a form</h4>
     <ol>
@@ -87,7 +87,7 @@
         form.
       </li>
     </ol>
-    <img src="images/SOP1_3.jpg" alt="Table Form View" class="sop-image" />
+    <img src="/Commerce/Database_Concept/images/SOP1_3.jpg" alt="Table Form View" class="sop-image" />
 
     <h4>Notes</h4>
     <ul>

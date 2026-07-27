@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SOP 2: GST Company Creation - Commerce IT</title>
-  <link rel="stylesheet" href="SOP page Style.css" />
+  <link rel="stylesheet" href="/Commerce/Computerised_Accounting/SOP page Style.css" />
   <style>
     .sop-image {
       display: block;
@@ -139,11 +139,11 @@
         Print.</li>
       <li>GST Reports: Gateway of Tally → Display → Statutory Reports → GST → GSTR-2 or Annual Computation.</li>
     </ul>
-    <img src="images/SOP3_1.jpg" alt="Taly" class="sop-image" />
+    <img src="/Commerce/Computerised_Accounting/images/SOP3_1.jpg" alt="Taly" class="sop-image" />
     <center>
       <h4>GSTR-2</h4>
     </center>
-    <img src="images/SOP3_2.jpg" alt="Taly" class="sop-image" />
+    <img src="/Commerce/Computerised_Accounting/images/SOP3_2.jpg" alt="Taly" class="sop-image" />
 
     <h4>Final Notes</h4>
     <ul>

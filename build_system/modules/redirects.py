@@ -308,6 +308,8 @@ class RedirectsGenerator(BaseModule):
                             "file_path": rel_path,
                             "short_url": short_url,
                             "destination_path": dest_path,
+                            "stream_folder": stream_folder,
+                            "subject_folder": subject_folder,
                             "stream": stream_folder,
                             "subject": subject_folder,
                             "subject_code": expected_subject_code,
@@ -395,20 +397,29 @@ class RedirectsGenerator(BaseModule):
         # --- 301 rules: old HTML path → clean short URL ---
         rules_301_data = []
         for sop in sorted_by_dest:
-            dest  = sop["destination_path"]
-            url   = sop["short_url"]
-            
-            # Form variations
-            variations = [dest]
-            if dest.endswith(".html"):
-                variations.append(dest[:-5])
-            
-            # Add lowercase versions to support case-sensitive matching
-            all_variations = []
-            for v in variations:
-                all_variations.append(v)
-                all_variations.append(v.lower())
-                
+            dest          = sop["destination_path"]
+            url           = sop["short_url"]
+            stream_lc     = sop["stream_folder"].lower()
+            subject_lc    = sop["subject_folder"].lower()
+            filename      = dest.split("/")[-1]              # e.g. science_awd_sop1.html
+            filename_bare = filename[:-5] if filename.endswith(".html") else filename
+
+            # Build every source path variant we want to redirect:
+            #   1. Exact disk casing with .html
+            #   2. Exact disk casing without .html  (Netlify pretty-URLs)
+            #   3. All-lowercase with .html
+            #   4. All-lowercase without .html
+            #   5. lowercase /stream/full_subject_folder/filename  (no .html)
+            #   6. lowercase /stream/full_subject_folder/filename.html
+            all_variations = [
+                dest,
+                dest[:-5] if dest.endswith(".html") else dest,
+                dest.lower(),
+                dest.lower()[:-5] if dest.lower().endswith(".html") else dest.lower(),
+                f"/{stream_lc}/{subject_lc}/{filename_bare}",
+                f"/{stream_lc}/{subject_lc}/{filename}",
+            ]
+
             for v in all_variations:
                 if v not in written_dests:
                     written_dests.add(v)

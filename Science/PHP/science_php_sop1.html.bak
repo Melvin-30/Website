@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHP program to check if a person is eligible to vote or not. - Science IT</title>
-    <link rel="stylesheet" href="SOP page Style.css">
+    <link rel="stylesheet" href="/Science/PHP/SOP page Style.css">
 </head>
 
 <body>

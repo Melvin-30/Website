@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOP 2: Digital Marketing - Commerce IT</title>
-    <link rel="stylesheet" href="SOP page Style.css">
+    <link rel="stylesheet" href="/Commerce/Digital_Marketing/SOP page Style.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 
         <h4>1) Total numbers of recommended improvements are?</h4>
         <p><b>Ans:</b> 23</p>
-        <img src="images/sop2_img2.png" alt="Recommendation">
+        <img src="/Commerce/Digital_Marketing/images/sop2_img2.png" alt="Recommendation">
 
 
         <h4>2) Mention grades given for the following points:</h4>
@@ -37,14 +37,14 @@
             <li><b>Performance:</b> A-</li>
             <li><b>Security:</b> A+</li>
         </ul>
-        <img src="images/sop2_img1.png" alt="SEO Usability Performance Security Report">
+        <img src="/Commerce/Digital_Marketing/images/sop2_img1.png" alt="SEO Usability Performance Security Report">
 
         <h4>3) Check for broken links and images.</h4>
         <p><b>Ans:</b> Not Present</p>
 
         <h4>4) Whether the website has links with the social media?</h4>
         <p><b>Ans:</b> No</p>
-        <img src="images/sop2_img3.png" alt="Social Media Links Check">
+        <img src="/Commerce/Digital_Marketing/images/sop2_img3.png" alt="Social Media Links Check">
     </div>
 
     <footer>

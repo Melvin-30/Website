@@ -7,6 +7,11 @@ subject aliases used by the build modules.
 from typing import Dict, Set
 
 # ---------------------------------------------------------------------------
+# Live site base URL — used by sitemap, canonical tags, and Open Graph
+# ---------------------------------------------------------------------------
+SITE_BASE_URL: str = "https://12thitsop.netlify.app"
+
+# ---------------------------------------------------------------------------
 # Subject folder alias mapping
 # Normalised folder name (lowercase, underscores → dashes) → short code.
 # If a folder name is not listed here the normalised folder name is used as-is.
